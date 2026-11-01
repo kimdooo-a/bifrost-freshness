@@ -1,0 +1,228 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bifrost Freshness Report</title><style>
+:root{--ok:#1a7f37;--bad:#cf222e;--unk:#8250df;--mut:#57606a;--line:#d0d7de}
+body{font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#1f2328;background:#f6f8fa}
+main{max-width:1100px;margin:0 auto;padding:24px}h1{margin:0 0 4px}h2{margin-top:32px;border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}.card b{display:block;font-size:24px}
+table{border-collapse:collapse;width:100%;background:#fff}td,th{border:1px solid var(--line);padding:6px 8px;text-align:left}
+.bar{display:inline-block;width:80px;height:8px;background:#eee;margin-right:6px;vertical-align:middle}.bar span{display:block;height:100%;background:var(--bad)}
+.v-supported{color:var(--ok)}.v-changed{color:var(--bad)}.v-unverifiable{color:var(--unk)}
+.answer{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:16px 0}
+.claim{border-left:4px solid var(--line);padding:6px 12px;margin:10px 0}.claim.supported{border-color:var(--ok)}.claim.changed{border-color:var(--bad)}.claim.unverifiable{border-color:var(--unk)}
+.badge{color:#fff;border-radius:10px;padding:1px 8px;font-size:12px;background:var(--mut)}.badge.supported{background:var(--ok)}.badge.changed{background:var(--bad)}.badge.unverifiable{background:var(--unk)}
+.fresh,.cat{margin-left:8px;color:var(--mut);font-size:12px}.ctext{font-weight:600;margin:6px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cols h5{margin:4px 0}.evidence q{background:#fff8c5}
+.muted{color:var(--mut)}.small{font-size:12px}.warn{color:var(--bad)}.notes{font-size:12px;color:#9a6700}
+pre{white-space:pre-wrap;background:#f6f8fa;padding:8px;border-radius:6px;overflow:auto}
+@media(max-width:700px){.cols{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Bifrost Freshness Report</h1>
+<p class="muted">Generated 2026-11-01T23:17:14.060Z &middot; reference date 2026-11-01 &middot; mode <code>logs</code> &middot; gateway <code>http://localhost:8080</code></p>
+<div class="cards">
+<div class="card"><b>10</b>answers audited</div>
+<div class="card"><b>10</b>claims researched</div>
+<div class="card"><b class="v-changed">8</b>changed (stale)</div>
+<div class="card"><b class="v-supported">2</b>still supported</div>
+<div class="card"><b class="v-unverifiable">0</b>unverifiable</div>
+<div class="card"><b>80%</b>staleness rate</div>
+</div>
+<h2>Staleness by audited model</h2>
+<table><tr><th>model</th><th>answers</th><th>researched</th><th>supported</th><th>changed</th><th>unverifiable</th><th>staleness</th></tr><tr><td><code>ollama/exaone-3.5-2.4b:latest</code></td><td>5</td><td>6</td>
+<td class="v-supported">1</td><td class="v-changed">5</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:83%"></span></div>83%</td></tr>
+<tr><td><code>ollama/gemma4:e4b-it-q4km-chat</code></td><td>5</td><td>4</td>
+<td class="v-supported">1</td><td class="v-changed">3</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:75%"></span></div>75%</td></tr></table>
+<h2>Staleness by topic</h2>
+<table><tr><th>category</th><th>answers</th><th>researched</th><th>supported</th><th>changed</th><th>unverifiable</th><th>staleness</th></tr><tr><td><code>other</code></td><td>-</td><td>1</td>
+<td class="v-supported">0</td><td class="v-changed">1</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:100%"></span></div>100%</td></tr>
+<tr><td><code>version</code></td><td>-</td><td>1</td>
+<td class="v-supported">0</td><td class="v-changed">1</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:100%"></span></div>100%</td></tr>
+<tr><td><code>office_holder</code></td><td>-</td><td>8</td>
+<td class="v-supported">2</td><td class="v-changed">6</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:75%"></span></div>75%</td></tr></table>
+<h2>Suggested Bifrost routing rules</h2><pre>{
+  &quot;governance&quot;: {
+    &quot;routing_rules&quot;: [
+      {
+        &quot;id&quot;: &quot;freshness-avoid-exaone-3-5-2-4b-latest&quot;,
+        &quot;name&quot;: &quot;Freshness: route time-sensitive exaone-3.5-2.4b:latest traffic to gemma4:e4b-it-q4km-chat&quot;,
+        &quot;description&quot;: &quot;ollama/exaone-3.5-2.4b:latest was stale on 5/6 researched claims (83%) vs 75% for ollama/gemma4:e4b-it-q4km-chat.&quot;,
+        &quot;cel_expression&quot;: &quot;provider == \&quot;ollama\&quot; &amp;&amp; model == \&quot;exaone-3.5-2.4b:latest\&quot; &amp;&amp; headers[\&quot;x-freshness-sensitive\&quot;] == \&quot;true\&quot;&quot;,
+        &quot;targets&quot;: [
+          {
+            &quot;provider&quot;: &quot;ollama&quot;,
+            &quot;model&quot;: &quot;gemma4:e4b-it-q4km-chat&quot;,
+            &quot;weight&quot;: 1
+          }
+        ],
+        &quot;enabled&quot;: true,
+        &quot;priority&quot;: 10,
+        &quot;scope&quot;: &quot;global&quot;
+      }
+    ]
+  }
+}</pre>
+<h2>Auditor run (through Bifrost)</h2>
+<ul>
+<li>Primary model <code>ollama/gemma4:26b-a4b-chat</code>, fallbacks <code>ollama/gemma4:e4b-it-q4km-chat</code></li>
+<li>20 LLM calls served by <code>ollama/gemma4:26b-a4b-chat</code> &times; 20; <b class="">0 answered by a fallback model</b></li>
+<li>Tokens: 19637 prompt + 2773 completion</li>
+<li>Virtual key <code>vk-freshness-auditor</code>: 22918 / 400000 tokens, 21 / 400 requests in window; budget budget-freshness-auditor $0.0000 / $1 per 1d</li>
+<li>Tavily: 10 searches this run (12 total in ledger)</li>
+
+</ul>
+<h2>Claims</h2>
+<section class="answer"><h3>#1 ollama/gemma4:e4b-it-q4km-chat
+<span class="muted small">log 7f03321a-db2b-4cf8-8f1e-0fcca978f0b9 &middot; 2026-11-01T23:15:48.7487836Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current CEO of Microsoft? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current CEO of Microsoft is Satya Nadella. He has been in this role since February 2014.</pre></details>
+
+<div class="claim supported"><div class="head"><span class="badge supported">supported</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 100 &middot; medium confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">Satya Nadella is the current CEO of Microsoft.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.
+
+Updated September 18, 2026</q> <a href="https://www.unifygtm.com/insights/executives/microsoft-ceo" target="_blank" rel="noopener">[2] www.unifygtm.com</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>Source 2, which was updated in September 2026, explicitly states that Satya Nadella is the CEO of Microsoft and has held the position since 2014, confirming the claim is current as of the current date of November 2026.</p>
+</div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/Satya_Nadella" target="_blank" rel="noopener">Satya Nadella - Wikipedia</a></li><li><a href="https://www.unifygtm.com/insights/executives/microsoft-ceo" target="_blank" rel="noopener">Who is the CEO of Microsoft in 2026? Satya Nadella | Unify</a></li><li><a href="https://www.clay.com/dossier/microsoft-ceo" target="_blank" rel="noopener">Who is the CEO of Microsoft in 2026? Satya Nadella&#39;s Bio | Clay</a></li><li><a href="https://www.ebsco.com/research-starters/biography/satya-nadella" target="_blank" rel="noopener">Satya Nadella | Biography | Research Starters | EBSCOhost</a></li><li><a href="https://news.microsoft.com/source/exec/satya-nadella" target="_blank" rel="noopener">Satya Nadella - Source</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Satya Nadella has been the CEO of Microsoft since February 2014.</p></div></section>
+<section class="answer"><h3>#2 ollama/gemma4:e4b-it-q4km-chat
+<span class="muted small">log 466798c7-b0ce-4ed3-9d83-06d14f2a3b5f &middot; 2026-11-01T23:15:48.5952678Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current Pope? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current Pope is Pope Francis. He is the head of the Catholic Church.</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; medium confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">The current Pope is Pope Francis.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave.</q> <a href="https://en.wikipedia.org/wiki/Pope" target="_blank" rel="noopener">[2] en.wikipedia.org</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>While source 1 states Pope Francis was the current pope as of 2024, sources 2, 3, 4, and 5 all confirm that Pope Leo XIV was elected on May 8, 2025, and is the current pope.</p>
+<p><b>Current value:</b> Pope Leo XIV</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://spiritualculture.org/who-is-the-current-pope" target="_blank" rel="noopener">Who is the Current Pope? - Questions and Answers</a></li><li><a href="https://en.wikipedia.org/wiki/Pope" target="_blank" rel="noopener">Pope - Wikipedia</a></li><li><a href="https://duckduckgo.com?q=Who+is+the+current+Pope%3F" target="_blank" rel="noopener">Who is the current Pope? at DuckDuckGo</a></li><li><a href="https://www.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church" target="_blank" rel="noopener">Pope Leo XIV | The Current Pope of the Catholic Church | Catholic Answers Tract</a></li><li><a href="https://www.4lpi.com/blog/everything-youve-ever-wanted-to-know-about-pope-leo-xiv" target="_blank" rel="noopener">Everything You’ve Ever Wanted to Know About Pope Leo XIV</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div></section>
+<section class="answer"><h3>#3 ollama/gemma4:e4b-it-q4km-chat
+<span class="muted small">log 938cf0c3-ac4d-4d1e-a490-aedaa39b7d40 &middot; 2026-11-01T23:15:48.3948392Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current Chancellor of Germany? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current Chancellor of Germany is Olaf Scholz. He has held this position since December 2021.</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; high confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">Olaf Scholz is the current Chancellor of Germany.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.</q> <a href="https://en.wikipedia.org/wiki/Chancellor_of_Germany" target="_blank" rel="noopener">[1] en.wikipedia.org</a></li><li><q>Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025.</q> <a href="https://en.wikipedia.org/wiki/Friedrich_Merz" target="_blank" rel="noopener">[2] en.wikipedia.org</a></li><li><q>Federal Chancellor ### Friedrich Merz</q> <a href="https://www.bundeskanzler.de/bk-en" target="_blank" rel="noopener">[4] www.bundeskanzler.de</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>The sources state that Friedrich Merz is the current Chancellor of Germany, having been sworn in on May 6, 2025, and Olaf Scholz is listed as his predecessor.</p>
+<p><b>Current value:</b> Friedrich Merz</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/Chancellor_of_Germany" target="_blank" rel="noopener">Chancellor of Germany - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Friedrich_Merz" target="_blank" rel="noopener">Friedrich Merz - Wikipedia</a></li><li><a href="https://www.pbs.org/newshour/show/as-germany-selects-a-new-conservative-chancellor-a-look-at-the-challenges-he-inherits" target="_blank" rel="noopener">As Germany selects a new conservative chancellor, a look at the challenges he inherits | PBS News</a></li><li><a href="https://www.bundeskanzler.de/bk-en" target="_blank" rel="noopener">The Federal Chancellor of the Federal Republic of Germany | Home page</a></li><li><a href="https://www.youtube.com/watch?v=qslX7zcx4Gw" target="_blank" rel="noopener">Friedrich Merz elected as Germany&#39;s new chancellor in unprecedented second round of voting | DW News</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">Olaf Scholz has held the position of Chancellor of Germany since December 2021.</p></div></section>
+<section class="answer"><h3>#4 ollama/gemma4:e4b-it-q4km-chat
+<span class="muted small">log 90918925-a5f2-4983-8aea-efd920c2df76 &middot; 2026-11-01T23:15:48.0431239Z</span></h3>
+<p class="q"><b>Q:</b> What is the latest stable version of Python? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>As of my last update, the latest stable version of Python is generally the newest release in the 3.x series. For the most precise and up-to-date information, you should check the official Python website.</pre></details>
+
+</section>
+<section class="answer"><h3>#5 ollama/gemma4:e4b-it-q4km-chat
+<span class="muted small">log eda0bb58-e927-4f3a-9e77-c2970712010b &middot; 2026-11-01T23:15:44.594381Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current CEO of Intel? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current CEO of Intel is Pat Gelsinger. He took over the role in January 2021.</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; high confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">Pat Gelsinger is the current CEO of Intel.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company&#39;s board of directors.</q> <a href="https://en.wikipedia.org/wiki/Intel" target="_blank" rel="noopener">[1] en.wikipedia.org</a></li><li><q>Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18.</q> <a href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html" target="_blank" rel="noopener">[2] www.intel.com</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>Pat Gelsinger retired as CEO on December 1, 2024, and was succeeded by Lip-Bu Tan, who took office on March 18, 2025.</p>
+<p><b>Current value:</b> Lip-Bu Tan</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/Intel" target="_blank" rel="noopener">Intel - Wikipedia</a></li><li><a href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html" target="_blank" rel="noopener">Intel Appoints Lip-Bu Tan as Chief Executive Officer</a></li><li><a href="https://en.wikipedia.org/wiki/Lip-Bu_Tan" target="_blank" rel="noopener">Lip-Bu Tan - Wikipedia</a></li><li><a href="https://www.clay.com/dossier/intel-ceo" target="_blank" rel="noopener">Who is the CEO of Intel in 2026? Lip-Bu Tan&#39;s Bio | Clay</a></li><li><a href="https://www.youtube.com/watch?v=smicjh7yyro" target="_blank" rel="noopener">Intel appoints Lip-Bu Tan as CEO</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Pat Gelsinger took over the role of Intel CEO in January 2021.</p></div></section>
+<section class="answer"><h3>#6 ollama/exaone-3.5-2.4b:latest
+<span class="muted small">log 7c1589da-ad19-4dab-9025-966ee5a6eaff &middot; 2026-11-01T23:15:44.4468392Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current CEO of Microsoft? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current CEO of Microsoft is Satya Nadella. He has led the company since 2014, focusing on innovation in cloud computing, artificial intelligence, and enterprise solutions.</pre></details>
+
+<div class="claim supported"><div class="head"><span class="badge supported">supported</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 100 &middot; medium confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">Satya Nadella is the current CEO of Microsoft.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.
+
+Updated September 18, 2026</q> <a href="https://www.unifygtm.com/insights/executives/microsoft-ceo" target="_blank" rel="noopener">[2] www.unifygtm.com</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>Source 2, which was updated in September 2026, explicitly states that Satya Nadella is the Chief Executive Officer of Microsoft and has held the position since 2014, confirming the claim is current as of the current date of November 2026.</p>
+</div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/Satya_Nadella" target="_blank" rel="noopener">Satya Nadella - Wikipedia</a></li><li><a href="https://www.unifygtm.com/insights/executives/microsoft-ceo" target="_blank" rel="noopener">Who is the CEO of Microsoft in 2026? Satya Nadella | Unify</a></li><li><a href="https://www.clay.com/dossier/microsoft-ceo" target="_blank" rel="noopener">Who is the CEO of Microsoft in 2026? Satya Nadella&#39;s Bio | Clay</a></li><li><a href="https://www.ebsco.com/research-starters/biography/satya-nadella" target="_blank" rel="noopener">Satya Nadella | Biography | Research Starters | EBSCOhost</a></li><li><a href="https://news.microsoft.com/source/exec/satya-nadella" target="_blank" rel="noopener">Satya Nadella - Source</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Satya Nadella has been the CEO of Microsoft since 2014.</p></div></section>
+<section class="answer"><h3>#7 ollama/exaone-3.5-2.4b:latest
+<span class="muted small">log 2d59bc6f-59f1-4692-8b12-74a694c2a699 &middot; 2026-11-01T23:15:44.3080255Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current Pope? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current Pope is Pope Francis, who has been serving since October 2013. His pontificate continues under the title &quot;Francis I.&quot;</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; medium confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">The current Pope is Pope Francis.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave.</q> <a href="https://en.wikipedia.org/wiki/Pope" target="_blank" rel="noopener">[2] en.wikipedia.org</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>While source 1 states Pope Francis was the current pope as of 2024, sources 2, 3, 4, and 5 all confirm that Pope Leo XIV was elected on May 8, 2025, and is the current pope.</p>
+<p><b>Current value:</b> Pope Leo XIV</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://spiritualculture.org/who-is-the-current-pope" target="_blank" rel="noopener">Who is the Current Pope? - Questions and Answers</a></li><li><a href="https://en.wikipedia.org/wiki/Pope" target="_blank" rel="noopener">Pope - Wikipedia</a></li><li><a href="https://duckduckgo.com?q=Who+is+the+current+Pope%3F" target="_blank" rel="noopener">Who is the current Pope? at DuckDuckGo</a></li><li><a href="https://www.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church" target="_blank" rel="noopener">Pope Leo XIV | The Current Pope of the Catholic Church | Catholic Answers Tract</a></li><li><a href="https://www.4lpi.com/blog/everything-youve-ever-wanted-to-know-about-pope-leo-xiv" target="_blank" rel="noopener">Everything You’ve Ever Wanted to Know About Pope Leo XIV</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Pope Francis has been serving as Pope since October 2013.</p></div></section>
+<section class="answer"><h3>#8 ollama/exaone-3.5-2.4b:latest
+<span class="muted small">log f150b8e8-6bbf-4aa3-a47b-a7c5e104512d &middot; 2026-11-01T23:15:44.0930819Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current Chancellor of Germany? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current Chancellor of Germany is Olaf Scholz, who assumed office on December 8, 2021. He leads a coalition government comprising the Social Democratic Party (SPD), the Green Party, and the Free Democratic Party (FDP).</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; high confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">The current Chancellor of Germany is Olaf Scholz.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.</q> <a href="https://en.wikipedia.org/wiki/Chancellor_of_Germany" target="_blank" rel="noopener">[1] en.wikipedia.org</a></li><li><q>Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025.</q> <a href="https://en.wikipedia.org/wiki/Friedrich_Merz" target="_blank" rel="noopener">[2] en.wikipedia.org</a></li><li><q>Federal Chancellor ### Friedrich Merz</q> <a href="https://www.bundeskanzler.de/bk-en" target="_blank" rel="noopener">[4] www.bundeskanzler.de</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>The claim that Olaf Scholz is the current Chancellor is incorrect; according to multiple sources, Friedrich Merz has been the Chancellor of Germany since May 6, 2025.</p>
+<p><b>Current value:</b> Friedrich Merz</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/Chancellor_of_Germany" target="_blank" rel="noopener">Chancellor of Germany - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Friedrich_Merz" target="_blank" rel="noopener">Friedrich Merz - Wikipedia</a></li><li><a href="https://www.pbs.org/newshour/show/as-germany-selects-a-new-conservative-chancellor-a-look-at-the-challenges-he-inherits" target="_blank" rel="noopener">As Germany selects a new conservative chancellor, a look at the challenges he inherits | PBS News</a></li><li><a href="https://www.bundeskanzler.de/bk-en" target="_blank" rel="noopener">The Federal Chancellor of the Federal Republic of Germany | Home page</a></li><li><a href="https://www.youtube.com/watch?v=qslX7zcx4Gw" target="_blank" rel="noopener">Friedrich Merz elected as Germany&#39;s new chancellor in unprecedented second round of voting | DW News</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Olaf Scholz assumed office as Chancellor of Germany on December 8, 2021.</p></div>
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; medium confidence</span>
+<span class="cat">other</span></div><p class="ctext">The German coalition government comprises the Social Democratic Party (SPD), the Green Party, and the Free Democratic Party (FDP).</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The cabinet is composed of Merz&#39;s Christian Democratic Union (CDU), its Bavarian sister-party Christian Social Union (CSU) (which form the CDU/CSU alliance; the so called Union) and the Social Democratic Party (SPD).</q> <a href="https://en.wikipedia.org/wiki/Merz_cabinet" target="_blank" rel="noopener">[5] en.wikipedia.org</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>The claim states the coalition consists of the SPD, Greens, and FDP, but the sources indicate that as of May 2025, the current German government is a &#39;Grand Coalition&#39; consisting of the CDU/CSU and the SPD.</p>
+<p><b>Current value:</b> Christian Democratic Union (CDU), Christian Social Union (CSU), and Social Democratic Party (SPD)</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/German_governing_coalition" target="_blank" rel="noopener">German governing coalition - Wikipedia</a></li><li><a href="https://www.dw.com/en/germany-cdu-csu-and-spd-announce-coalition-government-deal/live-72180120" target="_blank" rel="noopener">Germany: CDU/CSU and SPD announce coalition government deal</a></li><li><a href="https://www.youtube.com/watch?v=2PYOGBUNuoU" target="_blank" rel="noopener">Germany&#39;s incoming government signs coalition deal: What to expect | DW News</a></li><li><a href="https://www.pbs.org/newshour/world/german-coalition-deal-approved-by-center-left-party-paving-way-for-merz-to-be-elected-chancellor" target="_blank" rel="noopener">German coalition deal approved by center-left party, paving way for Merz to be elected chancellor | PBS News</a></li><li><a href="https://en.wikipedia.org/wiki/Merz_cabinet" target="_blank" rel="noopener">Merz cabinet - Wikipedia</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div></section>
+<section class="answer"><h3>#9 ollama/exaone-3.5-2.4b:latest
+<span class="muted small">log e4050ee1-ea07-4a40-baf3-9c0a5683c8ab &middot; 2026-11-01T23:15:43.8963371Z</span></h3>
+<p class="q"><b>Q:</b> What is the latest stable version of Python? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The latest stable version of Python as of early 2023 is Python 3.11, officially released on October 28, 2022, offering performance improvements and new features while maintaining backward compatibility.</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; medium confidence</span>
+<span class="cat">version</span></div><p class="ctext">The latest stable version of Python is Python 3.11.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The latest stable version of Python is 3.14</q> <a href="https://www.liquidweb.com/blog/latest-python-version" target="_blank" rel="noopener">[1] www.liquidweb.com</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>The claim states that Python 3.11 is the latest stable version, but Source 1 explicitly states that Python 3.14 is the latest stable version as of its release on October 7, 2025.</p>
+<p><b>Current value:</b> Python 3.14</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://www.liquidweb.com/blog/latest-python-version" target="_blank" rel="noopener">Latest Python Version (2025) – What&#39;s New in Python 3.14?</a></li><li><a href="https://www.mostlypython.com/updating-python" target="_blank" rel="noopener">Updating Python</a></li><li><a href="https://www.youtube.com/watch?v=ZQ6F_M4HAhE&amp;vl=en" target="_blank" rel="noopener">Which Python Version Should I Install?</a></li><li><a href="https://stackoverflow.com/questions/70378786/how-to-get-the-version-number-of-the-latest-stable-release-of-python-via-single" target="_blank" rel="noopener">How to get the version number of the latest stable release of Python via single HTTP request?</a></li><li><a href="https://www.reddit.com/r/Python/comments/1qgt083/python_version_in_production" target="_blank" rel="noopener">Python Version in Production ? : r/Python</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Python 3.11 was officially released on October 28, 2022.</p></div></section>
+<section class="answer"><h3>#10 ollama/exaone-3.5-2.4b:latest
+<span class="muted small">log 9b47086a-f416-4c73-b7f6-6ae692f68397 &middot; 2026-11-01T23:15:35.7678655Z</span></h3>
+<p class="q"><b>Q:</b> Who is the current CEO of Intel? Answer in one or two sentences.</p>
+<details><summary>Answer text</summary><pre>The current CEO of Intel Corporation is Jim Kelly, who took office in January 2023, succeeding Brian Kracklauer. Kelly leads Intel through ongoing technological advancements and strategic initiatives in semiconductor manufacturing and innovation.</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; medium confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">The current CEO of Intel Corporation is Jim Kelly.</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18.</q> <a href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html" target="_blank" rel="noopener">[2] www.intel.com</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>The claim that Jim Kelly is the CEO is incorrect; according to Intel&#39;s official announcement and supporting sources, Lip-Bu Tan was appointed CEO effective March 18, 2025.</p>
+<p><b>Current value:</b> Lip-Bu Tan</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://en.wikipedia.org/wiki/Intel" target="_blank" rel="noopener">Intel - Wikipedia</a></li><li><a href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html" target="_blank" rel="noopener">Intel Appoints Lip-Bu Tan as Chief Executive Officer</a></li><li><a href="https://www.unifygtm.com/insights/executives/intel-ceo" target="_blank" rel="noopener">Who is the CEO of Intel in 2026? Lip-Bu Tan | Unify</a></li><li><a href="https://www.clay.com/dossier/intel-ceo" target="_blank" rel="noopener">Who is the CEO of Intel in 2026? Lip-Bu Tan&#39;s Bio | Clay</a></li><li><a href="https://en.wikipedia.org/wiki/Lip-Bu_Tan" target="_blank" rel="noopener">Lip-Bu Tan - Wikipedia</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">office_holder</span></div><p class="ctext">Jim Kelly took office as CEO of Intel in January 2023.</p></div></section>
+</main></body></html>

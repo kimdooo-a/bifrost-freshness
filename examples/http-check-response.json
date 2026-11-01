@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-11-01T23:18:39.049Z",
+  "today": "2026-11-01",
+  "mode": "check",
+  "gateway": {
+    "baseUrl": "http://localhost:8080",
+    "vkBefore": {
+      "id": "vk-freshness-auditor",
+      "tokensUsed": 27019,
+      "tokenLimit": 400000,
+      "requestsUsed": 24,
+      "requestLimit": 400,
+      "budgets": [
+        {
+          "id": "budget-freshness-auditor",
+          "usedUsd": 0,
+          "limitUsd": 1,
+          "resetDuration": "1d"
+        }
+      ]
+    },
+    "vkAfter": {
+      "id": "vk-freshness-auditor",
+      "tokensUsed": 27019,
+      "tokenLimit": 400000,
+      "requestsUsed": 24,
+      "requestLimit": 400,
+      "budgets": [
+        {
+          "id": "budget-freshness-auditor",
+          "usedUsd": 0,
+          "limitUsd": 1,
+          "resetDuration": "1d"
+        }
+      ]
+    }
+  },
+  "auditor": {
+    "primaryModel": "ollama/gemma4:26b-a4b-chat",
+    "fallbackModels": [
+      "ollama/gemma4:e4b-it-q4km-chat"
+    ],
+    "calls": 2,
+    "fallbackCalls": 0,
+    "servedBy": {
+      "ollama/gemma4:26b-a4b-chat": 2
+    },
+    "promptTokens": 1716,
+    "completionTokens": 187,
+    "stoppedEarly": null
+  },
+  "tavily": {
+    "callsThisRun": 1,
+    "creditsThisRun": 1,
+    "ledgerTotalCalls": 17
+  },
+  "totals": {
+    "answers": 1,
+    "claims": 1,
+    "checked": 1,
+    "supported": 1,
+    "changed": 0,
+    "unverifiable": 0,
+    "skipped": 0,
+    "stalenessRate": 0
+  },
+  "byModel": {
+    "ollama/gemma4:e4b-it-q4km-chat": {
+      "answers": 1,
+      "claims": 1,
+      "checked": 1,
+      "supported": 1,
+      "changed": 0,
+      "unverifiable": 0,
+      "skipped": 0,
+      "stalenessRate": 0
+    }
+  },
+  "byCategory": {
+    "office_holder": {
+      "answers": 0,
+      "claims": 1,
+      "checked": 1,
+      "supported": 1,
+      "changed": 0,
+      "unverifiable": 0,
+      "skipped": 0,
+      "stalenessRate": 0
+    }
+  },
+  "routingSuggestions": [],
+  "audits": [
+    {
+      "source": {
+        "kind": "direct",
+        "model": "ollama/gemma4:e4b-it-q4km-chat"
+      },
+      "question": "Who is the CEO of Nvidia?",
+      "answer": "Nvidia is led by co-founder and CEO Jensen Huang.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "Jensen Huang is the CEO of Nvidia",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current CEO of Nvidia"
+          },
+          "verdict": "supported",
+          "confidence": 1,
+          "freshness": {
+            "score": 100,
+            "label": "fresh",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://en.wikipedia.org/wiki/Jensen_Huang",
+              "quote": "Jen-Hsun \"Jensen\" Huang (born February 17, 1963) is a Taiwanese and American business executive and electrical engineer who is the co-founder, president, and CEO of Nvidia, the world's most valuable company.",
+              "match": "exact"
+            }
+          ],
+          "inference": "The sources confirm that Jensen Huang is the co-founder, president, and CEO of Nvidia, and source 1 specifically notes his status as of October 2026, which aligns with today's date.",
+          "currentValue": null,
+          "sources": [
+            {
+              "n": 1,
+              "title": "Jensen Huang - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Jensen_Huang",
+              "content": "Jen-Hsun \"Jensen\" Huang (born February 17, 1963) is a Taiwanese and American business executive and electrical engineer who is the co-founder, president, and CEO of Nvidia, the world's most valuable company. As of October 2026,( Forbes estimates his net worth at over US$200 billion, making him the seventh-wealthiest individual in the world. [...] 23. ↑ Berger, Chloe (August 28, 2024). \"Nvidia's billionaire boss: 'I used to clean bathrooms, and now I'm the CEO'\". Fortune \"Fortune (magazine)\"). Retrieved December 23, 2024.\n24. ↑ Anand, Nisha (August 28, 2024). \"Nvidia CEO Jensen Huang's experience as 'dishwasher' goes viral on LinkedIn\". Business Standard. Archived from the original on October 7, 2024. Retrieved December 24, 2024.\n25. ↑ Kim 2024, p. 21. [...] 55. ↑ Leswing, Kif (May 24, 2024). \"Nvidia CEO Jensen Huang's net worth swells from $3 billion to $90 billion in five years\". CNBC. Retrieved May 30, 2024.\n56. ↑ Tan, Kwan Wei Kevin (March 27, 2024). \"Mark Zuckerberg says Nvidia CEO Jensen Huang is basically the Taylor Swift of tech\". Business Insider. Retrieved June 15, 2024.",
+              "score": 0.82492816
+            },
+            {
+              "n": 2,
+              "title": "Jensen Huang | NVIDIA Newsroom",
+              "url": "http://nvidianews.nvidia.com/bios/jensen-huang",
+              "content": "### Jensen Huang\n\n###### Founder & CEO\n\nJensen Huang founded NVIDIA in 1993 and has served since its inception as president, chief executive officer, and a member of the board of directors. [...] of Science and Technology, and Linköping University. He has been named the world’s best CEO by Fortune, the Economist, and Brand Finance, as well as one of TIME magazine’s 100 most influential people. [...] Prior to founding NVIDIA, Huang worked at LSI Logic and Advanced Micro Devices. He holds a BSEE degree from Oregon State University and an MSEE degree from Stanford University.\n\nJensen Huang Founder & CEO\n\n Download Headshot\n Download Bio as a PDF\n Download All Files in ZIP\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information",
+              "score": 0.7493996
+            },
+            {
+              "n": 3,
+              "title": "Jensen Huang",
+              "url": "https://www.nvidia.com/en-us/about-nvidia/board-of-directors/jensen-huang",
+              "content": "Jensen Huang founded NVIDIA in 1993 and has served since its inception as president, chief executive officer, and a member of the board of directors. Prior to founding NVIDIA, Mr. Huang held a variety of positions from 1985 to 1993 at LSI Logic Corp., a computer chip manufacturer, and from 1984 to 1985 at Advanced Micro Devices, Inc., a semiconductor company. In 2017, he was named Fortune’s Businessperson of the Year. In 2019, Harvard Business Review ranked him No. 1 on its list of the world’s",
+              "score": 0.7371019
+            },
+            {
+              "n": 4,
+              "title": "Jensen Huang - Founder and CEO, NVIDIA",
+              "url": "https://www.linkedin.com/in/jenhsunhuang",
+              "content": "# Jensen Huang\nFounder and CEO, NVIDIA\nLos Altos, California, United States, US  \n500 connections, 2021506 followers [...] ## About [...] We are consistently recognized as one of the “Best Places to Work” by Glassdoor, one of the “100 Best Companies to Work For” by Fortune magazine, a “TIME100 Most Influential Company,” the “Most Innovative Company of 2024” by Fast Company, and many more<br><br> We’re hiring, with openings in every corner of our company—and we are looking for talented, driven, and adventurous people who want to tackle challenges no one else can solve<br><br> NVIDIA employees build technology that moves humanity",
+              "score": 0.72814995
+            },
+            {
+              "n": 5,
+              "title": "Jensen Huang | NVIDIA",
+              "url": "https://www.nvidia.com/en-eu/about-nvidia/governance/management-team/jensen-huang",
+              "content": "Jensen Huang\n\n## Jensen Huang\n\n### Founder, President and CEO\n\nJensen Huang founded NVIDIA in 1993 and has served since its inception as president, chief executive officer and a member of the board of directors. [...] Huang is a recipient of the Dr. Morris Chang Exemplary Leadership Award from the Global Semiconductor Association in recognition of his exceptional contributions to driving the development, innovation, growth and long-term opportunities of the fabless semiconductor industry. He has received the Daniel J. Epstein Engineering Management Award from the University of Southern California, an honorary doctorate from Taiwan’s National Chiao Tung University, and the EB Lemon Distinguished Alumni Award [...] Alumni Award and an honorary doctorate from Oregon State University. He was named to the U.S. Immigrant Entrepreneur Hall of Fame when it was established in 2012. In 2017, Harvard Business Review ranked him No. 1 on its list of the world’s 100 best-performing CEOs, and, in 2016, No. 1 in the U.S., over the lifetime of their tenure.",
+              "score": 0.71995544
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1395,
+            "completionTokens": 138,
+            "latencyMs": 2716
+          }
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 321,
+        "completionTokens": 49,
+        "latencyMs": 1279
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "bifrost-freshness",
+  "version": "0.1.0",
+  "description": "Stale-answer auditor for the Bifrost AI gateway: reads Bifrost logs, re-checks time-sensitive claims with Tavily, reports staleness per model and topic.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "bifrost-freshness": "src/cli.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "audit": "node src/cli.ts audit",
+    "check": "node src/cli.ts check",
+    "serve": "node src/cli.ts serve",
+    "eval": "node src/cli.ts eval",
+    "seed-demo": "node scripts/seed-demo-traffic.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3"
+  }
+}

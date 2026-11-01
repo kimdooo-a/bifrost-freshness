@@ -1,0 +1,69 @@
+Bifrost http://localhost:8080 - auditor primary ollama/gemma4:26b-a4b-chat, fallbacks [ollama/gemma4:e4b-it-q4km-chat]
+[1/25] chg-01 sensitive Y/Y  verdict changed/changed OK
+[2/25] chg-02 sensitive Y/Y  verdict changed/changed OK
+[3/25] chg-03 sensitive Y/Y  verdict changed/changed OK
+[4/25] chg-04 sensitive Y/Y  verdict changed/changed OK
+[5/25] chg-05 sensitive Y/Y  verdict changed/changed OK
+[6/25] chg-06 sensitive Y/Y  verdict changed/changed OK
+[7/25] chg-07 sensitive Y/Y  verdict changed/changed OK
+[8/25] chg-08 sensitive Y/Y  verdict changed/changed OK
+[9/25] chg-09 sensitive Y/Y  verdict changed/changed OK
+[10/25] chg-10 sensitive Y/Y  verdict changed/changed OK
+[11/25] chg-11 sensitive Y/Y  verdict changed/changed OK
+[12/25] chg-12 sensitive Y/Y  verdict changed/changed OK
+[13/25] chg-13 sensitive Y/Y  verdict changed/changed OK
+[14/25] sup-01 sensitive Y/Y  verdict supported/supported OK
+[15/25] sup-02 sensitive Y/Y  verdict supported/supported OK
+[16/25] sup-03 sensitive Y/Y  verdict supported/supported OK
+[17/25] sup-04 sensitive Y/Y  verdict supported/supported OK
+[18/25] sup-05 sensitive Y/Y  verdict supported/supported OK
+[19/25] sup-06 sensitive Y/Y  verdict supported/supported OK
+[20/25] unv-01 sensitive Y/Y  verdict unverifiable/unverifiable OK
+[21/25] unv-02 sensitive Y/Y  verdict unverifiable/unverifiable OK
+[22/25] unv-03 sensitive Y/Y  verdict unverifiable/unverifiable OK
+[23/25] nts-01 sensitive N/N
+[24/25] nts-02 sensitive N/N
+[25/25] nts-03 sensitive N/N
+{
+  "n": 25,
+  "sensitivity": {
+    "correct": 25,
+    "total": 25,
+    "accuracy": 1
+  },
+  "verdict": {
+    "correct": 22,
+    "total": 22,
+    "accuracy": 1,
+    "confusion": {
+      "supported": {
+        "supported": 6,
+        "changed": 0,
+        "unverifiable": 0,
+        "none": 0
+      },
+      "changed": {
+        "supported": 0,
+        "changed": 13,
+        "unverifiable": 0,
+        "none": 0
+      },
+      "unverifiable": {
+        "supported": 0,
+        "changed": 0,
+        "unverifiable": 3,
+        "none": 0
+      }
+    }
+  },
+  "staleDetection": {
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "downgradedForMissingEvidence": 0,
+  "tavilyCalls": 22,
+  "llmCalls": 47,
+  "fallbackCalls": 0
+}
+Wrote eval\results\RESULTS.md

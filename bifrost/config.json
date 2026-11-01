@@ -1,0 +1,133 @@
+{
+  "$schema": "https://www.getbifrost.ai/schema",
+  "client": {
+    "enable_logging": true,
+    "disable_content_logging": false,
+    "drop_excess_requests": false
+  },
+  "providers": {
+    "ollama": {
+      "keys": [
+        {
+          "name": "ollama-local",
+          "value": "",
+          "models": [
+            "*"
+          ],
+          "weight": 1,
+          "ollama_key_config": {
+            "url": "env.OLLAMA_URL"
+          }
+        }
+      ],
+      "network_config": {
+        "default_request_timeout_in_seconds": 600,
+        "max_retries": 0
+      }
+    }
+  },
+  "config_store": {
+    "enabled": true,
+    "type": "sqlite",
+    "config": {
+      "path": "./config.db"
+    }
+  },
+  "logs_store": {
+    "enabled": true,
+    "type": "sqlite",
+    "config": {
+      "path": "./logs.db"
+    }
+  },
+  "governance": {
+    "auth_config": {
+      "is_enabled": true,
+      "admin_username": "env.BIFROST_ADMIN_USERNAME",
+      "admin_password": "env.BIFROST_ADMIN_PASSWORD",
+      "disable_auth_on_inference": true
+    },
+    "rate_limits": [
+      {
+        "id": "rl-freshness-auditor",
+        "request_max_limit": 400,
+        "request_reset_duration": "1d",
+        "token_max_limit": 400000,
+        "token_reset_duration": "1d"
+      },
+      {
+        "id": "rl-freshness-tiny",
+        "token_max_limit": 2500,
+        "token_reset_duration": "1h",
+        "request_max_limit": 3,
+        "request_reset_duration": "1h"
+      }
+    ],
+    "budgets": [
+      {
+        "id": "budget-freshness-auditor",
+        "max_limit": 1,
+        "reset_duration": "1d",
+        "virtual_key_id": "vk-freshness-auditor"
+      }
+    ],
+    "virtual_keys": [
+      {
+        "id": "vk-freshness-auditor",
+        "name": "freshness-auditor",
+        "value": "env.FRESHNESS_VK",
+        "is_active": true,
+        "rate_limit_id": "rl-freshness-auditor",
+        "provider_configs": [
+          {
+            "provider": "ollama",
+            "allowed_models": [
+              "*"
+            ],
+            "key_ids": [
+              "*"
+            ],
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "vk-freshness-tiny",
+        "name": "freshness-auditor-tiny-cap",
+        "value": "env.FRESHNESS_TINY_VK",
+        "is_active": true,
+        "rate_limit_id": "rl-freshness-tiny",
+        "provider_configs": [
+          {
+            "provider": "ollama",
+            "allowed_models": [
+              "*"
+            ],
+            "key_ids": [
+              "*"
+            ],
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "vk-demo-app",
+        "name": "demo-chat-app",
+        "value": "env.DEMO_APP_VK",
+        "is_active": true,
+        "provider_configs": [
+          {
+            "provider": "ollama",
+            "allowed_models": [
+              "*"
+            ],
+            "key_ids": [
+              "*"
+            ],
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  }
+}

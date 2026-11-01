@@ -1,0 +1,338 @@
+{
+  "generatedAt": "2026-11-01T23:18:19.670Z",
+  "today": "2026-11-01",
+  "mode": "check",
+  "gateway": {
+    "baseUrl": "http://localhost:8080",
+    "vkBefore": {
+      "id": "vk-freshness-tiny",
+      "tokensUsed": 0,
+      "tokenLimit": 2500,
+      "requestsUsed": 0,
+      "requestLimit": 3,
+      "budgets": []
+    },
+    "vkAfter": {
+      "id": "vk-freshness-tiny",
+      "tokensUsed": 523,
+      "tokenLimit": 2500,
+      "requestsUsed": 1,
+      "requestLimit": 3,
+      "budgets": []
+    }
+  },
+  "auditor": {
+    "primaryModel": "ollama/gemma4:26b-a4b-chat",
+    "fallbackModels": [
+      "ollama/gemma4:e4b-it-q4km-chat"
+    ],
+    "calls": 3,
+    "fallbackCalls": 0,
+    "servedBy": {
+      "ollama/gemma4:26b-a4b-chat": 3
+    },
+    "promptTokens": 3631,
+    "completionTokens": 470,
+    "stoppedEarly": "Bifrost rate_limit limit: Rate limit exceeded: rate limit violated for vk_model_config *: [token limit exceeded (4101/2500, resets every 1h) request limit exceeded (3/3, resets every 1h)]"
+  },
+  "tavily": {
+    "callsThisRun": 3,
+    "creditsThisRun": 3,
+    "ledgerTotalCalls": 16
+  },
+  "totals": {
+    "answers": 1,
+    "claims": 4,
+    "checked": 2,
+    "supported": 0,
+    "changed": 2,
+    "unverifiable": 0,
+    "skipped": 2,
+    "stalenessRate": 1
+  },
+  "byModel": {
+    "(direct input)": {
+      "answers": 1,
+      "claims": 4,
+      "checked": 2,
+      "supported": 0,
+      "changed": 2,
+      "unverifiable": 0,
+      "skipped": 2,
+      "stalenessRate": 1
+    }
+  },
+  "byCategory": {
+    "office_holder": {
+      "answers": 0,
+      "claims": 4,
+      "checked": 2,
+      "supported": 0,
+      "changed": 2,
+      "unverifiable": 0,
+      "skipped": 2,
+      "stalenessRate": 1
+    }
+  },
+  "routingSuggestions": [],
+  "audits": [
+    {
+      "source": {
+        "kind": "direct"
+      },
+      "question": null,
+      "answer": "Pat Gelsinger is the CEO of Intel. Olaf Scholz is the Chancellor of Germany. Pope Francis leads the Catholic Church. Justin Trudeau is the Prime Minister of Canada.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "Pat Gelsinger is the CEO of Intel",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current CEO of Intel"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://en.wikipedia.org/wiki/Intel",
+              "quote": "On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company's board of directors.",
+              "match": "exact"
+            }
+          ],
+          "inference": "Pat Gelsinger retired from the position of Intel CEO on December 1, 2024, and has been succeeded by Lip-Bu Tan as of March 2025.",
+          "currentValue": "Lip-Bu Tan",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Intel - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Intel",
+              "content": "On June 21, 2018, Intel announced the resignation of Brian Krzanich as CEO, with the exposure of a relationship he had with an employee. Bob Swan was named interim CEO, as the Board began a search for a permanent CEO.\n\nOn January 31, 2019, Swan transitioned from his role as CFO and interim CEO and was named by the Board as the seventh CEO to lead the company. [...] On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company's board of directors. David Zinsner and Michelle Johnston Holthaus were named as interim co-CEOs. On March 13, 2025, it was announced that he would be formally replaced by American Lip-Bu Tan starting March 18, 2025. [...] On May 2, 2013, Executive Vice President and COO Brian Krzanich was elected as Intel's sixth CEO, a selection that became effective on May 16, 2013, at the company's annual meeting. Reportedly, the board concluded that an insider could proceed with the role and exert an impact more quickly, without the need to learn Intel's processes, and Krzanich was selected on such a basis. Intel's software head Renée James was selected as president of the company, a role that is second to the CEO position.",
+              "score": 0.9049283
+            },
+            {
+              "n": 2,
+              "title": "Intel Appoints Lip-Bu Tan as Chief Executive Officer",
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html",
+              "content": "SANTA CLARA, Calif., March 12, 2025 – Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18. He succeeds Interim Co-CEOs David Zinsner and Michelle (MJ) Johnston Holthaus. Tan will also rejoin the Intel board of directors after stepping down from the board in August 2024. [...] Zinsner will remain executive vice president and chief financial officer, and Johnston Holthaus will remain CEO of Intel Products. Frank D. Yeary, who took on the role of interim executive chair of the board during the search for a new CEO, will revert to being the independent chair of the board upon Tan becoming CEO. [...] On his appointment, Tan said, “I am honored to join Intel as CEO. I have tremendous respect and admiration for this iconic company, and I see significant opportunities to remake our business in ways that serve our customers better and create value for our shareholders.",
+              "score": 0.88420963
+            },
+            {
+              "n": 3,
+              "title": "Lip-Bu Tan - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Lip-Bu_Tan",
+              "content": "Lip-Bu Tan (born November 12, 1959) is an American business executive who has been chief executive officer (CEO) of Intel since 2025. He is also chairman of Walden International, a venture capital firm; a founding managing partner of Walden Catalyst Ventures and Celesta Capital; and holds numerous board positions. Tan was CEO of Cadence Design Systems from 2009 to 2021.\n\n## Early life and education\n\n[edit] [...] | 陳立武 |\n| Tan in 2025 |\n| Born | (1959-11-12) November 12, 1959 (age 66)  Muar \"Muar (town)\"), Federation of Malaya |\n| Citizenship | United States |\n| Education |  + Nanyang University (BS)   + Massachusetts Institute of Technology (MS)   + University of San Francisco (MBA) |\n| Occupation | Business executive |\n| Title |  + CEO of Intel (2025–present)   + CEO of Cadence Design Systems (2009–2021) |\n| Predecessor | Pat Gelsinger |\n| Spouse | Ysa Loo |\n| Children | 2 |\n| Chinese name | [...] ### Intel\n\n[edit]\n\nIn March 2025, Tan was named CEO of Intel, effective from March 18, 2025. Tan had been on Intel's board of directors from 2022 to 2024.\n\n## Board memberships\n\n[edit]\n\n### Academic boards\n\n[edit]",
+              "score": 0.8437023
+            },
+            {
+              "n": 4,
+              "title": "Who is the CEO of Intel in 2026? Lip-Bu Tan's Bio | Clay",
+              "url": "https://www.clay.com/dossier/intel-ceo",
+              "content": "Lip-Bu Tan is the CEO of Intel Corporation, an experienced executive with a demonstrated history of working in the computer software and semiconductor industries. He brings deep expertise in EDA, Software as a Service (SaaS), Mergers & Acquisitions (M&A), Application-Specific Integrated Circuits (ASIC), and start-ups. [...] Lip-Bu Tan is the CEO of Intel Corporation, bringing extensive experience in the technology and semiconductor industries to the role. With a strong background in business development, mergers and acquisitions, and start-ups, Tan also serves as Chairman of Walden International and Founding Managing Partner of Walden Catalyst Ventures.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay\n\nTry for free\n\nLip-Bu Tan\n\nintel.com [...] In addition to his role at Intel, Tan serves as Chairman of Walden International and as Founding Managing Partner of Walden Catalyst Ventures, reflecting his long-standing commitment to technology investment and innovation.\n\n### Work History\n\n Intel: CEO, March 2025 - Present\n SambaNova: Chairman of the Board, March 2025 - Present\n SambaNova: Executive Chairman, April 2024 - March 2025\n Inphi Corporation: Board Member, May 2002 - December 2012\n\n### Education History",
+              "score": 0.8396422
+            },
+            {
+              "n": 5,
+              "title": "Intel appoints Lip-Bu Tan as CEO",
+              "url": "https://www.youtube.com/watch?v=smicjh7yyro",
+              "content": "### Transcript\n[0:01] us. First on overtime. >> Thanks for having me, John.\n[0:05] >> Well, I mentioned that breaking news on Intel a moment ago around a new CEO. Let's get to Christina Betsy Devos for more. Christina.\n[0:12] >> Well, thank you, John. Intel shares right now are jumping 11% after naming Lipton as its new CEO. This is effective as of\n[0:20] March 18th. He's well known in the tech world as an investor. [...] [0:23] He also has extensive about 20 years of. Semiconductor industry experience, and he will succeed interim co-CEOs David Zissner and Michelle Holthaus. House, I\n[0:32] should say ten, will also rejoin Intel's board. >> Of.\n[0:35] >> Directors after stepping down in August 2024. Reuters reported back in August that ten had resigned over differences with former CEO Pat Gelsinger and other directors, but he's back [...] [0:43] now. David Zissner will remain CFO. Michelle will continue as CEO of Holt House, I should say of CEO of Intel Products. And\n[0:51] then Frank Geary will return to his rol",
+              "score": 0.81875163
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1644,
+            "completionTokens": 119,
+            "latencyMs": 2559
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Olaf Scholz is the Chancellor of Germany",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current Chancellor of Germany"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "high"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+              "quote": "The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.",
+              "match": "exact"
+            },
+            {
+              "source": 2,
+              "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+              "quote": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025.",
+              "match": "exact"
+            }
+          ],
+          "inference": "The sources state that Friedrich Merz is the current Chancellor of Germany, having assumed office on May 6, 2025, and that he preceded Olaf Scholz.",
+          "currentValue": "Friedrich Merz",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Chancellor of Germany - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+              "content": "Ten people (nine men and one woman) have served as chancellor of the Federal Republic of Germany, the first being Konrad Adenauer from 1949 to 1963. (Another 26 men had served as \"Reich chancellors\" of the previous German Empire from 1871 to 1945.) The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.\n\n## History of the office (pre-1949)\n\n[edit\")]\n\n|  | [...] Scheel not taken into account, three persons, Ludwig Erhard, Willy Brandt, and Olaf Scholz, have held both the office of Vice Chancellor and that of Chancellor of Germany.\n\nThe current vice chancellor of Germany is Lars Klingbeil, who also serves as Minister of Finance \"Federal Ministry of Finance (Germany)\") in the Merz cabinet.\n\n#### List of vice chancellors (1949–present)\n\n[edit\")] [...] | This article is part of a series on the |\n| Politics of  Germany |\n| Constitution (Basic Law)   Federal Constitutional Court  Human rights |\n| Head of state   President of Germany   Frank-Walter Steinmeier (SPD) |\n| Executive   Chancellor of Germany \"Chancellor of Germany (1949–)\") (list)   Friedrich Merz (CDU)   Vice Chancellor of Germany   Lars Klingbeil (SPD)  ---   Cabinet Merz  Federal agencies \"Federal agency (Germany)\")  Federal ministries \"Federal ministry (Germany)\") |",
+              "score": 0.88705814
+            },
+            {
+              "n": 2,
+              "title": "Friedrich Merz - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+              "content": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025. He has also served as Leader of the Christian Democratic Union (CDU) since January 2022, leading the CDU/CSU (Union) parliamentary group as Leader of the Opposition \"Leader of the Opposition (Germany)\") in the Bundestag from February 2022 to May 2025. [...] | Head shot of Merz smiling.jpg) Merz in 2024 |\n| Chancellor of Germany |\n| Incumbent |\n| Assumed office  6 May 2025 |\n| President | Frank-Walter Steinmeier |\n| Vice Chancellor | Lars Klingbeil |\n| Preceded by | Olaf Scholz |\n| Leader of the Christian Democratic Union |\n| Incumbent |\n| Assumed office  31 January 2022 |\n| General Secretary | Mario Czaja Carsten Linnemann |\n| Deputy | Andreas Jung Karin Prien Silvia Breher Michael Kretschmer Karl-Josef Laumann |\n| Preceded by | Armin Laschet | [...] | Leader of the Opposition \"Leader of the Opposition (Germany)\") |\n| In office 15 February 2022 – 6 May 2025 |\n| Chancellor | Olaf Scholz |\n| Preceded by | Ralph Brinkhaus |\n| Succeeded by | Tino Chrupalla Alice Weidel |\n| In office 29 February 2000 – 22 September 2002 |\n| Chancellor | Gerhard Schröder |\n| Preceded by | Wolfgang Schäuble |\n| Succeeded by | Angela Merkel |",
+              "score": 0.87681407
+            },
+            {
+              "n": 3,
+              "title": "As Germany selects a new conservative chancellor, a look at the challenges he inherits | PBS News",
+              "url": "https://www.pbs.org/newshour/show/as-germany-selects-a-new-conservative-chancellor-a-look-at-the-challenges-he-inherits",
+              "content": "Nick Schifrin:\n\nToday, in Germany, a bitter victory. Friedrich Merz became Germany's 10th post-World War II chancellor and the first to lose an initial secret round of voting.\n\nMerz had promised to begin his chancellorship forcefully and today showed the fragility of his leadership and coalition. But, this evening, at the official handover ceremony without going Chancellor Olaf Scholz, Merz brushed it aside.\n\nFriedrich Merz, German Chancellor (through interpreter): [...] Watch the Full Episode\n\n## Related\n\nMay 06\n\nFriedrich Merz of the Christian Democratic Union (CDU) is sworn in as the new German Chancellor, in Berlin\n\nBy Stefanie Dazio, Kirsten Grieshaber, Associated Press\n\nApr 30\n\nChristian Democratic Union (CDU) party conference to formally sign off on a coalition agreement reached with the Social De...\n\nBy Associated Press\n\nApr 01\n\nA view shows Marinka town destroyed in the course of Russia-Ukraine conflict\n\nBy Illia Novikov, Associated Press\n\nMar 10 [...] Amna Nawaz:\n\nIn Berlin today, Friedrich Merz was elected Germany's chancellor, but not without a surprising setback. For the first time in Germany's modern history, he lost the Parliament's initial vote and needed a second round to secure a majority.\n\nNick Schifrin is back now with this report on the challenges that Merz inherits, from a politically divided Germany to an American president who's questioned the transatlantic alliance.\n\nNick Schifrin:",
+              "score": 0.76554126
+            },
+            {
+              "n": 4,
+              "title": "The Federal Chancellor of the Federal Republic of Germany | Home page",
+              "url": "https://www.bundeskanzler.de/bk-en",
+              "content": "## Main-navigation\n\n Federal Chancellor\n ### Friedrich Merz\n ### News\n ### Chancellery\n\n  + Tasks of the Chancellor\n  + The election of the Federal Chancellor\n  + Federal Cabinet\n  + Federal Chancellors since 1949 show more\n ### Service\n\n  + Contact\n  + Data privacy information\n\nFollow the Federal Chancellor:\n\n To the Federal Government's Instagram channel\")\n To the Federal Government's X channel\")\n To the Federal Government's TikTok- channel\")\n\nFollow the Federal Government: [...] Deutsch\n\nFederal Chancellor Merz and BDA President Rainer Dulger \n\n## Speech by Federal Chancellor Merz on the occasion of the 2026 German Employers’ Day Reforms for a bright future in Germany\n\nBundeskanzler Friedrich Merz und der britische Premierminister Andrew Burnham \n\n## Pressestatement von Kanzler Merz zum Empfang britischen Premier Burnham  Vereinigtes Königreich und Deutschland gehören zusammen [...] Smiles all round as Federal Chancellor Merz meets Kazakh President Tokayev. \n\n## Press conference with Federal Chancellor Merz and President Tokayev of Kazakhstan Close partners for energy and peace\")\n\nFinnish Prime Minister Orpo is sitting next to Chancellor Merz and gesticulating. \n\n## Federal Chancellor Friedrich Merz at the EU-Arctic Summit European partners discuss geopolitical changes in the Arctic\n\n Blick von oben auf den Plenarsaal des Bundestages",
+              "score": 0.73891455
+            },
+            {
+              "n": 5,
+              "title": "Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News",
+              "url": "https://www.youtube.com/watch?v=qslX7zcx4Gw",
+              "content": "### Transcript\n[0:00] extensions one.\n[0:12] There will be time to applaud in a moment, but I would like to note that MP\n[0:19] Fredish Mattz has now got the necessary majority of 316 votes according to\n[0:27] article 63 power 2. He has now been elected chancellor of the Federal Republic of Germany.\n[0:43] Now before you all come and congratulate him, I would like to ask you for a\n[0:49] moment here because we have to ask the chancellor whether he wishes to accept the result. [...] # Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News\n## Channel: DW News (verified)\n6.46M subscribers\n1.7K likes\n\n### Description\n91,550 views\nPosted: 2025-05-06\nGerman lawmakers have elected conservative Friedrich Merz as chancellor - after his historic defeat in the first round earlier today. [...] Follow DW on social media:\n►Instagram:   / dwnews  \n►TikTok:   / dwnews  \n►Facebook:   / deutschewellenews  \n►Twitter:   / dwnews  \n\nFür Videos in deutscher Sprache besuchen Sie:    / dwdeutsch  \n\nSubscribe: \n\n#germany #friedrichmerz #chancellor",
+              "score": 0.7055624
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1657,
+            "completionTokens": 158,
+            "latencyMs": 3223
+          }
+        },
+        {
+          "claim": {
+            "id": "c3",
+            "text": "Pope Francis leads the Catholic Church",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current Pope"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [
+            {
+              "n": 1,
+              "title": "Who is the Current Pope? - Questions and Answers",
+              "url": "https://spiritualculture.org/who-is-the-current-pope",
+              "content": "As of 2024, the current pope is Pope Francis, born Jorge Mario Bergoglio on December 17, 1936. He is the 266th pope in the history of the Catholic Church and took office on March 13, 2013. Pope Francis’s election marked a historic moment, as he became the first pope from the Americas, hailing from Argentina. He also bears the distinction of being the first Jesuit pope and the first pope to choose the name Francis, inspired by Saint Francis of Assisi, who epitomized humility and a deep concern [...] Pope Francis is currently 87 years old. His health has been a matter of public interest, especially considering he underwent surgery for colon cancer in July 2021. Although he has faced challenges relating to mobility, including issues with his knee that necessitated the use of a wheelchair for a time, he remains active in fulfilling his papal duties. The Vatican has communicated that he is in stable condition, continuing to prioritize his role as pope despite the challenges posed by age and [...] Religion and belief\n\n# Who is the Current Pope?\n\n## In this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nIn this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nThe papacy, one of the oldest and most influential religious institutions in the world, has seen a profound evolution over the centuries.",
+              "score": 0.8997663
+            },
+            {
+              "n": 2,
+              "title": "Pope - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Pope",
+              "content": "by Jesus, who gave Peter the Keys of Heaven and the powers of \"binding and loosing\", naming him as the \"rock\" upon which the Church would be built. The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave. [...] before. The most recent election, of Pope Leo XIV (formerly Cardinal Robert Prevost), continues this new tradition of papal selection from a global pool: the current pope was born and lived until his mid-20s in the United States, is a citizen by naturalization of Peru (where he served as an Augustinian priest and bishop for approximately 20 years), and had by the time of his election spent almost 20 years in Italy and the Vatican studying and in various Church leadership roles. [...] The pope's regnal name is not his real or legal name, which remains unchanged in legal and governmental documents; neither is it connected in any way to his real name. The current pope was born with the name Robert Francis Prevost.\n\n### Official list of titles\n\nThe official list of titles of the pope, in the order in which they are given in the Annuario Pontificio, is:",
+              "score": 0.8740022
+            },
+            {
+              "n": 3,
+              "title": "Who is the current Pope? at DuckDuckGo",
+              "url": "https://duckduckgo.com?q=Who+is+the+current+Pope%3F",
+              "content": "Only include results for this siteRedo search without this siteBlock this site from all results Share feedback about this site     Image 10visitingthevatican.com\n\n   ## Who is The Present Pope? - Visiting The Vatican Sep 2, 2025WHOISTHE PRESENT POPE? Meet Pope Leo XIV, elected in May 2025 as the first U.S.-born pontiff, leading the Catholic Church with unity, peace, and inclusion.   \n7.   vaticannews.va [...] › Pope_Leo_XIV   ## Pope Leo XIV - Wikipedia Pope Leo XIV[a] (born Robert Francis Prevost, [b] pronounced / ˈpriːvoʊst / PREE-vohst, [c] September 14, 1955) is the head of the Catholic Church and sovereign of Vatican City. He is the first pope to have been born in the United States, the first to hold either U.S. or Peruvian citizenship, the first from the Order of Saint Augustine, and the second (after his immediate predecessor ...   \n3.   ewtnnews.com [...] › pope › news › 2026-04 › pope-leo-xiv-africa-apostolic-journey-press-office.html   ## Pope Leo XIV: A pilgrim in Africa - Vatican News 5 days ago Vatican News The Director of the Holy See Press Office, Matteo Bruni, outlined the Apostolic Journey that Pope Leo XIV will undertake from 13 to 23 April in Algeria, Cameroon, Angola and Equatorial Guinea. Briefing journalists during a press conference on Thursday, he illustrated the visit which spans four countries over eleven days and will include",
+              "score": 0.79939574
+            },
+            {
+              "n": 4,
+              "title": "Pope Leo XIV | The Current Pope of the Catholic Church | Catholic Answers Tract",
+              "url": "https://www.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church",
+              "content": "On May 8, 2025, Cardinal Robert Prevost became the first American-born pope, and the native of Illinois seems to have providentially anticipated his pontificate in choosing his episcopal motto: In Illo uno unum. That is, “In the One [Jesus Christ], we are one” (see John 17:20-23), and the vicar of Christ, the pope, is at the service of fostering and safeguarding that unity. [...] Accessibility feedback\n\n☰Catholic Answers LogoCatholic Answers Logo\n\nAbout\n\nwww.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church\n\ntract\n\n# Pope Leo XIV | The Pope of the Catholic Church\n\n2026-06-18T11:10:39\n\n## Who Is Pope Leo XIV?\n\nPope Leo XIV is the current pope of the Catholic Church, the Successor of St. Peter and thus visible leader in unifying the faithful and advancing the Church’s God-given mission to “make disciples of all nations” (Matt. 28:18-20; CCC 882; see CCC 815). [...] Who is the new pope in 2025? Pope Leo XIV, formerly Cardinal Robert Francis Prevost.\n How old is Pope Leo XIV? Pope Leo XIV was born September 14, 1955, making him 70 years old.\n Where is Pope Leo XIV from? He is from Chicago, Illinois, in the United States of America.",
+              "score": 0.7711725
+            },
+            {
+              "n": 5,
+              "title": "Everything You’ve Ever Wanted to Know About Pope Leo XIV",
+              "url": "https://www.4lpi.com/blog/everything-youve-ever-wanted-to-know-about-pope-leo-xiv",
+              "content": "Pope Leo XIV was elected on May 8, 2025 by the Catholic College of Cardinals to be pope, the head of the global Catholic Church. His historic election as the first American-born pope has garnered interest from Catholics and non-Catholics worldwide. In this guide, we cover Pope Leo XIV’s past, missionary work, path to the papacy, and what he’s currently focusing on as the leader of the Catholic church. [...] Birth Name: His birth name is Robert Francis Prevost.\n Age: Pope Leo XIV is currently 70 years old. He was born on September 14, 1955.\n Birthplace: He was born in Chicago, Ill., and lived in the south suburb of Dolton until 1969.\n Nationality: Pope Leo XIV is a citizen of the United States and has a dual nationality with Peru.\n Ethnicity: Pope Leo XIV is a mixed-race American with heritage that includes French, Italian, Spanish, Cuban, and African American (Louisiana Creole). [...] Born in September 1955, the 70-year-old pope grew up in Chicago, currently speaks five languages fluently, and is also the very first pope elected from the Order of Saint Augustine (O.S.A). This priestly order, inspired by the life and spirituality of St. Augustine of Hippo, was established in 1244. They take a vow of obedience, chastity, and poverty. On the order’s official website, they proclaim, “United in community and rooted in a shared search for God, we serve the Church and the world",
+              "score": 0.7011614
+            }
+          ],
+          "notes": [
+            "Bifrost rate_limit limit: Rate limit exceeded: rate limit violated for vk_model_config *: [token limit exceeded (4101/2500, resets every 1h) request limit exceeded (3/3, resets every 1h)]"
+          ],
+          "skipped": "governance_limit"
+        },
+        {
+          "claim": {
+            "id": "c4",
+            "text": "Justin Trudeau is the Prime Minister of Canada",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current Prime Minister of Canada"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "Bifrost rate_limit limit: Rate limit exceeded: rate limit violated for vk_model_config *: [token limit exceeded (4101/2500, resets every 1h) request limit exceeded (3/3, resets every 1h)]"
+          ],
+          "skipped": "governance_limit"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 330,
+        "completionTokens": 193,
+        "latencyMs": 3365
+      }
+    }
+  ]
+}

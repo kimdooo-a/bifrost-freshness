@@ -1,0 +1,238 @@
+{
+  "generatedAt": "2026-11-01T23:18:03.104Z",
+  "today": "2026-11-01",
+  "mode": "check",
+  "gateway": {
+    "baseUrl": "http://localhost:8080",
+    "vkBefore": {
+      "id": "vk-freshness-auditor",
+      "tokensUsed": 24686,
+      "tokenLimit": 400000,
+      "requestsUsed": 22,
+      "requestLimit": 400,
+      "budgets": [
+        {
+          "id": "budget-freshness-auditor",
+          "usedUsd": 0,
+          "limitUsd": 1,
+          "resetDuration": "1d"
+        }
+      ]
+    },
+    "vkAfter": {
+      "id": "vk-freshness-auditor",
+      "tokensUsed": 24686,
+      "tokenLimit": 400000,
+      "requestsUsed": 22,
+      "requestLimit": 400,
+      "budgets": [
+        {
+          "id": "budget-freshness-auditor",
+          "usedUsd": 0,
+          "limitUsd": 1,
+          "resetDuration": "1d"
+        }
+      ]
+    }
+  },
+  "auditor": {
+    "primaryModel": "ollama/llama3.3:70b",
+    "fallbackModels": [
+      "ollama/gemma4:26b-a4b-chat",
+      "ollama/gemma4:e4b-it-q4km-chat"
+    ],
+    "calls": 2,
+    "fallbackCalls": 2,
+    "servedBy": {
+      "ollama/gemma4:26b-a4b-chat": 2
+    },
+    "promptTokens": 2024,
+    "completionTokens": 309,
+    "stoppedEarly": null
+  },
+  "tavily": {
+    "callsThisRun": 1,
+    "creditsThisRun": 1,
+    "ledgerTotalCalls": 13
+  },
+  "totals": {
+    "answers": 1,
+    "claims": 3,
+    "checked": 1,
+    "supported": 0,
+    "changed": 1,
+    "unverifiable": 0,
+    "skipped": 2,
+    "stalenessRate": 1
+  },
+  "byModel": {
+    "ollama/exaone-3.5-2.4b:latest": {
+      "answers": 1,
+      "claims": 3,
+      "checked": 1,
+      "supported": 0,
+      "changed": 1,
+      "unverifiable": 0,
+      "skipped": 2,
+      "stalenessRate": 1
+    }
+  },
+  "byCategory": {
+    "version": {
+      "answers": 0,
+      "claims": 1,
+      "checked": 1,
+      "supported": 0,
+      "changed": 1,
+      "unverifiable": 0,
+      "skipped": 0,
+      "stalenessRate": 1
+    }
+  },
+  "routingSuggestions": [],
+  "audits": [
+    {
+      "source": {
+        "kind": "direct",
+        "model": "ollama/exaone-3.5-2.4b:latest"
+      },
+      "question": null,
+      "answer": "The latest stable version of Python is Python 3.11, released in October 2022. Python was created by Guido van Rossum.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "The latest stable version of Python is Python 3.11",
+            "category": "version",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "latest stable version of Python"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://www.liquidweb.com/blog/latest-python-version",
+              "quote": "The latest stable version of Python is 3.14",
+              "match": "exact"
+            }
+          ],
+          "inference": "The claim states that Python 3.11 is the latest stable version, but source 1 explicitly states that Python 3.14 is the latest stable version as of its release on October 7, 2025.",
+          "currentValue": "Python 3.14",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Latest Python Version (2025) – What's New in Python 3.14?",
+              "url": "https://www.liquidweb.com/blog/latest-python-version",
+              "content": "The latest major version, Python 3.14 was officially released on October 7, 2025.\n\nLet’s explore the key features of Python’s current version, how to download and install it, and what this release means for developers.\n\n## Get premium VPS hosting\n\nHigh-performance VPS hosting that delivers unrivaled power\n\nExplore VPS hosting\n\n## What’s the latest Python version?\n\nThe latest stable version of Python is 3.14\n\nPython 3.14 was released on October 7, 2025 with several improvements: [...] Download the latest Python version today and start exploring its new features on Liquid Web’s diversity of packages for dedicated hosting, VPS hosting, bare metal servers, GPU hosting, and cloud servers,\n\nExplore all hosting\n\nBuild a server now\n\n## Frequently asked questions\n\nYes, Python 3.14 is the latest stable release. We recommend testing this version in a staging or development environment before deploying in order to identify any refactoring required. [...] | Python 3.4 | March 16, 2014 | `enum` module, pathlib, async IO (`asyncio`) |\n| Python 3.3 | September 29, 2012 | `yield from, u\"` string literals reintroduced |\n| Python 3.2 | February 20, 2011 | `concurrent.futures`, PEP 384 (Stable ABI) |\n| Python 3.1 | June 27, 2009 | OrderedDict, io module rewritten |\n| Python 3.0 | December 3, 2008 | Print function, integer division changes, Unicode by default |\n| Python 2.7 | July 3, 2010 | Last release of Python 2, backported features from Python 3 |",
+              "score": 0.8965509
+            },
+            {
+              "n": 2,
+              "title": "Updating Python",
+              "url": "https://www.mostlypython.com/updating-python",
+              "content": "I write a bunch of small scripts that don't use any third-party libraries, and don't need a dedicated virtual environment. I want to have a `python` command on my system that always points to the latest point release of the most recent stable version of Python. At the time of this writing, that's Python 3.13.5. [...] $ uv python install Installed Python 3.13.5 in 930ms\n + cpython-3.13.5-macos-aarch64-none (python3.13)\nIf you don't specify a version, `uv` will install the latest stable release. (Note that it's `uv python install`, not `uv install python`!)\n\nBut, my `python` commands are still blank, or pointing to brew-installed interpreters: [...] It's also a good to check out Python's status page, and see what the latest point releases are for each major release:\n\nImage 2: bar chart showing release date and end of support date for each major Python release\n\nPython's status page is fantastic for knowing which versions are still being supported, and when the next version will be released. As of this writing, Python 3.9 is just about to reach end of life, and Python 3.14 will be released this fall.",
+              "score": 0.8405867
+            },
+            {
+              "n": 3,
+              "title": "Which Python Version Should I Install?",
+              "url": "https://www.youtube.com/watch?v=ZQ6F_M4HAhE&vl=en",
+              "content": "[0:57] or 3.12. The general overwhelming recommendation for anyone starting a new project or learning Python is to install the latest stable release of Python 3.\n[1:08] As of now, that typically means Python 3.12 or the most recent stable iteration available on python.org. The reason for this recommendation is straightforward.\n[1:19] Newer versions come packed with performance improvements, new language features, bug fixes, and critical security updates. While some legacy [...] 3. Essential: Virtual Environments - Crucial for managing different project Python versions, Isolate project dependencies and specific Python versions easily, Avoid conflicts between distinct project requirements seamlessly.\n4. Installation Best Practices - Download latest stable Python 3 from python.org, Use package managers or Anaconda for specific needs, Always create a virtual environment for each project. [...] [1:27] projects might require an older Python 3 minor version, eg 3.9 or 3.10, due to specific library dependencies\n[1:35] that haven't yet caught up, this is a niche scenario and not the default for general use. For beginners, sticking with the latest stable version ensures\n[1:43] you're learning the most current syntax and practices, and you'll benefit from all the optimizations. The real power move for managing Python versions,",
+              "score": 0.8266142
+            },
+            {
+              "n": 4,
+              "title": "How to get the version number of the latest stable release of Python via single HTTP request?",
+              "url": "https://stackoverflow.com/questions/70378786/how-to-get-the-version-number-of-the-latest-stable-release-of-python-via-single",
+              "content": "m = re.search(r'Download Python (\\d+\\.\\d+.\\d+)', resp.text)\n    return m if m else None\n\nif __name__ == '__main__':\n    print(get_latest_python_release())\n```\n\nPrints:\n\n```\n3.13.3\n```\n\nShare\n\nShare a link to this answer \n\nCopy linkCC BY-SA 4.0\n\nShort permalink to this answer\n\nImprove this answer\n\n Follow \n\nFollow this answer to receive notifications\n\n answered Apr 24, 2025 at 12:40\n\nImage 9: Booboo's user avatar\n\nBooboo\n\n46.7k 4 4 gold badges 48 48 silver badges 75 75 bronze badges [...] ## 2 Comments\n\nAdd a comment\n\nImage 7\n\nТёма Макеев\n\nТёма МакеевOver a year ago\n\nSeems like the best solution so far, thank you!\n\n2021-12-16T18:41:04.65Z+00:00\n\n0\n\nReply\n\n   Copy link\n\nImage 8\n\nhippietrail\n\nhippietrailOver a year ago\n\nThat's pretty nice but it's a little bit laggy. For instance it lists `3.12.1 (07 Dec 2023)` as the latest rather than `3.12.2` which was just released today or yesterday.\n\n2024-02-07T06:08:27.513Z+00:00\n\n0\n\nReply\n\n   Copy link [...] Copy link\n\n\n>>> for m in re.finditer(r'Download Python (\\d+\\.\\d+.\\d+)', resp.text): print(m)\n...\n3.13.3\n3.13.3\n3.13.3\n3.13.3\n>>>\n```\n\nDisclaimer: There is no guarantee that this will always be the case in the future. But as long as it is the case, this might be a better alternative to the accepted answer:\n\nCopy\n\n```python\nimport requests\nimport re\n\ndef get_latest_python_release():\n    url = '\n\n    resp = requests.get(url)\n    resp.raise_for_status()",
+              "score": 0.79522943
+            },
+            {
+              "n": 5,
+              "title": "Python Version in Production ? : r/Python",
+              "url": "https://www.reddit.com/r/Python/comments/1qgt083/python_version_in_production",
+              "content": "Balance-\n\n•9mo ago\n\n3.13 for GIS and web stuff (those packages tend to be updated later), 3.14 for data science and general development.\n\n, newer stuff is a mix of 3.13 & 3.14\n\n# People also ask about section\n\n People also ask about \n\nBest Python version for production use\n\nMain differences between Python 3.12 and 3.13\n\nLatest stable Python version recommendations\n\nBest practices for Python code optimization\n\nHow to start a Python project from scratch [...] Edit: I read more of the comments and it seems that the biggest reason people don’t use the latest stable version is that dependencies haven’t been updated to support it. This is why we have venvs, people! Use the latest version which is compatible, and pin your versions so your type checker and linter and LSP can tell you what to do when things aren’t backwards compatible.\n\n2 more replies \n\n2 more replies \n\n2 more replies\n\nImage 23: u/Balance- avatar\n\nBalance-\n\n•9mo ago",
+              "score": 0.7159213
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/llama3.3:70b",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": true,
+            "promptTokens": 1696,
+            "completionTokens": 109,
+            "latencyMs": 2412
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Python 3.11 was released in October 2022",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "Python 3.11 release date"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        },
+        {
+          "claim": {
+            "id": "c3",
+            "text": "Python was created by Guido van Rossum",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "creator of Python"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/llama3.3:70b",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": true,
+        "promptTokens": 328,
+        "completionTokens": 200,
+        "latencyMs": 13921
+      }
+    }
+  ]
+}

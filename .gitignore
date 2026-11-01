@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.key
+.tavily-usage.json
+reports/
+.bifrost-run.log
+bifrost/*.db
+bifrost/*.db-shm
+bifrost/*.db-wal
+bifrost/logs/

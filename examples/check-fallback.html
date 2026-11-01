@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bifrost Freshness Report</title><style>
+:root{--ok:#1a7f37;--bad:#cf222e;--unk:#8250df;--mut:#57606a;--line:#d0d7de}
+body{font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#1f2328;background:#f6f8fa}
+main{max-width:1100px;margin:0 auto;padding:24px}h1{margin:0 0 4px}h2{margin-top:32px;border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}.card b{display:block;font-size:24px}
+table{border-collapse:collapse;width:100%;background:#fff}td,th{border:1px solid var(--line);padding:6px 8px;text-align:left}
+.bar{display:inline-block;width:80px;height:8px;background:#eee;margin-right:6px;vertical-align:middle}.bar span{display:block;height:100%;background:var(--bad)}
+.v-supported{color:var(--ok)}.v-changed{color:var(--bad)}.v-unverifiable{color:var(--unk)}
+.answer{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:16px 0}
+.claim{border-left:4px solid var(--line);padding:6px 12px;margin:10px 0}.claim.supported{border-color:var(--ok)}.claim.changed{border-color:var(--bad)}.claim.unverifiable{border-color:var(--unk)}
+.badge{color:#fff;border-radius:10px;padding:1px 8px;font-size:12px;background:var(--mut)}.badge.supported{background:var(--ok)}.badge.changed{background:var(--bad)}.badge.unverifiable{background:var(--unk)}
+.fresh,.cat{margin-left:8px;color:var(--mut);font-size:12px}.ctext{font-weight:600;margin:6px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cols h5{margin:4px 0}.evidence q{background:#fff8c5}
+.muted{color:var(--mut)}.small{font-size:12px}.warn{color:var(--bad)}.notes{font-size:12px;color:#9a6700}
+pre{white-space:pre-wrap;background:#f6f8fa;padding:8px;border-radius:6px;overflow:auto}
+@media(max-width:700px){.cols{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Bifrost Freshness Report</h1>
+<p class="muted">Generated 2026-11-01T23:18:03.104Z &middot; reference date 2026-11-01 &middot; mode <code>check</code> &middot; gateway <code>http://localhost:8080</code></p>
+<div class="cards">
+<div class="card"><b>1</b>answers audited</div>
+<div class="card"><b>1</b>claims researched</div>
+<div class="card"><b class="v-changed">1</b>changed (stale)</div>
+<div class="card"><b class="v-supported">0</b>still supported</div>
+<div class="card"><b class="v-unverifiable">0</b>unverifiable</div>
+<div class="card"><b>100%</b>staleness rate</div>
+</div>
+<h2>Staleness by audited model</h2>
+<table><tr><th>model</th><th>answers</th><th>researched</th><th>supported</th><th>changed</th><th>unverifiable</th><th>staleness</th></tr><tr><td><code>ollama/exaone-3.5-2.4b:latest</code></td><td>1</td><td>1</td>
+<td class="v-supported">0</td><td class="v-changed">1</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:100%"></span></div>100%</td></tr></table>
+<h2>Staleness by topic</h2>
+<table><tr><th>category</th><th>answers</th><th>researched</th><th>supported</th><th>changed</th><th>unverifiable</th><th>staleness</th></tr><tr><td><code>version</code></td><td>-</td><td>1</td>
+<td class="v-supported">0</td><td class="v-changed">1</td><td class="v-unverifiable">0</td>
+<td><div class="bar"><span style="width:100%"></span></div>100%</td></tr></table>
+<h2>Suggested Bifrost routing rules</h2><p class="muted">No rule suggested (needs at least two audited models with decided claims and a staleness gap).</p>
+<h2>Auditor run (through Bifrost)</h2>
+<ul>
+<li>Primary model <code>ollama/llama3.3:70b</code>, fallbacks <code>ollama/gemma4:26b-a4b-chat</code>, <code>ollama/gemma4:e4b-it-q4km-chat</code></li>
+<li>2 LLM calls served by <code>ollama/gemma4:26b-a4b-chat</code> &times; 2; <b class="warn">2 answered by a fallback model</b></li>
+<li>Tokens: 2024 prompt + 309 completion</li>
+<li>Virtual key <code>vk-freshness-auditor</code>: 24686 / 400000 tokens, 22 / 400 requests in window; budget budget-freshness-auditor $0.0000 / $1 per 1d</li>
+<li>Tavily: 1 searches this run (13 total in ledger)</li>
+
+</ul>
+<h2>Claims</h2>
+<section class="answer"><h3>#1 ollama/exaone-3.5-2.4b:latest
+</h3>
+
+<details><summary>Answer text</summary><pre>The latest stable version of Python is Python 3.11, released in October 2022. Python was created by Guido van Rossum.</pre></details>
+
+<div class="claim changed"><div class="head"><span class="badge changed">changed</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness 0 &middot; medium confidence</span>
+<span class="cat">version</span></div><p class="ctext">The latest stable version of Python is Python 3.11</p><div class="cols"><div><h5>Evidence <span class="muted">(text found in sources)</span></h5><ul class="evidence"><li><q>The latest stable version of Python is 3.14</q> <a href="https://www.liquidweb.com/blog/latest-python-version" target="_blank" rel="noopener">[1] www.liquidweb.com</a></li></ul></div>
+<div><h5>Inference <span class="muted">(model reasoning, not evidence)</span></h5><p>The claim states that Python 3.11 is the latest stable version, but source 1 explicitly states that Python 3.14 is the latest stable version as of its release on October 7, 2025.</p>
+<p><b>Current value:</b> Python 3.14</p></div></div><details><summary>5 source(s) searched</summary><ol><li><a href="https://www.liquidweb.com/blog/latest-python-version" target="_blank" rel="noopener">Latest Python Version (2025) – What&#39;s New in Python 3.14?</a></li><li><a href="https://www.mostlypython.com/updating-python" target="_blank" rel="noopener">Updating Python</a></li><li><a href="https://www.youtube.com/watch?v=ZQ6F_M4HAhE&amp;vl=en" target="_blank" rel="noopener">Which Python Version Should I Install?</a></li><li><a href="https://stackoverflow.com/questions/70378786/how-to-get-the-version-number-of-the-latest-stable-release-of-python-via-single" target="_blank" rel="noopener">How to get the version number of the latest stable release of Python via single HTTP request?</a></li><li><a href="https://www.reddit.com/r/Python/comments/1qgt083/python_version_in_production" target="_blank" rel="noopener">Python Version in Production ? : r/Python</a></li></ol></details>
+
+<p class="muted small">judged by <code>ollama/gemma4:26b-a4b-chat</code> <b class='warn'>(fallback took over)</b></p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Python 3.11 was released in October 2022</p></div>
+<div class="claim skipped"><div class="head"><span class="badge skipped">skipped: not time sensitive</span>
+<span class="fresh" title="freshness score 0 (stale) - 100 (current)">freshness ? &middot; low confidence</span>
+<span class="cat">other</span></div><p class="ctext">Python was created by Guido van Rossum</p></div></section>
+</main></body></html>

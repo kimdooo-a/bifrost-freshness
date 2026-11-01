@@ -1,0 +1,2088 @@
+{
+  "meta": {
+    "today": "2026-11-01",
+    "model": "ollama/gemma4:26b-a4b-chat"
+  },
+  "summary": {
+    "n": 25,
+    "sensitivity": {
+      "correct": 25,
+      "total": 25,
+      "accuracy": 1
+    },
+    "verdict": {
+      "correct": 22,
+      "total": 22,
+      "accuracy": 1,
+      "confusion": {
+        "supported": {
+          "supported": 6,
+          "changed": 0,
+          "unverifiable": 0,
+          "none": 0
+        },
+        "changed": {
+          "supported": 0,
+          "changed": 13,
+          "unverifiable": 0,
+          "none": 0
+        },
+        "unverifiable": {
+          "supported": 0,
+          "changed": 0,
+          "unverifiable": 3,
+          "none": 0
+        }
+      }
+    },
+    "staleDetection": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "downgradedForMissingEvidence": 0,
+    "tavilyCalls": 22,
+    "llmCalls": 47,
+    "fallbackCalls": 0
+  },
+  "rows": [
+    {
+      "id": "chg-01",
+      "text": "Pat Gelsinger is the CEO of Intel.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Lip-Bu Tan",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Intel"
+    },
+    {
+      "id": "chg-02",
+      "text": "Olaf Scholz is the Chancellor of Germany.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 3,
+      "currentValue": "Friedrich Merz",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Chancellor_of_Germany"
+    },
+    {
+      "id": "chg-03",
+      "text": "Pope Francis is the current Pope.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Pope Leo XIV",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Pope"
+    },
+    {
+      "id": "chg-04",
+      "text": "Rishi Sunak is the Prime Minister of the United Kingdom.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Andy Burnham",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Prime_Minister_of_the_United_Kingdom"
+    },
+    {
+      "id": "chg-05",
+      "text": "Joe Biden is the President of the United States.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Donald Trump",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://www.usa.gov/presidents"
+    },
+    {
+      "id": "chg-06",
+      "text": "Yoon Suk Yeol is the President of South Korea.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 3,
+      "currentValue": "Lee Jae-myung",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/President_of_South_Korea"
+    },
+    {
+      "id": "chg-07",
+      "text": "Fumio Kishida is the Prime Minister of Japan.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 2,
+      "currentValue": "Sanae Takaichi",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan"
+    },
+    {
+      "id": "chg-08",
+      "text": "Laxman Narasimhan is the CEO of Starbucks.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Brian Niccol",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://about.starbucks.com/press/2024/starbucks-names-brian-niccol-as-chairman-and-chief-executive-officer"
+    },
+    {
+      "id": "chg-09",
+      "text": "The latest stable release of Python is Python 3.11.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Python 3.14",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://www.liquidweb.com/blog/latest-python-version"
+    },
+    {
+      "id": "chg-10",
+      "text": "The newest Long Term Support release line of Node.js is Node.js 18.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "Node.js 24",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://hidekazu-konishi.com/entry/nodejs_release_and_eol_timeline.html"
+    },
+    {
+      "id": "chg-11",
+      "text": "The newest iPhone model line is the iPhone 15.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 1,
+      "currentValue": "iPhone 17",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://www.consumerreports.org/electronics-computers/cell-phones/which-iphone-should-you-buy-a7028071026"
+    },
+    {
+      "id": "chg-12",
+      "text": "Justin Trudeau is the Prime Minister of Canada.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 2,
+      "currentValue": "Mark Carney",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Prime_Minister_of_Canada"
+    },
+    {
+      "id": "chg-13",
+      "text": "The latest version of the Java SE platform is Java 21.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "changed",
+      "predictedVerdict": "changed",
+      "correct": true,
+      "freshnessScore": 0,
+      "evidenceCount": 3,
+      "currentValue": "Java 27",
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://www.codejava.net/java-se/java-se-versions-history"
+    },
+    {
+      "id": "sup-01",
+      "text": "Satya Nadella is the CEO of Microsoft.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "supported",
+      "predictedVerdict": "supported",
+      "correct": true,
+      "freshnessScore": 100,
+      "evidenceCount": 1,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://www.unifygtm.com/insights/executives/microsoft-ceo"
+    },
+    {
+      "id": "sup-02",
+      "text": "Jensen Huang is the CEO of Nvidia.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "supported",
+      "predictedVerdict": "supported",
+      "correct": true,
+      "freshnessScore": 100,
+      "evidenceCount": 1,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Jensen_Huang"
+    },
+    {
+      "id": "sup-03",
+      "text": "Sundar Pichai is the CEO of Alphabet.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "supported",
+      "predictedVerdict": "supported",
+      "correct": true,
+      "freshnessScore": 100,
+      "evidenceCount": 1,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Sundar_Pichai"
+    },
+    {
+      "id": "sup-04",
+      "text": "The US federal minimum wage is $7.25 per hour.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "supported",
+      "predictedVerdict": "supported",
+      "correct": true,
+      "freshnessScore": 100,
+      "evidenceCount": 1,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://statesminimumwage.com/blog/current-federal-minimum-wage-2026"
+    },
+    {
+      "id": "sup-05",
+      "text": "Emmanuel Macron is the President of France.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "supported",
+      "predictedVerdict": "supported",
+      "correct": true,
+      "freshnessScore": 100,
+      "evidenceCount": 1,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/President_of_France"
+    },
+    {
+      "id": "sup-06",
+      "text": "Narendra Modi is the Prime Minister of India.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "supported",
+      "predictedVerdict": "supported",
+      "correct": true,
+      "freshnessScore": 100,
+      "evidenceCount": 2,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://en.wikipedia.org/wiki/Prime_Minister_of_India"
+    },
+    {
+      "id": "unv-01",
+      "text": "Zentrovix Labs, a startup in Tallinn, charges 49 euros per month for its Pro plan.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "unverifiable",
+      "predictedVerdict": "unverifiable",
+      "correct": true,
+      "freshnessScore": null,
+      "evidenceCount": 0,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://zed.dev/docs/account/plans-and-pricing"
+    },
+    {
+      "id": "unv-02",
+      "text": "The internal codename of Harbor Analytics' next database engine is Bluefin.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "unverifiable",
+      "predictedVerdict": "unverifiable",
+      "correct": true,
+      "freshnessScore": null,
+      "evidenceCount": 0,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://tavily.com/knowledge/company/XKCycHf6dXYc"
+    },
+    {
+      "id": "unv-03",
+      "text": "Mirelle Okafor is the current head of procurement at the Lisbon municipal water utility.",
+      "expectedSensitive": true,
+      "predictedSensitive": true,
+      "expectedVerdict": "unverifiable",
+      "predictedVerdict": "unverifiable",
+      "correct": true,
+      "freshnessScore": null,
+      "evidenceCount": 0,
+      "currentValue": null,
+      "servedBy": "ollama/gemma4:26b-a4b-chat",
+      "notes": [],
+      "topSource": "https://pt.linkedin.com/in/ricardo-vila-selas-b503762b/en"
+    },
+    {
+      "id": "nts-01",
+      "text": "Water boils at 100 degrees Celsius at sea level.",
+      "expectedSensitive": false,
+      "predictedSensitive": false,
+      "expectedVerdict": null,
+      "predictedVerdict": null,
+      "correct": null,
+      "freshnessScore": null,
+      "evidenceCount": 0,
+      "currentValue": null,
+      "servedBy": null,
+      "notes": [],
+      "topSource": null
+    },
+    {
+      "id": "nts-02",
+      "text": "The Treaty of Versailles was signed in 1919.",
+      "expectedSensitive": false,
+      "predictedSensitive": false,
+      "expectedVerdict": null,
+      "predictedVerdict": null,
+      "correct": null,
+      "freshnessScore": null,
+      "evidenceCount": 0,
+      "currentValue": null,
+      "servedBy": null,
+      "notes": [],
+      "topSource": null
+    },
+    {
+      "id": "nts-03",
+      "text": "Mount Everest lies on the border between Nepal and China.",
+      "expectedSensitive": false,
+      "predictedSensitive": false,
+      "expectedVerdict": null,
+      "predictedVerdict": null,
+      "correct": null,
+      "freshnessScore": null,
+      "evidenceCount": 0,
+      "currentValue": null,
+      "servedBy": null,
+      "notes": [],
+      "topSource": null
+    }
+  ],
+  "results": [
+    {
+      "claim": {
+        "id": "chg-01",
+        "text": "Pat Gelsinger is the CEO of Intel.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current CEO of Intel"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Intel",
+          "quote": "On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company's board of directors.",
+          "match": "exact"
+        }
+      ],
+      "inference": "Pat Gelsinger retired from the position of Intel CEO on December 1, 2024, and has been succeeded by Lip-Bu Tan, who became CEO in March 2025.",
+      "currentValue": "Lip-Bu Tan",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Intel - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Intel",
+          "content": "On June 21, 2018, Intel announced the resignation of Brian Krzanich as CEO, with the exposure of a relationship he had with an employee. Bob Swan was named interim CEO, as the Board began a search for a permanent CEO.\n\nOn January 31, 2019, Swan transitioned from his role as CFO and interim CEO and was named by the Board as the seventh CEO to lead the company. [...] On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company's board of directors. David Zinsner and Michelle Johnston Holthaus were named as interim co-CEOs. On March 13, 2025, it was announced that he would be formally replaced by American Lip-Bu Tan starting March 18, 2025. [...] On May 2, 2013, Executive Vice President and COO Brian Krzanich was elected as Intel's sixth CEO, a selection that became effective on May 16, 2013, at the company's annual meeting. Reportedly, the board concluded that an insider could proceed with the role and exert an impact more quickly, without the need to learn Intel's processes, and Krzanich was selected on such a basis. Intel's software head Renée James was selected as president of the company, a role that is second to the CEO position.",
+          "score": 0.9049283
+        },
+        {
+          "n": 2,
+          "title": "Intel Appoints Lip-Bu Tan as Chief Executive Officer",
+          "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html",
+          "content": "SANTA CLARA, Calif., March 12, 2025 – Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18. He succeeds Interim Co-CEOs David Zinsner and Michelle (MJ) Johnston Holthaus. Tan will also rejoin the Intel board of directors after stepping down from the board in August 2024. [...] Zinsner will remain executive vice president and chief financial officer, and Johnston Holthaus will remain CEO of Intel Products. Frank D. Yeary, who took on the role of interim executive chair of the board during the search for a new CEO, will revert to being the independent chair of the board upon Tan becoming CEO. [...] On his appointment, Tan said, “I am honored to join Intel as CEO. I have tremendous respect and admiration for this iconic company, and I see significant opportunities to remake our business in ways that serve our customers better and create value for our shareholders.",
+          "score": 0.88420963
+        },
+        {
+          "n": 3,
+          "title": "Lip-Bu Tan - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lip-Bu_Tan",
+          "content": "Lip-Bu Tan (born November 12, 1959) is an American business executive who has been chief executive officer (CEO) of Intel since 2025. He is also chairman of Walden International, a venture capital firm; a founding managing partner of Walden Catalyst Ventures and Celesta Capital; and holds numerous board positions. Tan was CEO of Cadence Design Systems from 2009 to 2021.\n\n## Early life and education\n\n[edit] [...] | 陳立武 |\n| Tan in 2025 |\n| Born | (1959-11-12) November 12, 1959 (age 66)  Muar \"Muar (town)\"), Federation of Malaya |\n| Citizenship | United States |\n| Education |  + Nanyang University (BS)   + Massachusetts Institute of Technology (MS)   + University of San Francisco (MBA) |\n| Occupation | Business executive |\n| Title |  + CEO of Intel (2025–present)   + CEO of Cadence Design Systems (2009–2021) |\n| Predecessor | Pat Gelsinger |\n| Spouse | Ysa Loo |\n| Children | 2 |\n| Chinese name | [...] ### Intel\n\n[edit]\n\nIn March 2025, Tan was named CEO of Intel, effective from March 18, 2025. Tan had been on Intel's board of directors from 2022 to 2024.\n\n## Board memberships\n\n[edit]\n\n### Academic boards\n\n[edit]",
+          "score": 0.8437023
+        },
+        {
+          "n": 4,
+          "title": "Who is the CEO of Intel in 2026? Lip-Bu Tan's Bio | Clay",
+          "url": "https://www.clay.com/dossier/intel-ceo",
+          "content": "Lip-Bu Tan is the CEO of Intel Corporation, an experienced executive with a demonstrated history of working in the computer software and semiconductor industries. He brings deep expertise in EDA, Software as a Service (SaaS), Mergers & Acquisitions (M&A), Application-Specific Integrated Circuits (ASIC), and start-ups. [...] Lip-Bu Tan is the CEO of Intel Corporation, bringing extensive experience in the technology and semiconductor industries to the role. With a strong background in business development, mergers and acquisitions, and start-ups, Tan also serves as Chairman of Walden International and Founding Managing Partner of Walden Catalyst Ventures.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay\n\nTry for free\n\nLip-Bu Tan\n\nintel.com [...] In addition to his role at Intel, Tan serves as Chairman of Walden International and as Founding Managing Partner of Walden Catalyst Ventures, reflecting his long-standing commitment to technology investment and innovation.\n\n### Work History\n\n Intel: CEO, March 2025 - Present\n SambaNova: Chairman of the Board, March 2025 - Present\n SambaNova: Executive Chairman, April 2024 - March 2025\n Inphi Corporation: Board Member, May 2002 - December 2012\n\n### Education History",
+          "score": 0.8396422
+        },
+        {
+          "n": 5,
+          "title": "Intel appoints Lip-Bu Tan as CEO",
+          "url": "https://www.youtube.com/watch?v=smicjh7yyro",
+          "content": "### Transcript\n[0:01] us. First on overtime. >> Thanks for having me, John.\n[0:05] >> Well, I mentioned that breaking news on Intel a moment ago around a new CEO. Let's get to Christina Betsy Devos for more. Christina.\n[0:12] >> Well, thank you, John. Intel shares right now are jumping 11% after naming Lipton as its new CEO. This is effective as of\n[0:20] March 18th. He's well known in the tech world as an investor. [...] [0:23] He also has extensive about 20 years of. Semiconductor industry experience, and he will succeed interim co-CEOs David Zissner and Michelle Holthaus. House, I\n[0:32] should say ten, will also rejoin Intel's board. >> Of.\n[0:35] >> Directors after stepping down in August 2024. Reuters reported back in August that ten had resigned over differences with former CEO Pat Gelsinger and other directors, but he's back [...] [0:43] now. David Zissner will remain CFO. Michelle will continue as CEO of Holt House, I should say of CEO of Intel Products. And\n[0:51] then Frank Geary will return to his rol",
+          "score": 0.81875163
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1645,
+        "completionTokens": 122,
+        "latencyMs": 2550
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-02",
+        "text": "Olaf Scholz is the Chancellor of Germany.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Chancellor of Germany"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "high"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+          "quote": "The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.",
+          "match": "exact"
+        },
+        {
+          "source": 2,
+          "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+          "quote": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025.",
+          "match": "exact"
+        },
+        {
+          "source": 4,
+          "url": "https://www.bundeskanzler.de/bk-en",
+          "quote": "Federal Chancellor ### Friedrich Merz",
+          "match": "exact"
+        }
+      ],
+      "inference": "The sources state that Friedrich Merz is the current Chancellor of Germany, having been sworn in on May 6, 2025, and Olaf Scholz is listed as his predecessor.",
+      "currentValue": "Friedrich Merz",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Chancellor of Germany - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+          "content": "Ten people (nine men and one woman) have served as chancellor of the Federal Republic of Germany, the first being Konrad Adenauer from 1949 to 1963. (Another 26 men had served as \"Reich chancellors\" of the previous German Empire from 1871 to 1945.) The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.\n\n## History of the office (pre-1949)\n\n[edit\")]\n\n|  | [...] Scheel not taken into account, three persons, Ludwig Erhard, Willy Brandt, and Olaf Scholz, have held both the office of Vice Chancellor and that of Chancellor of Germany.\n\nThe current vice chancellor of Germany is Lars Klingbeil, who also serves as Minister of Finance \"Federal Ministry of Finance (Germany)\") in the Merz cabinet.\n\n#### List of vice chancellors (1949–present)\n\n[edit\")] [...] | This article is part of a series on the |\n| Politics of  Germany |\n| Constitution (Basic Law)   Federal Constitutional Court  Human rights |\n| Head of state   President of Germany   Frank-Walter Steinmeier (SPD) |\n| Executive   Chancellor of Germany \"Chancellor of Germany (1949–)\") (list)   Friedrich Merz (CDU)   Vice Chancellor of Germany   Lars Klingbeil (SPD)  ---   Cabinet Merz  Federal agencies \"Federal agency (Germany)\")  Federal ministries \"Federal ministry (Germany)\") |",
+          "score": 0.88705814
+        },
+        {
+          "n": 2,
+          "title": "Friedrich Merz - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+          "content": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025. He has also served as Leader of the Christian Democratic Union (CDU) since January 2022, leading the CDU/CSU (Union) parliamentary group as Leader of the Opposition \"Leader of the Opposition (Germany)\") in the Bundestag from February 2022 to May 2025. [...] | Head shot of Merz smiling.jpg) Merz in 2024 |\n| Chancellor of Germany |\n| Incumbent |\n| Assumed office  6 May 2025 |\n| President | Frank-Walter Steinmeier |\n| Vice Chancellor | Lars Klingbeil |\n| Preceded by | Olaf Scholz |\n| Leader of the Christian Democratic Union |\n| Incumbent |\n| Assumed office  31 January 2022 |\n| General Secretary | Mario Czaja Carsten Linnemann |\n| Deputy | Andreas Jung Karin Prien Silvia Breher Michael Kretschmer Karl-Josef Laumann |\n| Preceded by | Armin Laschet | [...] | Leader of the Opposition \"Leader of the Opposition (Germany)\") |\n| In office 15 February 2022 – 6 May 2025 |\n| Chancellor | Olaf Scholz |\n| Preceded by | Ralph Brinkhaus |\n| Succeeded by | Tino Chrupalla Alice Weidel |\n| In office 29 February 2000 – 22 September 2002 |\n| Chancellor | Gerhard Schröder |\n| Preceded by | Wolfgang Schäuble |\n| Succeeded by | Angela Merkel |",
+          "score": 0.87681407
+        },
+        {
+          "n": 3,
+          "title": "As Germany selects a new conservative chancellor, a look at the challenges he inherits | PBS News",
+          "url": "https://www.pbs.org/newshour/show/as-germany-selects-a-new-conservative-chancellor-a-look-at-the-challenges-he-inherits",
+          "content": "Nick Schifrin:\n\nToday, in Germany, a bitter victory. Friedrich Merz became Germany's 10th post-World War II chancellor and the first to lose an initial secret round of voting.\n\nMerz had promised to begin his chancellorship forcefully and today showed the fragility of his leadership and coalition. But, this evening, at the official handover ceremony without going Chancellor Olaf Scholz, Merz brushed it aside.\n\nFriedrich Merz, German Chancellor (through interpreter): [...] Watch the Full Episode\n\n## Related\n\nMay 06\n\nFriedrich Merz of the Christian Democratic Union (CDU) is sworn in as the new German Chancellor, in Berlin\n\nBy Stefanie Dazio, Kirsten Grieshaber, Associated Press\n\nApr 30\n\nChristian Democratic Union (CDU) party conference to formally sign off on a coalition agreement reached with the Social De...\n\nBy Associated Press\n\nApr 01\n\nA view shows Marinka town destroyed in the course of Russia-Ukraine conflict\n\nBy Illia Novikov, Associated Press\n\nMar 10 [...] Amna Nawaz:\n\nIn Berlin today, Friedrich Merz was elected Germany's chancellor, but not without a surprising setback. For the first time in Germany's modern history, he lost the Parliament's initial vote and needed a second round to secure a majority.\n\nNick Schifrin is back now with this report on the challenges that Merz inherits, from a politically divided Germany to an American president who's questioned the transatlantic alliance.\n\nNick Schifrin:",
+          "score": 0.76554126
+        },
+        {
+          "n": 4,
+          "title": "The Federal Chancellor of the Federal Republic of Germany | Home page",
+          "url": "https://www.bundeskanzler.de/bk-en",
+          "content": "## Main-navigation\n\n Federal Chancellor\n ### Friedrich Merz\n ### News\n ### Chancellery\n\n  + Tasks of the Chancellor\n  + The election of the Federal Chancellor\n  + Federal Cabinet\n  + Federal Chancellors since 1949 show more\n ### Service\n\n  + Contact\n  + Data privacy information\n\nFollow the Federal Chancellor:\n\n To the Federal Government's Instagram channel\")\n To the Federal Government's X channel\")\n To the Federal Government's TikTok- channel\")\n\nFollow the Federal Government: [...] Deutsch\n\nFederal Chancellor Merz and BDA President Rainer Dulger \n\n## Speech by Federal Chancellor Merz on the occasion of the 2026 German Employers’ Day Reforms for a bright future in Germany\n\nBundeskanzler Friedrich Merz und der britische Premierminister Andrew Burnham \n\n## Pressestatement von Kanzler Merz zum Empfang britischen Premier Burnham  Vereinigtes Königreich und Deutschland gehören zusammen [...] Smiles all round as Federal Chancellor Merz meets Kazakh President Tokayev. \n\n## Press conference with Federal Chancellor Merz and President Tokayev of Kazakhstan Close partners for energy and peace\")\n\nFinnish Prime Minister Orpo is sitting next to Chancellor Merz and gesticulating. \n\n## Federal Chancellor Friedrich Merz at the EU-Arctic Summit European partners discuss geopolitical changes in the Arctic\n\n Blick von oben auf den Plenarsaal des Bundestages",
+          "score": 0.73891455
+        },
+        {
+          "n": 5,
+          "title": "Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News",
+          "url": "https://www.youtube.com/watch?v=qslX7zcx4Gw",
+          "content": "### Transcript\n[0:00] extensions one.\n[0:12] There will be time to applaud in a moment, but I would like to note that MP\n[0:19] Fredish Mattz has now got the necessary majority of 316 votes according to\n[0:27] article 63 power 2. He has now been elected chancellor of the Federal Republic of Germany.\n[0:43] Now before you all come and congratulate him, I would like to ask you for a\n[0:49] moment here because we have to ask the chancellor whether he wishes to accept the result. [...] # Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News\n## Channel: DW News (verified)\n6.46M subscribers\n1.7K likes\n\n### Description\n91,550 views\nPosted: 2025-05-06\nGerman lawmakers have elected conservative Friedrich Merz as chancellor - after his historic defeat in the first round earlier today. [...] Follow DW on social media:\n►Instagram:   / dwnews  \n►TikTok:   / dwnews  \n►Facebook:   / deutschewellenews  \n►Twitter:   / dwnews  \n\nFür Videos in deutscher Sprache besuchen Sie:    / dwdeutsch  \n\nSubscribe: \n\n#germany #friedrichmerz #chancellor",
+          "score": 0.7055624
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1658,
+        "completionTokens": 178,
+        "latencyMs": 3318
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-03",
+        "text": "Pope Francis is the current Pope.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Pope"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 2,
+          "url": "https://en.wikipedia.org/wiki/Pope",
+          "quote": "The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave.",
+          "match": "exact"
+        }
+      ],
+      "inference": "While source 1 states Pope Francis was the current pope as of 2024, sources 2, 3, 4, and 5 all confirm that Pope Leo XIV was elected on May 8, 2025, and is the current pope as of the current date in 2026.",
+      "currentValue": "Pope Leo XIV",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Who is the Current Pope? - Questions and Answers",
+          "url": "https://spiritualculture.org/who-is-the-current-pope",
+          "content": "As of 2024, the current pope is Pope Francis, born Jorge Mario Bergoglio on December 17, 1936. He is the 266th pope in the history of the Catholic Church and took office on March 13, 2013. Pope Francis’s election marked a historic moment, as he became the first pope from the Americas, hailing from Argentina. He also bears the distinction of being the first Jesuit pope and the first pope to choose the name Francis, inspired by Saint Francis of Assisi, who epitomized humility and a deep concern [...] Pope Francis is currently 87 years old. His health has been a matter of public interest, especially considering he underwent surgery for colon cancer in July 2021. Although he has faced challenges relating to mobility, including issues with his knee that necessitated the use of a wheelchair for a time, he remains active in fulfilling his papal duties. The Vatican has communicated that he is in stable condition, continuing to prioritize his role as pope despite the challenges posed by age and [...] Religion and belief\n\n# Who is the Current Pope?\n\n## In this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nIn this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nThe papacy, one of the oldest and most influential religious institutions in the world, has seen a profound evolution over the centuries.",
+          "score": 0.8997663
+        },
+        {
+          "n": 2,
+          "title": "Pope - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Pope",
+          "content": "by Jesus, who gave Peter the Keys of Heaven and the powers of \"binding and loosing\", naming him as the \"rock\" upon which the Church would be built. The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave. [...] before. The most recent election, of Pope Leo XIV (formerly Cardinal Robert Prevost), continues this new tradition of papal selection from a global pool: the current pope was born and lived until his mid-20s in the United States, is a citizen by naturalization of Peru (where he served as an Augustinian priest and bishop for approximately 20 years), and had by the time of his election spent almost 20 years in Italy and the Vatican studying and in various Church leadership roles. [...] The pope's regnal name is not his real or legal name, which remains unchanged in legal and governmental documents; neither is it connected in any way to his real name. The current pope was born with the name Robert Francis Prevost.\n\n### Official list of titles\n\nThe official list of titles of the pope, in the order in which they are given in the Annuario Pontificio, is:",
+          "score": 0.8740022
+        },
+        {
+          "n": 3,
+          "title": "Who is the current Pope? at DuckDuckGo",
+          "url": "https://duckduckgo.com?q=Who+is+the+current+Pope%3F",
+          "content": "Only include results for this siteRedo search without this siteBlock this site from all results Share feedback about this site     Image 10visitingthevatican.com\n\n   ## Who is The Present Pope? - Visiting The Vatican Sep 2, 2025WHOISTHE PRESENT POPE? Meet Pope Leo XIV, elected in May 2025 as the first U.S.-born pontiff, leading the Catholic Church with unity, peace, and inclusion.   \n7.   vaticannews.va [...] › Pope_Leo_XIV   ## Pope Leo XIV - Wikipedia Pope Leo XIV[a] (born Robert Francis Prevost, [b] pronounced / ˈpriːvoʊst / PREE-vohst, [c] September 14, 1955) is the head of the Catholic Church and sovereign of Vatican City. He is the first pope to have been born in the United States, the first to hold either U.S. or Peruvian citizenship, the first from the Order of Saint Augustine, and the second (after his immediate predecessor ...   \n3.   ewtnnews.com [...] › pope › news › 2026-04 › pope-leo-xiv-africa-apostolic-journey-press-office.html   ## Pope Leo XIV: A pilgrim in Africa - Vatican News 5 days ago Vatican News The Director of the Holy See Press Office, Matteo Bruni, outlined the Apostolic Journey that Pope Leo XIV will undertake from 13 to 23 April in Algeria, Cameroon, Angola and Equatorial Guinea. Briefing journalists during a press conference on Thursday, he illustrated the visit which spans four countries over eleven days and will include",
+          "score": 0.79939574
+        },
+        {
+          "n": 4,
+          "title": "Pope Leo XIV | The Current Pope of the Catholic Church | Catholic Answers Tract",
+          "url": "https://www.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church",
+          "content": "On May 8, 2025, Cardinal Robert Prevost became the first American-born pope, and the native of Illinois seems to have providentially anticipated his pontificate in choosing his episcopal motto: In Illo uno unum. That is, “In the One [Jesus Christ], we are one” (see John 17:20-23), and the vicar of Christ, the pope, is at the service of fostering and safeguarding that unity. [...] Accessibility feedback\n\n☰Catholic Answers LogoCatholic Answers Logo\n\nAbout\n\nwww.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church\n\ntract\n\n# Pope Leo XIV | The Pope of the Catholic Church\n\n2026-06-18T11:10:39\n\n## Who Is Pope Leo XIV?\n\nPope Leo XIV is the current pope of the Catholic Church, the Successor of St. Peter and thus visible leader in unifying the faithful and advancing the Church’s God-given mission to “make disciples of all nations” (Matt. 28:18-20; CCC 882; see CCC 815). [...] Who is the new pope in 2025? Pope Leo XIV, formerly Cardinal Robert Francis Prevost.\n How old is Pope Leo XIV? Pope Leo XIV was born September 14, 1955, making him 70 years old.\n Where is Pope Leo XIV from? He is from Chicago, Illinois, in the United States of America.",
+          "score": 0.7711725
+        },
+        {
+          "n": 5,
+          "title": "Everything You’ve Ever Wanted to Know About Pope Leo XIV",
+          "url": "https://www.4lpi.com/blog/everything-youve-ever-wanted-to-know-about-pope-leo-xiv",
+          "content": "Pope Leo XIV was elected on May 8, 2025 by the Catholic College of Cardinals to be pope, the head of the global Catholic Church. His historic election as the first American-born pope has garnered interest from Catholics and non-Catholics worldwide. In this guide, we cover Pope Leo XIV’s past, missionary work, path to the papacy, and what he’s currently focusing on as the leader of the Catholic church. [...] Birth Name: His birth name is Robert Francis Prevost.\n Age: Pope Leo XIV is currently 70 years old. He was born on September 14, 1955.\n Birthplace: He was born in Chicago, Ill., and lived in the south suburb of Dolton until 1969.\n Nationality: Pope Leo XIV is a citizen of the United States and has a dual nationality with Peru.\n Ethnicity: Pope Leo XIV is a mixed-race American with heritage that includes French, Italian, Spanish, Cuban, and African American (Louisiana Creole). [...] Born in September 1955, the 70-year-old pope grew up in Chicago, currently speaks five languages fluently, and is also the very first pope elected from the Order of Saint Augustine (O.S.A). This priestly order, inspired by the life and spirituality of St. Augustine of Hippo, was established in 1244. They take a vow of obedience, chastity, and poverty. On the order’s official website, they proclaim, “United in community and rooted in a shared search for God, we serve the Church and the world",
+          "score": 0.7011614
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1642,
+        "completionTokens": 146,
+        "latencyMs": 2852
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-04",
+        "text": "Rishi Sunak is the Prime Minister of the United Kingdom.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Prime Minister of the United Kingdom"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_the_United_Kingdom",
+          "quote": "The current prime minister is Andy Burnham who has held the office since 20 July 2026.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim that Rishi Sunak is the Prime Minister is incorrect as of the current date (2026-11-01); the sources state that Andy Burnham has been the Prime Minister since July 20, 2026.",
+      "currentValue": "Andy Burnham",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Prime Minister of the United Kingdom - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_the_United_Kingdom",
+          "content": "As of 2026( 59 people (56 men and 3 women) have served as prime minister, with the first, Walpole, taking office on 3 April 1721. The longest-serving prime minister was also Walpole, who served over 20 years, and the shortest-serving was Liz Truss, who served seven weeks. The current prime minister is Andy Burnham who has held the office since 20 July 2026.\n\n## History\n\nMain articles: History of the prime minister of the United Kingdom and List of prime ministers of the United Kingdom [...] | |  v  t  e  Great Offices of State of the United Kingdom |  | |  |  |  |  |  ---  --- | | Prime Minister Andy Burnham | Chancellor of the Exchequer John Healey | Foreign Secretary \"Foreign Secretary (United Kingdom)\") Ed Miliband | Home Secretary Shabana Mahmood | |    |  v  t  e  UK cabinet portfolios |  | Cabinet of the United Kingdom | | Cabinet ministers |  Prime Minister / First Lord of the Treasury / Minister for the Union / Minister for the Civil Service  First Secretary of State / [...] Attorney General for England and Wales / Advocate General for Northern Ireland  Minister for Artificial Intelligence  Minister for Intergovernmental Relations & European Relations  Minister for Housing & Planning \"Minister of State for Housing and Planning (United Kingdom)\") |    |  v  t  e  List of current heads of government in the United Kingdom |  | His Majesty's Government | |  |  |  --- | | Majority |  | | Prime Minister | Andy Burnham (Labour \"Labour Party (UK)\")) | | | Northern Ireland",
+          "score": 0.9125066
+        },
+        {
+          "n": 2,
+          "title": "Andy Burnham - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Andy_Burnham",
+          "content": "Andrew Murray Burnham (born 7 January 1970) is a British politician who has served as Prime Minister of the United Kingdom and Leader of the Labour Party \"Leader of the Labour Party (UK)\") since July 2026. He has been Member of Parliament \"Member of Parliament (United Kingdom)\") (MP) for Makerfield \"Makerfield (constituency)\") in Greater Manchester since June 2026, and was Mayor of Greater Manchester from 2017 to 2026; before that he was MP for Leigh \"Leigh (constituency)\") from 2001 to 2017 [...] | Preceded by John Healey | Shadow Secretary of State for Health  2011–2015 | Succeeded by Heidi Alexander |\n| Preceded by Yvette Cooper | Shadow Home Secretary  2015–2016 | Succeeded by Diane Abbott |\n| Preceded by Tony Lloyd Interim | Mayor of Greater Manchester  2017–2026 | Succeeded by Bev Craig |\n| Preceded by Keir Starmer | Prime Minister of the United Kingdom  2026–present | Incumbent |\n| Minister for the Civil Service  2026–present |\n| First Lord of the Treasury  2026–present | [...] | Image of Burnham as Prime Minister 2026.jpg) Official portrait, 2026 |\n| Prime Minister of the United Kingdom |\n| Incumbent |\n| Assumed office  20 July 2026 |\n| Monarch | Charles III |\n| First Secretary | Louise Haigh |\n| Preceded by | Keir Starmer |\n| Leader of the Labour Party \"Leader of the Labour Party (UK)\") |\n| Incumbent |\n| Assumed office  17 July 2026 |\n| Deputy \"Deputy Leader of the Labour Party (UK)\") | Lucy Powell |\n| Preceded by | Keir Starmer |\n| Mayor of Greater Manchester |",
+          "score": 0.84183896
+        },
+        {
+          "n": 3,
+          "title": "Prime Minister - GOV.UK",
+          "url": "https://www.gov.uk/government/ministers/prime-minister",
+          "content": "oversees the operation of the Civil Service and government agencies\n chooses members of the government\n is the principal government figure in the House of Commons\n\n## Current role holder\n\n### The Rt Hon Andy Burnham MP\n\nAndy Burnham became Prime Minister on 20 July 2026. [...] View cookies\n\nMinisterial role \n\n# Prime Minister\n\nOrganisations: Cabinet Office and Prime Minister's Office, 10 Downing Street\n\nCurrent role holder: The Rt Hon Andy Burnham MP\n\n## Responsibilities\n\nThe Prime Minister is the leader of His Majesty’s Government and is ultimately responsible for the policy and decisions of the government.\n\nAs leader of the UK government the Prime Minister also:",
+          "score": 0.8232293
+        },
+        {
+          "n": 4,
+          "title": "Andy Burnham becomes new British prime minister, Keir Starmer leaves",
+          "url": "https://www.nbcnews.com/world/united-kingdom/andy-burnham-british-prime-minister-keir-starmer-labour-king-charles-rcna588324",
+          "content": "By Alexander Smith\n\nLONDON — Over to you, Andy Burnham.\n\nThe man dubbed the “King of the North” became the new British prime minister Monday, the latest in a revolving door of leaders trying to halt a decade of political turbulence and economic stagnation in the United Kingdom.\n\nBurnham, 56, was appointed unchallenged after the unpopular Keir Starmer agreed to step down last month following a series of election defeats, U-turns and scandals. [...] Both Starmer and Burnham come from the same center-left Labour Party, and in the United Kingdom ruling parties can change leaders — and therefore the prime minister — in the middle of an election cycle without anyone voting.\n\nThat said, Burnham has promised radical change after taking office following a morning of royal formality, though he already faces infighting over his Cabinet selections. [...] “Let’s have the courage to fix the big things that politics has neglected,” he added, vowing to reverse the “wrong turns” that Britain began to take in the 1980s when “political power was centralized, and economic power was privatized.”\n\nAbroad, he will also have to navigate his relationship with Trump, who he said would be one of his first calls alongside Ukrainian President Volodymyr Zelenksyy.",
+          "score": 0.8131201
+        },
+        {
+          "n": 5,
+          "title": "Five questions about new UK Prime Minister Andy Burnham | School of Foreign Service | Georgetown",
+          "url": "https://sfs.georgetown.edu/news/five-questions-about-new-uk-prime-minister-andy-burnham",
+          "content": "On Monday, July 20, 2026, Andy Burnham became the new prime minister of the United Kingdom. He took over the government from Keir Starmer as the seventh prime minister in the decade since the June 2016 Brexit vote. What factors have led the UK to have such turbulence in the political system, and is the former mayor of Manchester likely to steady the ship? We spoke with Professor Jeffrey Anderson, professor in the School of Foreign of Foreign Service and the department of government, to learn [...] Many of the issues that drove the decision to leave the European Union—immigration, government spending, low and uneven economic growth—remain salient and bitterly contested within and between the major political parties in the United Kingdom today. Keir Starmer, the outgoing Labour prime minister who took his party to a thumping victory over the Tories in 2024, was plagued by scandals in his party, perceptions of aloofness and ineffectiveness, controversial budget-cutting decisions and a [...] Q: Andy Burnham is the seventh prime minister (PM) of the United Kingdom in 10 years. Why is the political situation so tumultuous since Brexit?\n\nJeffrey Anderson wearing a blue blazer and a button down shirt.\n\nProfessor Jeffrey Anderson",
+          "score": 0.8091708
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1510,
+        "completionTokens": 117,
+        "latencyMs": 2408
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-05",
+        "text": "Joe Biden is the President of the United States.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current President of the United States"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 3,
+          "url": "https://www.usa.gov/presidents",
+          "quote": "The 47th and current president of the United States is Donald John Trump. He was sworn into office on January 20, 2025.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The sources indicate that Donald Trump is the current 47th president of the United States, having been sworn in on January 20, 2025, which means Joe Biden is no longer the president.",
+      "currentValue": "Donald Trump",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Donald Trump - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+          "content": "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who is the 47th president of the United States. A member of the Republican Party \"Republican Party (United States)\"), he served as the 45th president from 2017 to 2021. [...] |  45th (2017–2021) and 47th (2025–present) president of the United States | [...] Abstract Wikipedia\n   Wikimedia Commons\n   Wikinews\n   Wikiquote\n   Wikisource\n   Wikiversity\n   Wikidata item\n\nAppearance\n\nmove to sidebar hide\n\nImage 4: Extended-protected article\n\nFrom Wikipedia, the free encyclopedia\n\nPresident of the United States (2017–2021; since 2025)\n\nSeveral terms redirect here. For other uses, see Donald Trump (disambiguation) \"Donald Trump (disambiguation)\"),Trump (disambiguation) \"Trump (disambiguation)\"),andDJT (disambiguation) \"DJT (disambiguation)\").",
+          "score": 0.7185356
+        },
+        {
+          "n": 2,
+          "title": "Who is the current US president in office?",
+          "url": "https://www.quora.com/Who-is-the-current-US-president-in-office",
+          "content": "The current president of the United States is Donald John Trump. He is the 45th president of the united states and took office on January 20th, 2017. He became the President Elect on November 8th, 2016. His vice president is Michael Richard Pence.\n\nDonald himself is a billionaire, a real estate mogul, and probably the definition of a celebrity. [...] Continue Reading\n\nThe current president of the United States is Donald John Trump. He is the 45th president of the united states and took office on January 20th, 2017. He became the President Elect on November 8th, 2016. His vice president is Michael Richard Pence.\n\nDonald himself is a billionaire, a real estate mogul, and probably the definition of a celebrity. [...] Joe Biden is the 46th and current, President of the United States. He was elected on November 3, 2020, and took office on January 20, 2021. His four year term will end on January 20, 2025. He is eligible to run for a second four year term that would be from January 20, 2025 to January 20, 2029. Presidents are term-limited by the 22nd Amendment to the US Constitution to being eligible to serve for no more than two, four year terms, and up to two years of another term, such as a Vice President",
+          "score": 0.91936076
+        },
+        {
+          "n": 3,
+          "title": "Presidents, vice presidents, and first ladies | USAGov",
+          "url": "https://www.usa.gov/presidents",
+          "content": "# Presidents, vice presidents, and first ladies\n\nLearn about the duties of president, vice president, and first lady of the United States. Find out how to contact and learn more about current and past leaders.\n\n## \n\nThe president of the United States is the:\n\n U.S. head of state\n Leader of the executive branch\n Commander in chief of the armed forces\n\n### Current president\n\nThe 47th and current president of the United States is Donald John Trump. He was sworn into office on January 20, 2025. [...] ## \n\nThe vice president of the United States presides over the U.S. Senate and takes over the role of president of the United States if the president is unable to perform their duties. If the vice president is not able to fulfill the duties of president, the role is passed to another leader in the order of presidential succession.\n\n### Current vice president\n\nThe 50th and current vice president of the United States is James David (JD) Vance. He was sworn in on January 20, 2025",
+          "score": 0.8638634
+        },
+        {
+          "n": 4,
+          "title": "President of the United States",
+          "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+          "content": "Non-voting members\n\n  \n\n   Senate\n\n   PresidentJD Vance (R)\n\n   President Pro TemporeChuck Grassley (R)\n\n   Majority LeaderJohn Thune (R)\n\n   Minority LeaderChuck Schumer (D)\n\n   Majority WhipJohn Barrasso (R)\n\n   Minority WhipDick Durbin (D)\nExecutive\n\n   President of the United States\n\n   Donald Trump (R)\n\n   Vice President of the United States\n\n   JD Vance (R)\n\n  \n\n   Cabinet\n   Federal agencies\n   Executive Office\nJudiciary\n\n   Supreme Court of the United States [...] 47th and current president since January 20, 2025.( [...] ### Protection\n\nMain article: United States Secret Service\n\nImage 38\n\nPresident Ronald Reagan waves following his inauguration as the nation's 40th president on January 20, 1981.",
+          "score": 0.8055255
+        },
+        {
+          "n": 5,
+          "title": "President Donald J. Trump",
+          "url": "https://www.whitehouse.gov/administration/donald-j-trump",
+          "content": "# Donald J. Trump\n\n45th & 47th President of the United States\n\nAfter a landslide election victory in 2024, President Donald J. Trump is returning to the White House to build upon his previous successes and use his mandate to reject the extremist policies of the radical left while providing tangible quality of life improvements for the American people. [...] He remarkably won the Presidency in his first ever run for any political office.  He won a second time despite several assassination attempts and the unprecedented weaponization of law fare against him.  Time after time President Trump has defied the odds because he fundamentally believes in the exceptionalism of the American spirit and wants to see our great country succeed.",
+          "score": 0.6649108
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1463,
+        "completionTokens": 122,
+        "latencyMs": 2367
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-06",
+        "text": "Yoon Suk Yeol is the President of South Korea.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current President of South Korea"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "high"
+      },
+      "evidence": [
+        {
+          "source": 2,
+          "url": "https://en.wikipedia.org/wiki/President_of_South_Korea",
+          "quote": "Following Yoon Suk Yeol's impeachment, his successor Lee Jae Myung [...] On 3 June 2025, Lee Jae Myung of the Democratic Party \"Democratic Party (South Korea, 2015)\") was elected as president of South Korea.",
+          "match": "near"
+        },
+        {
+          "source": 3,
+          "url": "https://en.wikipedia.org/wiki/Lee_Jae_Myung",
+          "quote": "Lee Jae Myung (Korean: 이재명; pronounced ( \"Help:IPA/Korean\"); born c. 8 December 1963) is a South Korean politician and lawyer who has served as the 14th President of South Korea since 2025.",
+          "match": "exact"
+        },
+        {
+          "source": 5,
+          "url": "https://www.britannica.com/biography/Lee-Jae-Myung",
+          "quote": "He rose to power following the impeachment of Pres. Yoon Suk-Yeol, whose abrupt declaration of martial law in late 2024 plunged the country into political turmoil.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim that Yoon Suk Yeol is the President is incorrect as of the current date; sources indicate he was impeached and succeeded by Lee Jae-myung, who assumed office on June 4, 2025.",
+      "currentValue": "Lee Jae-myung",
+      "sources": [
+        {
+          "n": 1,
+          "title": "How Many Presidents Has South Korea Had? Here’s The Full List",
+          "url": "https://www.jagranjosh.com/lite/general-knowledge/list-of-all-presidents-of-south-korea-1820010556-1",
+          "content": "## Who Is The Current President Of South Korea?\n\nThe current president of South Korea is Lee Jae-myung. He became President on June 4, 2025, after he won the presidential election in 2025. He is a member of the Democratic Party, and he has been serving as the President for five years.\n\n## Who Is The First President Of South Korea? [...] # List of All Presidents of South Korea (1948-2026)\n\n## Since its founding as a nation in 1948, South Korea has had a long list of political leaders. The country is now led by President Lee Jae-myung (since 2025) and Prime Minister Han Seong-sook (since 2026).\n\nComplete List of South Korean Presidents (1948 – Present) [...] | 10 | Lee Myung-bak | February 25, 2008 – February 25, 2013 | 5 years | Grand National |\n| 11 | Park Geun-hye | February 25, 2013 – March 10, 2017 | 4 years, 13 days | Saenuri |\n| 12 | Moon Jae-in | May 10, 2017 – May 10, 2022 | 5 years | Democratic |\n| 13 | Yoon Suk-yeol | May 10, 2022 – April 4, 2025 | 2 years, 329 days | People Power |\n| 14 | Lee Jae-myung | June 4, 2025 – Present | Incumbent | Democratic |",
+          "score": 0.9263638
+        },
+        {
+          "n": 2,
+          "title": "President of South Korea - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/President_of_South_Korea",
+          "content": "Upon the inauguration of President Yoon Suk Yeol in May 2022, Cheong Wa Dae was relieved of its duties as the official residence and executive office of the president and fully converted to a public park. The president's office and residence was moved to the Office of the President of South Korea (formerly the Ministry of National Defense \"Ministry of National Defense (South Korea)\") building) in the Yongsan District of Seoul. Following Yoon Suk Yeol's impeachment, his successor Lee Jae Myung [...] On 3 June 2025, Lee Jae Myung of the Democratic Party \"Democratic Party (South Korea, 2015)\") was elected as president of South Korea. Due to the previous president's impeachment and expulsion from office, Lee was sworn in immediately the next day.\n\n## History\n\n[edit] [...] | Presidential emblem |\n| Presidential standard |\n| Incumbent Lee Jae Myung since 4 June 2025 |\n| Executive branch of the Government of South Korea Office of the President \"Office of the President (South Korea)\") |\n| Style \"Style (form of address)\") |  Mr. President \"Mr. President (title)\") (informal)  His Excellency (diplomatic) |\n| Status |  Head of state  Head of government  Commander-in-chief |",
+          "score": 0.8785752
+        },
+        {
+          "n": 3,
+          "title": "Lee Jae Myung - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lee_Jae_Myung",
+          "content": "Lee Jae Myung (Korean: 이재명; pronounced ( \"Help:IPA/Korean\"); born c. 8 December 1963) is a South Korean politician and lawyer who has served as the 14th President of South Korea since 2025. A member of the Democratic Party of Korea \"Democratic Party (South Korea, 2015)\") (DPK), he was the party's leader while serving as member of the National Assembly \"National Assembly (South Korea)\") for Incheon Gyeyang B from 2022 to 2025. Lee previously served as Governor of Gyeonggi from 2018 to 2021 and [...] | Lee in 2026 |\n| 14th President of South Korea |\n| Incumbent |\n| Assumed office  4 June 2025 |\n| Prime Minister |  Lee Ju-ho (acting)  Kim Min-seok \"Kim Min-seok (politician)\")  Han Seong-sook |\n| Preceded by |  Yoon Suk Yeol  Han Duck-soo (acting)  Choi Sang-mok (acting)  Han Duck-soo (acting)  Lee Ju-ho (acting) |\n| Leader of the Democratic Party#Leaders \"Democratic Party (South Korea, 2015)\") |\n| In office 28 August 2022 – 9 April 2025 | [...] 84. ↑ Yun-Hwan, Chae (18 May 2025). \"(LEAD) DP's Lee proposes amending Constitution for two four-year presidential terms\". Yonhap News Agency. Archived from the original on 4 June 2025. Retrieved 18 May 2025.\n85. ↑ 개표진행상황, National Election Commission \"National Election Commission (South Korea)\"), archived from the original on 4 June 2025, retrieved 4 June 2025\n86. ↑ \"Lee Jae Myung Is the Next President of South Korea\". The Diplomat. 3 June 2025. Archived from the original on 4 June 2025.",
+          "score": 0.8657814
+        },
+        {
+          "n": 4,
+          "title": "Who Is South Korea’s New President? | Journal of Democracy",
+          "url": "https://www.journalofdemocracy.org/news-and-updates/who-is-south-koreas-new-president",
+          "content": "South Koreans just elected liberal candidate Lee Jae-myung as their new president. The outcome was unsurprising given the chaos sparked by the former president’s declaration of martial law last December, but it wasn’t the landslide victory many had anticipated. After mass protests and a presidential impeachment, why wasn’t the election a sweep for Lee? In a new Journal of Democracyonline exclusive, Gi-Wook Shin explains what this outcome means for South Korea’s polarized democracy, and what we [...] > Is South Korea’s New President Good for Democracy?  \n>  South Koreans have elected Lee Jae-myung president. Will he be a pragmatic democratic reformer? Or will he continue the polarizing political warfare of recent South Korean leaders?  \n>  Gi-Wook Shin\n>\n> How South Korea’s Next Leader Should Handle Kim Jong-un",
+          "score": 0.83549726
+        },
+        {
+          "n": 5,
+          "title": "Lee Jae-Myung | Biography, Career, & Presidency",
+          "url": "https://www.britannica.com/biography/Lee-Jae-Myung",
+          "content": "Lee Jae-Myung (born December 1963/64?, Andong, South Korea) is the president of South Korea (2025– ), representing the left-leaning Democratic Party of Korea (DPK). He rose to power following the impeachment of Pres. Yoon Suk-Yeol, whose abrupt declaration of martial law in late 2024 plunged the country into political turmoil. Lee won the ensuing snap election by campaigning on a centrist platform focused on stabilizing the country. Though he positioned himself as a unifier during the campaign, [...] Table of Contents  Ask Anything \n\nQuick Facts\n\n   Country:South Korea \n   Role: President (2025– ) \n   Political affiliation:Democratic Party of Korea (DPK) \n   \nNotable policies and events:\n       2010: Elected mayor of Seongnam \n       2018: Elected governor of Gyeonggi province \n       2024: Survived assassination attempt \n       2025: Elected president of South Korea (sworn in June 4) \n\n   Born: December 1963/64?, in Andong, South Korea \n\n Top Questions [...] References & Edit HistoryQuick Facts & Related Topics\n\nImages\n\nImage 3: Lee Jae-Myung\n\n Quick Facts\n\nBorn: December 1963/64?, Andong, South Korea (age 62)_(Show more)_\n\nTitle / Office: president (2025-), South Koreagovernor (2018-2021), Gyeonggimayor (2010-2018), Seongnam_(Show more)_\n\nPolitical Affiliation: Democratic Party of Korea_(Show more)_\n\nSee all related content\n\nImage 4: Britannica AI Icon\n\n Contents  Ask Anything \n\nPolitics, Law & GovernmentWorld LeadersPresidents & Heads of States",
+          "score": 0.8184036
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1729,
+        "completionTokens": 265,
+        "latencyMs": 4370
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-07",
+        "text": "Fumio Kishida is the Prime Minister of Japan.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Prime Minister of Japan"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "high"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan",
+          "quote": "Sanae Takaichi succeeded Shigeru Ishiba as prime minister on 21 October 2025, following the 2025 Liberal Democratic Party presidential election; she is the first woman to serve as prime minister.",
+          "match": "exact"
+        },
+        {
+          "source": 2,
+          "url": "https://www.britannica.com/biography/Sanae-Takaichi",
+          "quote": "Sanae Takaichi (born March 7, 1961, Yamatokōriyama, Nara prefecture, Japan) is a Japanese politician who serves as the leader of the Liberal-Democratic Party (LDP) and prime minister of Japan (2025– ).",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim that Fumio Kishida is the Prime Minister is incorrect as of 2026; the sources state that Sanae Takaichi assumed office on 21 October 2025 and is the current incumbent.",
+      "currentValue": "Sanae Takaichi",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Prime Minister of Japan - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan",
+          "content": "As of 2026( sixty-six people (sixty-five men and one woman) have served as prime minister. The longest-serving prime minister was Shinzo Abe, who served over eight years across two non-consecutive terms, and the shortest-serving was Prince Naruhiko Higashikuni, who served fifty-four days. Sanae Takaichi succeeded Shigeru Ishiba as prime minister on 21 October 2025, following the 2025 Liberal Democratic Party presidential election; she is the first woman to serve as prime minister. [...] | 日本国内閣総理大臣 |\n| Emblem of the prime minister of Japan |\n| Standard of the prime minister of Japan |\n| Incumbent Sanae Takaichi since 21 October 2025 |\n| Executive branch of the Japanese government Office of the Prime Minister |\n| Style \"Style (form of address)\") | Naikaku sōridaijin (formal)  Her Excellency (formal and diplomatic)   Shushō  (informal and during party debates)  Sōri (informal) |\n| Type |  Head of government  Commander-in-chief | [...] Cordon of the order were last awarded posthumously to former prime minister Shinzo Abe in July 2022.",
+          "score": 0.87139857
+        },
+        {
+          "n": 2,
+          "title": "Sanae Takaichi | Prime Minister of Japan, Biography, & Career | Britannica",
+          "url": "https://www.britannica.com/biography/Sanae-Takaichi",
+          "content": "Sanae Takaichi (born March 7, 1961, Yamatokōriyama, Nara prefecture, Japan) is a Japanese politician who serves as the leader of the Liberal-Democratic Party (LDP) and prime minister of Japan (2025– ). She is the first woman to hold either position. Before becoming prime minister, she served in important cabinet positions under both the Fumio Kishida and Shinzo Abe administrations. She is known for her hardline conservative views. She has cited Margaret Thatcher as one of her primary [...] Sanae Takaichi became prime minister on October 21, 2025, after winning the leadership contest for the Liberal-Democratic Party following Shigeru Ishiba’s resignation.\n\n## News •\n\nSanae Takaichi took on Japan’s male-dominated politics and won – can she survive a second year in power?\n\n• Oct. 21, 2026, 8:31 AM ET (The Guardian)\n\nJapanese Prime Minister Takaichi rejects criticism around weak yen and high interest rates\n\n• Oct. 19, 2026, 1:29 AM ET (CNBC) [...] The LDP’s dominance appeared entrenched under Abe after successive electoral victories, and he became Japan’s longest-serving prime minister in 2019. He resigned in 2020 because of ill health and was succeeded by Yoshihide Suga, whose government struggled to maintain public support during the COVID-19 pandemic. Abe was assassinated in 2022, an event that severely destabilized the LDP. In the years that followed, the party increasingly struggled with internal cohesion amid economic stagnation,",
+          "score": 0.8156003
+        },
+        {
+          "n": 3,
+          "title": "Sanae Takaichi - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sanae_Takaichi",
+          "content": "| 高市 早苗 |\n| Official portrait, 2025 |\n| Prime Minister of Japan |\n| Incumbent |\n| Assumed office  21 October 2025 |\n| Monarch | Naruhito |\n| Preceded by | Shigeru Ishiba |\n| President of the Liberal Democratic Party \"President of the Liberal Democratic Party (Japan)\") |\n| Incumbent |\n| Assumed office  4 October 2025 |\n| Vice President \"Vice President of the Liberal Democratic Party (Japan)\") | Tarō Asō |\n| Secretary-General | Shun'ichi Suzuki \"Shun'ichi Suzuki (politician)\") | [...] | | Ministerial offices |  |  | | Minister of State for Economic Security | | In office 10 August 2022 – 1 October 2024 | | Prime Minister | Fumio Kishida | | Preceded by | Takayuki Kobayashi | | Succeeded by | Minoru Kiuchi | | Minister for Internal Affairs and Communications | | In office 11 September 2019 – 16 September 2020 | | Prime Minister | Shinzo Abe | | Preceded by | Masatoshi Ishida \"Masatoshi Ishida (politician)\") | | Succeeded by | Ryota Takeda | | In office 3 September 2014 – 3 [...] September 2014 – 3 August 2017 | | Prime Minister | Shinzo Abe | | Preceded by | Yoshitaka Shindō | | Succeeded by | Seiko Noda | | Minister of State for Okinawa and Northern Territories Affairs | | In office 26 September 2006 – 26 September 2007 | | Prime Minister | Shinzo Abe | | Preceded by | Yuriko Koike | | Succeeded by | Fumio Kishida | | Minister of State for Science and Technology Policy | | In office 26 September 2006 – 26 September 2007 | | Prime Minister | Shinzo Abe | | Preceded by",
+          "score": 0.8047902
+        },
+        {
+          "n": 4,
+          "title": "Japan’s new prime minister faces hurdles with delicate U.S. relations",
+          "url": "https://www.youtube.com/watch?v=gU97Em0s6-w",
+          "content": "# Japan’s new prime minister faces hurdles with delicate U.S. relations\n## Channel: NBC News (verified)\n12.1M subscribers\n659 likes\n\n### Description\n83,739 views\nPosted: 2026-03-18\nJapan’s newly elected prime minister Sanae Takaichi faces increasing complexity in the country’s relationship with the U.S., especially with the recent war with Iran halting the flow of vital oil shipments to Japan. NBC News’ Janis Mackey Frayer reports on the evolution of the U.S.-Japan relationship.",
+          "score": 0.7906115
+        },
+        {
+          "n": 5,
+          "title": "TAKAICHI Sanae (The Cabinet) | Prime Minister's Office of Japan",
+          "url": "https://japan.kantei.go.jp/104/meibo/daijin/takaichi_sanae.html",
+          "content": "# TAKAICHI Sanae\n\nPrime Minister\n\nFace Photo：TAKAICHI Sanae\n\n## Profile\n\nDate of birth\n:   March 7, 1961\n\nPlace of Birth\n:   Nara, Japan\n\nPolitical party\n:   Liberal Democratic Party of Japan (LDP)\n\nAffiliation\n:   Member of the House of Representatives\n\nConstituency\n:   Nara 2nd District\n\n## Past career\n\n Mar. 1984\n  :   Graduated from the Faculty of Business Administration, Kobe University\n Oct. 2025\n  :   The 104th Prime Minister [...] Sept. 2019\n  :   Minister for Internal Affairs and Communications  \n       Minister of State for the Social Security and Tax Number System  \n       (4th Abe Cabinet (2nd Reshuffled))\n\n  Oct. 2018\n  :   Chair, Committee on Rules and Administration, House of Representatives\n\n  Nov. 2017\n  :   Chairperson, Headquarters for Cybersecurity Measures, LDP [...] Sept. 2023\n  :   Minister in charge of Economic Security  \n       Minister of State for Cool Japan Strategy  \n       Minister of State for Intellectual Property Strategy  \n       Minister of State for Science and Technology Policy  \n       Minister of State for Space Policy  \n       Minister of State for Economic Security  \n       (2nd Kishida Cabinet (2nd Reshuffled))",
+          "score": 0.67706895
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1633,
+        "completionTokens": 217,
+        "latencyMs": 3857
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-08",
+        "text": "Laxman Narasimhan is the CEO of Starbucks.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current CEO of Starbucks"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://about.starbucks.com/press/2024/starbucks-names-brian-niccol-as-chairman-and-chief-executive-officer",
+          "quote": "Laxman Narasimhan is stepping down from his role as ceo and as a member of the Starbucks board with immediate effect.",
+          "match": "exact"
+        }
+      ],
+      "inference": "Laxman Narasimhan has stepped down as CEO, and Brian Niccol has taken over the role as of September 2024.",
+      "currentValue": "Brian Niccol",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Starbucks names Brian Niccol as Chairman and Chief Executive Officer",
+          "url": "https://about.starbucks.com/press/2024/starbucks-names-brian-niccol-as-chairman-and-chief-executive-officer",
+          "content": "SEATTLE– Starbucks (NASDAQ: SBUX) today announced that Brian Niccol has been appointed chairman and chief executive officer. Niccol will start in his new role on September 9, 2024. Starbucks chief financial officer, Rachel Ruggeri, will serve as interim ceo until that time. Mellody Hobson, Starbucks board chair, will become lead independent director. [...] Laxman Narasimhan is stepping down from his role as ceo and as a member of the Starbucks board with immediate effect. During his tenure, he improved the Starbucks partner experience, drove significant innovation in our supply chain, and enhanced our store operations. [...] _Brian Niccol will join Starbucks on September 9, 2024.Mellody Hobson will be lead independent director. Laxman Narasimhan is stepping down as ceo and as a director effective immediately. Rachel Ruggeri will serve as interim ceo._",
+          "score": 0.890761
+        },
+        {
+          "n": 2,
+          "title": "Brian Niccol",
+          "url": "https://miamioh.edu/profiles/fsb/brian-niccol.html",
+          "content": "Brian currently serves as the Chairman and Chief Executive Officer of Starbucks Coffee Company. Prior to his move to Starbucks, Brian most recently held the post of CEO of Chipotle after holding the positions of CEO, President, and Chief Marketing and Innovation Officer for Taco Bell. Prior to his positions at Taco Bell, he served as General Manager for Pizza Hut, Inc., where he was responsible for managing the brand and leading an organization of nearly 16,000 people in more than 6,000 [...] Brian Niccol\n\nChairman and CEO, Starbucks Coffee Company\n\nFSB Business Advisory Council\n\nBack to Directory\n\n# Brian Niccol\n\n## About\n\nBrian earned a Bachelor of Science in Engineering degree from Miami University in 1996, and an MBA from the University of Chicago Booth School of Business.",
+          "score": 0.88420963
+        },
+        {
+          "n": 3,
+          "title": "Starbucks Coffee Company - Governance - Board of Directors - Person Details",
+          "url": "https://investor.starbucks.com/governance/board-of-directors/person-details/default.aspx?ItemId=5490d108-aad0-46c9-bd96-e53e863b3bc2",
+          "content": "BRIAN NICCOL has served as chairman of the board and chief executive officer of Starbucks since September 2024. Mr. Niccol joined Starbucks after leading Chipotle Mexican Grill, Inc. (“Chipotle”) through a period of growth and transformation. He served as a director and as Chipotle’s Chief Executive Officer from 2018 until 2024 and assumed the role of Chairman in March 2020. During that time, he more than doubled the business by establishing Chipotle as a culinary leader, pioneering digital [...] Starbucks\n\n# Person Details\n\n## Brian Niccol\n\nPortrait [...] pioneering digital innovation, introducing exciting new menu offerings, and expanding internationally. He also helped improve the experience of Chipotle’s people by focusing on strengthening culture and development. Before joining Chipotle, Mr. Niccol served as Chief Executive Officer of Taco Bell, a division of Yum! Brands, Inc., from 2015 to 2018, after having served as Taco Bell’s President from 2013 to 2014 and Chief Marketing and Innovation Officer from 2011 to 2012. Mr. Niccol also served",
+          "score": 0.8624794
+        },
+        {
+          "n": 4,
+          "title": "Brian Niccol - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Brian_Niccol",
+          "content": "On August 13, 2024, Niccol was named the incoming chairman and chief executive officer of Starbucks. Niccol replaced Mellody Hobson as the chairman and Laxman Narasimhan as the CEO. On the day of the announcement, shares of Starbucks gained 24.5%. Niccol received a starting salary of $1.6 million and a $10 million starting bonus, with an additional $75 million in equity grants designed to pay out over time and an annual cash incentive opportunity at a target of 225 percent of his base salary. [...] 46. 1 2 Lucas, Amelia; Goswami, Rohan (August 13, 2024). \"Starbucks replaces CEO Laxman Narasimhan with Chipotle CEO Brian Niccol\". cnbc.com. CNBC. Archived from the original on August 13, 2024. Retrieved August 14, 2024. [...] | Niccol in 2023 |\n| Born | 1974 (age 51–52)[citation needed] |\n| Education | Miami University (BA) University of Chicago (MBA) |\n| Occupation | CEO of Starbucks |\n\nBrian R. Niccol (born 1974) is an American businessman and the chairman and chief executive officer of Starbucks, a role which he started on September 9, 2024, replacing Laxman Narasimhan. He previously was chairman and CEO of Chipotle until August 31, 2024.\n\n## Early life and education\n\n[edit]",
+          "score": 0.8622012
+        },
+        {
+          "n": 5,
+          "title": "Brian Niccol - Phi Delta Theta",
+          "url": "https://phideltatheta.org/news-stories/famous-phis/brian-niccol",
+          "content": "Skip to content\n\nPhi Delta Theta\n\nBack) \n\nMiami '96\n\n# Brian Niccol\n\nCEO, Starbucks\n\n \n\nBrian R. Niccol is an American businessman and the chief executive officer of Starbucks, a role which he started on September 9, 2024. He previously served as chairman and CEO of Chipotle until August 31, 2024.",
+          "score": 0.83678174
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1413,
+        "completionTokens": 100,
+        "latencyMs": 1981
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-09",
+        "text": "The latest stable release of Python is Python 3.11.",
+        "category": "version",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "latest stable version of Python"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://www.liquidweb.com/blog/latest-python-version",
+          "quote": "The latest stable version of Python is 3.14",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim states that Python 3.11 is the latest stable release, but Source 1 explicitly states that Python 3.14 is the latest stable version as of October 7, 2025.",
+      "currentValue": "Python 3.14",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Latest Python Version (2025) – What's New in Python 3.14?",
+          "url": "https://www.liquidweb.com/blog/latest-python-version",
+          "content": "The latest major version, Python 3.14 was officially released on October 7, 2025.\n\nLet’s explore the key features of Python’s current version, how to download and install it, and what this release means for developers.\n\n## Get premium VPS hosting\n\nHigh-performance VPS hosting that delivers unrivaled power\n\nExplore VPS hosting\n\n## What’s the latest Python version?\n\nThe latest stable version of Python is 3.14\n\nPython 3.14 was released on October 7, 2025 with several improvements: [...] Download the latest Python version today and start exploring its new features on Liquid Web’s diversity of packages for dedicated hosting, VPS hosting, bare metal servers, GPU hosting, and cloud servers,\n\nExplore all hosting\n\nBuild a server now\n\n## Frequently asked questions\n\nYes, Python 3.14 is the latest stable release. We recommend testing this version in a staging or development environment before deploying in order to identify any refactoring required. [...] | Python 3.4 | March 16, 2014 | `enum` module, pathlib, async IO (`asyncio`) |\n| Python 3.3 | September 29, 2012 | `yield from, u\"` string literals reintroduced |\n| Python 3.2 | February 20, 2011 | `concurrent.futures`, PEP 384 (Stable ABI) |\n| Python 3.1 | June 27, 2009 | OrderedDict, io module rewritten |\n| Python 3.0 | December 3, 2008 | Print function, integer division changes, Unicode by default |\n| Python 2.7 | July 3, 2010 | Last release of Python 2, backported features from Python 3 |",
+          "score": 0.8965509
+        },
+        {
+          "n": 2,
+          "title": "Updating Python",
+          "url": "https://www.mostlypython.com/updating-python",
+          "content": "I write a bunch of small scripts that don't use any third-party libraries, and don't need a dedicated virtual environment. I want to have a `python` command on my system that always points to the latest point release of the most recent stable version of Python. At the time of this writing, that's Python 3.13.5. [...] $ uv python install Installed Python 3.13.5 in 930ms\n + cpython-3.13.5-macos-aarch64-none (python3.13)\nIf you don't specify a version, `uv` will install the latest stable release. (Note that it's `uv python install`, not `uv install python`!)\n\nBut, my `python` commands are still blank, or pointing to brew-installed interpreters: [...] It's also a good to check out Python's status page, and see what the latest point releases are for each major release:\n\nImage 2: bar chart showing release date and end of support date for each major Python release\n\nPython's status page is fantastic for knowing which versions are still being supported, and when the next version will be released. As of this writing, Python 3.9 is just about to reach end of life, and Python 3.14 will be released this fall.",
+          "score": 0.8405867
+        },
+        {
+          "n": 3,
+          "title": "Which Python Version Should I Install?",
+          "url": "https://www.youtube.com/watch?v=ZQ6F_M4HAhE&vl=en",
+          "content": "[0:57] or 3.12. The general overwhelming recommendation for anyone starting a new project or learning Python is to install the latest stable release of Python 3.\n[1:08] As of now, that typically means Python 3.12 or the most recent stable iteration available on python.org. The reason for this recommendation is straightforward.\n[1:19] Newer versions come packed with performance improvements, new language features, bug fixes, and critical security updates. While some legacy [...] 3. Essential: Virtual Environments - Crucial for managing different project Python versions, Isolate project dependencies and specific Python versions easily, Avoid conflicts between distinct project requirements seamlessly.\n4. Installation Best Practices - Download latest stable Python 3 from python.org, Use package managers or Anaconda for specific needs, Always create a virtual environment for each project. [...] [1:27] projects might require an older Python 3 minor version, eg 3.9 or 3.10, due to specific library dependencies\n[1:35] that haven't yet caught up, this is a niche scenario and not the default for general use. For beginners, sticking with the latest stable version ensures\n[1:43] you're learning the most current syntax and practices, and you'll benefit from all the optimizations. The real power move for managing Python versions,",
+          "score": 0.8266142
+        },
+        {
+          "n": 4,
+          "title": "How to get the version number of the latest stable release of Python via single HTTP request?",
+          "url": "https://stackoverflow.com/questions/70378786/how-to-get-the-version-number-of-the-latest-stable-release-of-python-via-single",
+          "content": "m = re.search(r'Download Python (\\d+\\.\\d+.\\d+)', resp.text)\n    return m if m else None\n\nif __name__ == '__main__':\n    print(get_latest_python_release())\n```\n\nPrints:\n\n```\n3.13.3\n```\n\nShare\n\nShare a link to this answer \n\nCopy linkCC BY-SA 4.0\n\nShort permalink to this answer\n\nImprove this answer\n\n Follow \n\nFollow this answer to receive notifications\n\n answered Apr 24, 2025 at 12:40\n\nImage 9: Booboo's user avatar\n\nBooboo\n\n46.7k 4 4 gold badges 48 48 silver badges 75 75 bronze badges [...] ## 2 Comments\n\nAdd a comment\n\nImage 7\n\nТёма Макеев\n\nТёма МакеевOver a year ago\n\nSeems like the best solution so far, thank you!\n\n2021-12-16T18:41:04.65Z+00:00\n\n0\n\nReply\n\n   Copy link\n\nImage 8\n\nhippietrail\n\nhippietrailOver a year ago\n\nThat's pretty nice but it's a little bit laggy. For instance it lists `3.12.1 (07 Dec 2023)` as the latest rather than `3.12.2` which was just released today or yesterday.\n\n2024-02-07T06:08:27.513Z+00:00\n\n0\n\nReply\n\n   Copy link [...] Copy link\n\n\n>>> for m in re.finditer(r'Download Python (\\d+\\.\\d+.\\d+)', resp.text): print(m)\n...\n3.13.3\n3.13.3\n3.13.3\n3.13.3\n>>>\n```\n\nDisclaimer: There is no guarantee that this will always be the case in the future. But as long as it is the case, this might be a better alternative to the accepted answer:\n\nCopy\n\n```python\nimport requests\nimport re\n\ndef get_latest_python_release():\n    url = '\n\n    resp = requests.get(url)\n    resp.raise_for_status()",
+          "score": 0.79522943
+        },
+        {
+          "n": 5,
+          "title": "Python Version in Production ? : r/Python",
+          "url": "https://www.reddit.com/r/Python/comments/1qgt083/python_version_in_production",
+          "content": "Balance-\n\n•9mo ago\n\n3.13 for GIS and web stuff (those packages tend to be updated later), 3.14 for data science and general development.\n\n, newer stuff is a mix of 3.13 & 3.14\n\n# People also ask about section\n\n People also ask about \n\nBest Python version for production use\n\nMain differences between Python 3.12 and 3.13\n\nLatest stable Python version recommendations\n\nBest practices for Python code optimization\n\nHow to start a Python project from scratch [...] Edit: I read more of the comments and it seems that the biggest reason people don’t use the latest stable version is that dependencies haven’t been updated to support it. This is why we have venvs, people! Use the latest version which is compatible, and pin your versions so your type checker and linter and LSP can tell you what to do when things aren’t backwards compatible.\n\n2 more replies \n\n2 more replies \n\n2 more replies\n\nImage 23: u/Balance- avatar\n\nBalance-\n\n•9mo ago",
+          "score": 0.7159213
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1697,
+        "completionTokens": 106,
+        "latencyMs": 2221
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-10",
+        "text": "The newest Long Term Support release line of Node.js is Node.js 18.",
+        "category": "version",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Node.js LTS version"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://hidekazu-konishi.com/entry/nodejs_release_and_eol_timeline.html",
+          "quote": "As of 2026-07-24 the supported LTS lines are Node.js 24 (Active LTS) and Node.js 22 (Maintenance LTS), while Node.js 26 is the current Current release and is scheduled to become Active LTS on 2026-10-28.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim that Node.js 18 is the newest LTS release is incorrect. According to the sources, as of late 2026, Node.js 24 is the Active LTS and Node.js 22 is the Maintenance LTS, with Node.js 26 scheduled to become Active LTS in October 2026.",
+      "currentValue": "Node.js 24",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Node.js Release and EOL Timeline - LTS Schedule, Active LTS and Maintenance, and End-of-Life Dates | hidekazu-konishi.com",
+          "url": "https://hidekazu-konishi.com/entry/nodejs_release_and_eol_timeline.html",
+          "content": "Only even-numbered major versions are promoted to Long Term Support (LTS). As of 2026-07-24 the supported LTS lines are Node.js 24 (Active LTS) and Node.js 22 (Maintenance LTS), while Node.js 26 is the current Current release and is scheduled to become Active LTS on 2026-10-28. Odd-numbered versions (such as 23 and 25) never become LTS. Note that from Node.js 27 the odd/even distinction is being retired and every major will become LTS.  \n\n### How long is a Node.js LTS version supported? [...] Having followed the chronology, this section summarizes the current picture: how the release phases fit together, which versions are supported right now, and the full per-version schedule. As of 2026-07-24, the supported (non-EOL) lines are Node.js 22 (Maintenance LTS), Node.js 24 (Active LTS), and Node.js 26 (Current). Everything from Node.js 20 and earlier, along with the odd-numbered lines 21, 23, and 25, has reached End-of-Life and no longer receives security updates. [...] | 2027-04-22 (scheduled) | Node.js 27 is released as the first version under the new schedule. From Node.js 27, the odd/even distinction is retired and every major becomes LTS: one major per year in April, promoted to LTS in October, with version numbers aligned to the calendar year of the Current release (27 in 2027, 28 in 2028) and a total of 36 months of support to End-of-Life. Source: Evolving the Node.js Release Schedule. |",
+          "score": 0.903098
+        },
+        {
+          "n": 2,
+          "title": "Node.js Version Support: EOL Dates and Latest Releases (July 2026)",
+          "url": "https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware-of",
+          "content": "Node.js 24 is the Active LTS line (EOL April 30, 2028) and Node.js 22 is in Maintenance LTS (EOL April 30, 2027). Node.js 26, released in May 2026, is the Current line and is scheduled to enter LTS in October 2026.\n\n#### Why should I avoid odd-numbered Node.js versions in production?\n\nOdd-numbered releases (19, 21, 23, 25) never enter LTS. They stay Current for six months and then go straight to EOL, so they receive no long-term security support. Use even-numbered LTS lines for production. [...] The only fully supported lines today are Node.js 26 (Current), 24 (Active LTS), and 22 (Maintenance LTS). Everything else is end-of-life.\n\n‍\n\n## Versions Reaching EOL Next: What to Watch\n\n### Node.js 20 End of Life\n\nNode.js 20 reached end-of-life on April 30, 2026. It was one of the most widely deployed LTS lines in Node's history, which means a large installed base is now running an unsupported runtime. [...] | Version Range | Status | Recommended Action |\n --- \n| Node.js 26 | Current | Fine for testing; move to LTS for production |\n| Node.js 24 | Active LTS | Supported; recommended upgrade target |\n| Node.js 22 | Maintenance LTS (EOL Apr 2027) | Supported; good upgrade target |\n| Node.js 21, 23, 25 (odd) | EOL | Move to an even-numbered LTS immediately |\n| Node.js 20 | EOL (Apr 30, 2026) | Upgrade to 22/24, or adopt NES |\n| Node.js 18 | EOL (Apr 30, 2025) | Upgrade to 22/24, or adopt NES |",
+          "score": 0.8900749
+        },
+        {
+          "n": 3,
+          "title": "Download & Update Node.js to the Latest Version! Node v26.5.1 Current / LTS v24.18.1 Direct Links - RisingStack Engineering",
+          "url": "https://blog.risingstack.com/update-node-js-latest-version",
+          "content": "## Node.js LTS & Current Download for Windows:\n\n 24.18.1 LTS Windows 64-bit\n 26.5.1 Current Windows 64-bit\n\nFor other downloads like Linux libraries, source codes, Docker images, etc. please visit \n\n## Node.js Release Schedule:\n\n## Node.js v23\n\nHere’s a rundown of the key features and improvements in the latest release.\n\n Default ESM in require(): Native ES modules can now be used with `require()` by default, simplifying module usage without experimental flags. [...] # Download & Update Node.js to the Latest Version! Node v26.5.1 Current / LTS v24.18.1 Direct Links\n\n Last updated: August 3, 2026\n\n#### 💻 RISINGSTACK SERVICES\n\n AI Development Services\n\n Node.js Consulting & Full‑Stack JavaScript Development\n\n MLOps and AI Infrastructure Services\n\n SRE & DevOps Consulting Services\n\n IT Strategy Consultancy\n\n#### 💻 Articles by Topics\n\n AI\n\n DevOps\n\n Elixir\n\n JavaScript\n\n Kubernetes\n\n Node.js\n\n React\n\n### Sign up to our newsletter!\n\n#### In this article: [...] V8 JavaScript Engine Update: The V8 engine has been upgraded to version 12.4.254.14, which may improve performance and support for modern JavaScript features.\n\n Support for ESM Graphs: Node.js 22 introduces support for synchronously requiring ESM (ECMAScript Module) graphs, allowing for more flexible and efficient module usage.\n\n FileSystem Enhancements: The fs module now includes glob and globSync functions, expanding capabilities for pattern matching in file operations.",
+          "score": 0.885404
+        },
+        {
+          "n": 4,
+          "title": "Node LTS versions · Actions · GitHub Marketplace · GitHub",
+          "url": "https://github.com/marketplace/actions/node-lts-versions",
+          "content": "```\nVer Codename Latest Release LTS Period 20 Iron v20.20.2 on 2026-03-24 2023-10-17 to 2026-04-30 22 Jod v22.22.2 on 2026-03-24 2024-10-24 to 2027-04-30 24 Krypton v24.15.0 on 2026-04-15 2025-11-06 to 2028-05-31 \n```\n\n Node.js release schedule\n GitHub Actions: workflow syntax · new workflow features\n Release management for Actions\n\n## Contributors4 (4)\n\n@msimerson@Jey-Cee@younggglcy@DoobleD [...] #### maintenance\n\nEvery non-EOL version, including the Current release. Wider than `lts`; useful if you want the broadest possible compatibility signal.\n\n#### current\n\nThe newest Node.js release, still in its initial six-month window before transitioning to LTS. Useful for catching breakage early, typically in an allow-failure job. Returns the highest LTS version when no Current release is active.\n\n#### min [...] Start a discussion\n Open an issue0 (0)\n Pull requests0 (0)\n View source code\n Security policy\n Report abuse\n\nNode LTS versions is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.\n\n## About\n\nGet list of LTS node.js versions \n\nv2.0.3\n\nLatest\n\nBy msimerson\n\n## Tags\n\n2 (2)\n\ncontinuous-integrationtesting\n\n## Contributors4 (4)\n\n@msimerson@Jey-Cee@younggglcy@DoobleD\n\n## Resources",
+          "score": 0.86024034
+        },
+        {
+          "n": 5,
+          "title": "Node.js LTS vs Current: How to choose one?",
+          "url": "https://medium.com/@nseth314/node-js-lts-vs-current-how-to-choose-one-c5db139faf03",
+          "content": "LTS versions are stable releases maintained and supported for an extended period. A Current version transitions to LTS status one year after its initial release. LTS versions have two phases:\n\n1. Active LTS: Lasts for 18 months with regular updates.  \n2. Maintenance LTS: Lasts for 12 months with only critical fixes and security updates.\n\n## Create an account to read the full story. [...] Sitemap\n\nOpen in app\n\nSign up\n\nSign in\n\n and Current versions of Node.js.\n\nWhat is Node.js Versioning?\n\nNode.js follows a predictable release cycle with two main types of versions:\n\n1. Current: The latest release with cutting-edge features.  \n2. Long-Term Support (LTS): Stable versions with extended support.\n\nWhat are current Versions? [...] Current versions are released approximately every six months, in April and October. They include the newest features, improvements, and updates. Initially designated as “Current,” these versions receive active feature updates for six months before transitioning to LTS status or being replaced by a new Current version.\n\nWhat are LTS Versions?",
+          "score": 0.8437023
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1868,
+        "completionTokens": 191,
+        "latencyMs": 3377
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-11",
+        "text": "The newest iPhone model line is the iPhone 15.",
+        "category": "product",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current newest iPhone model"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 5,
+          "url": "https://www.consumerreports.org/electronics-computers/cell-phones/which-iphone-should-you-buy-a7028071026",
+          "quote": "Apple currently offers the flagship iPhone 17 line (which includes the iPhone 17, the slimmer iPhone Air, and two premium models: the 17 Pro and 17 Pro Max), but the company also sells the new budget-friendly iPhone 17e, plus the iPhone 16 and the 16 Plus.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim states the iPhone 15 is the newest model, but source 5, which is current as of the context of the claim's evaluation, states that the flagship line is the iPhone 17.",
+      "currentValue": "iPhone 17",
+      "sources": [
+        {
+          "n": 1,
+          "title": "What is the Newest iPhone Out Right Now? [Sept. 2022]",
+          "url": "https://www.alphr.com/newest-iphone-out-right-now",
+          "content": "If you’re ready to explore Apple’s changes to the iPhone, you’ve come to the right place. From the basic model to the Max Pro, there are four different iPhone 14 models plus the iPhone SE 2022 (3rd Gen.) to choose from and customized features such as internal storage size and body color.\n\nNote: Some iPhone models may not show the current year because none have replaced them yet.\n\nThere a currently five iPhone models available with a fifth one (iPhone 14 Plus) releasing in October 2022: [...] The iPhone 11 was the first model to use the “Pro” name back in Sept. 2018, and now, the iPhone 14 Pro is the latest version. The differences between the iPhone 14 Plus and iPhone 14 Pro are less than ever before. The Pro series still uses a stainless steel body like the iPhone 13 and the iPhone 13 Mini, and the display on the iPhone 14 Pro is brighter in everyday use just like the iPhone 13 Pro. However, you only get a 6.1-inch screen versus the 6.7-inch on the Plus model. [...] ### iPhone 14 2022\n\nLet’s kick things off with the namesake itself: the iPhone 14. This model is the first one in the lineup. We’re not talking about the iPhone Pro, Pro Max, or Plus models just yet. Apple’s design language for the iPhone hasn’t changed much since the launch of the iPhone X in 2017, and the rounded aluminum body of the device goes back to the launch of the iPhone 6 in 2014.",
+          "score": 0.8259413
+        },
+        {
+          "n": 2,
+          "title": "What is the latest iPhone model and what does it offer?",
+          "url": "https://pocket-lint.com/phones/news/apple/161170-what-is-the-latest-newest-iphone-model",
+          "content": "SoC\n:   A15 Bionic\n\nDisplay\n:   5.4-inch, OLED, 2340 x 1080, HDR, 1200nits\n\nStorage\n:   128/256/512GB\n\nOperating System\n:   iOS\n\nFront camera\n:   12MP f/2.2\n\nSee at Amazon\n\n## What is the newest iPhone?\n\nThe newest and latest iPhones are the iPhone 14, iPhone 14 Plus, iPhone 14 Pro and iPhone 14 Pro Max. These were all announced in September 2022, following on from the the iPhone SE (2022) which arrived in April 2022. [...] While you can of course buy the latest iPhone models from Apple - which as we mentioned is currently the iPhone 14 models - some of the older models are still available to buy through Apple too, as well as elsewhere.\n\nApple sells the following models:\n\n iPhone 14\n iPhone 14 Plus\n iPhone 14 Pro\n iPhone 14 Pro Max\n iPhone 13 mini\n iPhone 13\n iPhone 12\n iPhone SE (2022) [...] You can read all about each iPhone model and how they compares to the rest of the range in our separate feature that discusses which iPhone might be best for you.\n\n## What is the next iPhone and when is it coming?\n\nThe next Apple iPhone isn't expected for a while now, since the iPhone 14 models have only just been announced.\n\nThe iPhone 15 series - as it could be called - is not expected to be announced until September 2023.",
+          "score": 0.80771893
+        },
+        {
+          "n": 3,
+          "title": "What is the latest iPhone model and what does it offer?",
+          "url": "https://www.pocket-lint.com/phones/news/apple/161170-what-is-the-latest-newest-iphone-model",
+          "content": "SoC\n:   A15 Bionic\n\nDisplay\n:   5.4-inch, OLED, 2340 x 1080, HDR, 1200nits\n\nStorage\n:   128/256/512GB\n\nOperating System\n:   iOS\n\nFront camera\n:   12MP f/2.2\n\nSee at Amazon\n\n## What is the newest iPhone?\n\nThe newest and latest iPhones are the iPhone 14, iPhone 14 Plus, iPhone 14 Pro and iPhone 14 Pro Max. These were all announced in September 2022, following on from the the iPhone SE (2022) which arrived in April 2022. [...] While you can of course buy the latest iPhone models from Apple - which as we mentioned is currently the iPhone 14 models - some of the older models are still available to buy through Apple too, as well as elsewhere.\n\nApple sells the following models:\n\n iPhone 14\n iPhone 14 Plus\n iPhone 14 Pro\n iPhone 14 Pro Max\n iPhone 13 mini\n iPhone 13\n iPhone 12\n iPhone SE (2022) [...] You can read all about each iPhone model and how they compares to the rest of the range in our separate feature that discusses which iPhone might be best for you.\n\n## What is the next iPhone and when is it coming?\n\nThe next Apple iPhone isn't expected for a while now, since the iPhone 14 models have only just been announced.\n\nThe iPhone 15 series - as it could be called - is not expected to be announced until September 2023.",
+          "score": 0.80771893
+        },
+        {
+          "n": 4,
+          "title": "The Latest IPhone Model: Everything You Need To Know",
+          "url": "https://ccgit.crown.edu/cyber-reels/the-latest-iphone-model-everything-you-need-to-know-1764806477",
+          "content": "Under the hood, the new iPhone model is all about performance, and this is where Apple truly shines. The heart of any iPhone is its processor, and with each generation, Apple engineers a chip that sets new standards for mobile computing. We’re talking about the A-series chip, and the latest iPhone model is powered by its most advanced iteration yet. This means a significant leap in speed and efficiency. Apps will launch faster, multitasking will be smoother, and graphically intensive games will [...] Oh, the display! Apple consistently pushes the boundaries here, and the latest iPhone model boasts a screen that’s brighter, more vibrant, and possibly even more power-efficient. We’re likely looking at advancements in OLED technology, perhaps with improved color accuracy and deeper blacks. The refresh rate could be a game-changer too, making scrolling, gaming, and watching videos feel incredibly fluid. Imagine a display that adapts its refresh rate on the fly to save battery, or one that [...] than ever. Apple’s focus on integrating hardware and software so tightly means that the overall user experience is incredibly polished. The new iPhone model isn’t just about having the fastest chip; it’s about how that power translates into a tangible benefit for you, the user, making every interaction smoother, faster, and more intuitive. It’s the quiet engine that drives all the amazing features you love on your iPhone, and this year, it’s more powerful and intelligent than ever before.",
+          "score": 0.73596483
+        },
+        {
+          "n": 5,
+          "title": "Which iPhone Should You Buy? - Consumer Reports",
+          "url": "https://www.consumerreports.org/electronics-computers/cell-phones/which-iphone-should-you-buy-a7028071026",
+          "content": "Apple currently offers the flagship iPhone 17 line (which includes the iPhone 17, the slimmer iPhone Air, and two premium models: the 17 Pro and 17 Pro Max), but the company also sells the new budget-friendly iPhone 17e, plus the iPhone 16 and the 16 Plus.\n\nSo how do you decide which one is the best for you?\n\nHere are a few key factors to consider before you pull out your credit card. [...] If you want Apple’s most budget-friendly option, the new iPhone 17e is for you. It has a 6.1-inch display, the smallest option in the iPhone 17 line. It comes in a new pink shade, in addition to the standard black and white editions available for the iPhone 16e.",
+          "score": 0.5820878
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1725,
+        "completionTokens": 159,
+        "latencyMs": 3251
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-12",
+        "text": "Justin Trudeau is the Prime Minister of Canada.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Prime Minister of Canada"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "high"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Canada",
+          "quote": "Mark Carney is the current prime minister of Canada, taking office on March 14, 2025.",
+          "match": "exact"
+        },
+        {
+          "source": 5,
+          "url": "https://www.britannica.com/biography/Mark-Carney",
+          "quote": "Mark Carney became prime minister of Canada in March 2025 after the government of Justin Trudeau collapsed.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The sources state that Mark Carney is the current Prime Minister of Canada, having taken office in March 2025 after the government of Justin Trudeau collapsed.",
+      "currentValue": "Mark Carney",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Prime Minister of Canada - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Canada",
+          "content": "Mark Carney is the current prime minister of Canada, taking office on March 14, 2025. Since Canadian Confederation in 1867, 24 prime ministers have formed 30 ministries.\n\n## Origin of the office\n\n[edit | edit source] [...] | Preceded by Louise Arbour as Governor General of Canada | Prime Minister of Canada Canadian order of precedence (ceremonial) | Succeeded by Richard Wagner \"Richard Wagner (judge)\") as Chief Justice of Canada |\n\n|  v  t  e  Prime ministers of Canada | [...] Stewart, J.D.M. (2018). Being Prime Minister. Dundurn. ISBN \"ISBN (identifier)\") 978-1-4597-3849-2.",
+          "score": 0.9380391
+        },
+        {
+          "n": 2,
+          "title": "About | Prime Minister of Canada",
+          "url": "https://www.pm.gc.ca/en/about",
+          "content": "Mark Carney is Canada’s 24th Prime Minister. He was elected Leader of the Liberal Party of Canada and sworn in as Prime Minister in March 2025. He leads a government that will take action to unite Canadians, defend Canada’s sovereignty, and build the strongest economy in the G7. [...] Prime Minister Mark Carney is sitting in his office at West Block on Parliament HillBorn in Fort Smith, Northwest Territories, and raised in Edmonton, Alberta, Prime Minister Carney is the son of teachers and grew up with a strong sense of community and hard work. After graduating from St. Francis Xavier High School in Edmonton, he earned a Bachelor of Economics from Harvard University in 1988, followed by a Master of Economics in 1993 and a PhD in Economics in 1995, both from Oxford [...] # Main Container\n\nPrime Minister Crest\n\nPrime Minister of Canada\n\n fr\n\nPrime Minister Crest\n\n# About\n\n## Main Content\n\n1. Home\n2. About\n\n## Share this Page\n\n -\n\n## The Right Honourable Mark Carney, Prime Minister of Canada",
+          "score": 0.88444936
+        },
+        {
+          "n": 3,
+          "title": "Mark Carney - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mark_Carney",
+          "content": "Mark Joseph Carney (born March 16, 1965) is a Canadian politician and economist who is the 24th prime minister of Canada and leader of the Liberal Party, serving since 2025. Carney has been the member of Parliament \"Member of Parliament (Canada)\") (MP) for Nepean \"Nepean (federal electoral district)\") since his election in April 2025. He was previously Governor of the Bank of Canada from 2008 to 2013 and Governor of the Bank of England from 2013 to 2020. [...] | |  v  t  e  Prime ministers of Canada |  |  Macdonald  Mackenzie \"Alexander Mackenzie (politician)\")  Macdonald  Abbott  Thompson  Bowell  Tupper  Laurier  Borden  Meighen  King  Meighen  King  Bennett  King  St. Laurent  Diefenbaker  Pearson  P. E. Trudeau  Clark  P. E. Trudeau  Turner  Mulroney  Campbell  Chrétien  Martin  Harper  J. Trudeau  Carney | |  Category  List |    |  v  t  e  Current first ministers of Canada |  | Federal |  Prime Minister: Mark Carney (Liberal) | | Provincial | [...] On March 14, 2025, five days after winning the leadership election, Carney was sworn in as the 24th prime minister of Canada, along with the 30th Canadian Ministry. Upon taking the oath of office, he became the first Canadian prime minister born in any of its territories (as opposed to provinces) and the third born west of Ontario (after Joe Clark and Kim Campbell). He is the second prime minister to have earned a PhD, after William Lyon Mackenzie King. Additionally, he is the first to have",
+          "score": 0.852752
+        },
+        {
+          "n": 4,
+          "title": "Mark Carney - Prime Minister of Canada | Prime Minister of Canada",
+          "url": "https://www.pm.gc.ca/en",
+          "content": "# Main Container\n\nPrime Minister Crest\n\nPrime Minister of Canada\n\n fr\n\nPrime Minister Crest  \n Mark Carney\n\nMark Carney\n\n## Main Content\n\n## Latest news\n\nSubscribe to updates\n\nNews Releases\n\nCanada announces landmark investment in Cohere to scale secure, sovereign AI\n\nPublished\n\n54489\n\nNews Releases\n\nPrime Minister Carney launches The Plan for a Stronger Canada to strengthen sovereignty and build a more secure and prosperous future\n\nPublished\n\n54488\n\nMedia Advisories\n\nThursday, October 29, 2026 [...] The government’s plan to build, protect, and empower Canada amid global uncertainty.\n\nPublished\n\nPrime Minister Mark Carney stands at a podium to announce Canada’s new automotive strategy.\n\nVideo: Canada’s new automotive strategy\n\nPrime Minister Carney announces a new strategy to transform Canada’s auto industry.\n\nPublished\n\nOne Canadian Economy Act\n\nVideo: One Canadian Economy Act\n\nThe passing in the House of Commons of Bill C-5, One Canadian Economy Act.\n\nPublished [...] Canada Strong\n\nConcrete measures to support Canadians, workers and industries across the country.\n\nPublished\n\nPrime Minister Mark Carney meets with members of the Canadian Armed Forces and shakes hands with a Canadian Ranger.\n\nDefending, building, and transforming the North\n\nPrime Minister Mark Carney announces new measures to defend and transform Canada’s Northern and Arctic region.\n\nPublished\n\nSpring Economic Update 2026: Canada Strong For All \n\nSpring Economic Update 2026",
+          "score": 0.8021998
+        },
+        {
+          "n": 5,
+          "title": "Mark Carney | Liberal Party, Prime Minister, Biography, & Facts | Britannica",
+          "url": "https://www.britannica.com/biography/Mark-Carney",
+          "content": "Mark Carney (born March 16, 1965, Fort Smith, Northwest Territories, Canada) is a Canadian economist who became prime minister of Canada in March 2025 after he was elected leader of the Liberal Party. He had previously served as governor of the Bank of Canada from 2008 to 2013 and as head of the Bank of England from 2013 to 2020. He is the first non-British person to have led the Bank of England since its founding in 1694. He led the Liberals to victory in the April 2025 snap election and [...] Mark Carney became prime minister of Canada in March 2025 after the government of Justin Trudeau collapsed. The demise of the Trudeau government seemed to set up the Conservative Party to take control of the government. But fueled by a surge in Canadian nationalism, which was prompted by U.S. Pres. Donald Trump’s rhetoric about making Canada the “51st state,” Carney won a stunning and overwhelming victory.\n\n### What positions did Mark Carney hold before becoming prime minister? [...] polls showed Pierre Poilievre’s Conservative Party on track for a crushing electoral victory. Stating that Canadians deserved a “real choice in the next election,” on January 6, 2025, Trudeau announced his resignation as Liberal leader and prime minister.",
+          "score": 0.76888984
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1497,
+        "completionTokens": 131,
+        "latencyMs": 2698
+      }
+    },
+    {
+      "claim": {
+        "id": "chg-13",
+        "text": "The latest version of the Java SE platform is Java 21.",
+        "category": "version",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "latest Java SE version"
+      },
+      "verdict": "changed",
+      "confidence": 1,
+      "freshness": {
+        "score": 0,
+        "label": "stale",
+        "confidence": "high"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://www.codejava.net/java-se/java-se-versions-history",
+          "quote": "As of September 2026,the latest version of Java is Java 27 or JDK 27 released on September, 15th 2026",
+          "match": "exact"
+        },
+        {
+          "source": 3,
+          "url": "https://www.oracle.com/java/technologies/java-se-glance.html",
+          "quote": "Java SE 27 is the latest release of Java SE Platform.",
+          "match": "exact"
+        },
+        {
+          "source": 4,
+          "url": "https://www.oracle.com/java/technologies/downloads",
+          "quote": "JDK 27 is the latest release of the Java SE Platform.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The claim that Java 21 is the latest version is incorrect; according to multiple sources as of September 2026, Java 27 is the latest version of the Java SE platform.",
+      "currentValue": "Java 27",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Java SE versions history and important changes",
+          "url": "https://www.codejava.net/java-se/java-se-versions-history",
+          "content": "As of September 2026,the latest version of Java is Java 27 or JDK 27 released on September, 15th 2026 (follow this article to check Java version on your computer). You know, JDK 27 is current latest feature-release of the Java SE platform, whereas JDK 25 is currently the latest long-term support release (LTS). For more information, you can check release notes of JDK 26.Currently, Oracle corporation maintains and supports the following Java LTS versions: JDK 25 and JDK 21.Old versions of JDK [...] |  |  |  |\n --- \n| Java SE Version | Version Number | Release Date |\n| JDK 1.0  (Oak) | 1.0 | January 1996 |\n| JDK 1.1 | 1.1 | February 1997 |\n| J2SE 1.2  (Playground) | 1.2 | December 1998 |\n| J2SE 1.3  (Kestrel) | 1.3 | May 2000 |\n| J2SE 1.4  (Merlin) | 1.4 | February 2002 |\n| J2SE 5.0  (Tiger) | 1.5 | September 2004 |\n| Java SE 6  (Mustang) | 1.6 | December 2006 |\n| Java SE 7  (Dolphin) | 1.7 | July 2011 |\n| Java SE 8 | 1.8 | March 2014 |\n| Java SE 9 | 9 | September, 21st 2017 | [...] | Java SE 10 | 10 | March, 20th 2018 |\n| Java SE 11 | 11 | September, 25th 2018 |\n| Java SE 12 | 12 | March, 19th 2019 |\n| Java SE 13 | 13 | September, 17th 2019 |\n| Java SE 14 | 14 | March, 17th 2020 |\n| Java SE 15 | 15 | September, 15th 2020 |\n| Java SE 16 | 16 | March, 16th 2021 |\n| Java SE 17 | 17 | September, 14th 2021 |\n| Java SE 18 | 18 | March, 22nd 2022 |\n| Java SE 19 | 19 | September, 20th 2022 |\n| Java SE 20 | 20 | March, 21st 2023 |\n| Java SE 21  (LTS) | 21 | September, 19th 2023 |",
+          "score": 0.9065293
+        },
+        {
+          "n": 2,
+          "title": "Java version history - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Java_version_history",
+          "content": "Regarding Oracle's Java SE support roadmap, Java SE 25 (LTS) is the latest version as of September 2025 (and Java 26 a later released version) while versions 21, 17, 11 and 8 are the other still supported (long-term support − LTS) versions, where Oracle customers will receive Oracle Premier Support. Oracle continues to release no-cost public Java 8 updates for development and personal use indefinitely. [...] | Unsupported: Java SE 26 | 70 | March 17, 2026 | September 2026 for Oracle September 2026 for Eclipse Temurin October 2026 for Amazon Corretto | —N/a |\n| Latest version: Java SE 27 | 71 | September 15, 2026 | March 2027 | —N/a |\n| Future version: Java SE 28 | 72 | March 23, 2027 | September 2027 | —N/a |\n| Future version: Java SE 29 | Future version: LTS | 73 | September 21, 2027 | September 2032 | September 2035 for Oracle | [...] | Java SE 17.0.11 | 2024-04-16 |\n| Java SE 17.0.12 | 2024-07-16 |\n| Java SE 17.0.13 | 2024-10-15 |\n| Java SE 17.0.14 | 2025-01-21 |\n| Java SE 17.0.15 | 2025-04-15 |\n| Java SE 17.0.16 | 2025-07-15 |\n| Java SE 17.0.17 | 2025-10-21 |",
+          "score": 0.9018604
+        },
+        {
+          "n": 3,
+          "title": "Java SE | Oracle Technology Network | Oracle",
+          "url": "https://www.oracle.com/java/technologies/java-se-glance.html",
+          "content": "Java SE 17.0.20.1 is the latest release of Java SE 17 Platform. Oracle strongly recommends that all Java SE 17 users upgrade to this release.\n\nJava SE 11.0.32.1 is the latest release of Java SE 11 Platform. Oracle strongly recommends that all Java SE 11 users upgrade to this release.\n\nJava SE 8u503 is the latest release of Java SE 8 Platform. Oracle strongly recommends that all Java SE 8 users upgrade to this release. [...] #### What's New\n\nJava SE 27 is the latest release of Java SE Platform.\n\n### Know More\n\n#### \n\nJava SE 25.0.4.1 is the latest release of Java SE Platform. Oracle strongly recommends that all Java SE 25 users upgrade to this release.\n\nJava SE 21.0.12.1 is the latest release of Java SE 21 Platform. Oracle strongly recommends that all Java SE 21 users upgrade to this release.",
+          "score": 0.8965509
+        },
+        {
+          "n": 4,
+          "title": "Java Downloads | Oracle",
+          "url": "https://www.oracle.com/java/technologies/downloads",
+          "content": "# Java Downloads\n\neMudhra Intermediate Certificates are no Longer Trusted in Oracle JDK\n\nLooking for other Java downloads?\n\n## Java 27, Java 25, and earlier versions available now\n\nJDK 27 is the latest release of the Java SE Platform.\n\nJDK 25 is the latest Long-Term Support (LTS) release of the Java SE Platform.\n\nEarlier JDK versions are available below.\n\n### Java SE Development Kit 27.0.1.0.3 downloads [...] | Product/file description | File size | Download |\n --- \n| x64 Compressed Archive | 175.23 MB | jdk-17.0.21.0.3\\_windows-x64\\_bin.zip |\n| x64 Installer | 157.12 MB | jdk-17.0.21.0.3\\_windows-x64\\_bin.exe |\n| x64 MSI Installer | 155.9 MB | jdk-17.0.21.0.3\\_windows-x64\\_bin.msi |\n\n| Product/file description | File size | Download |\n --- \n| SPARC Compressed Archive | 102.93 MB | jdk-17.0.21.0.3\\_solaris-sparcv9\\_bin.tar.gz |\n\n### Release information\n\n## Java SE Development Kit 11.0.33.0.3 [...] | Product/file description | File size | Download |\n --- \n| x64 Compressed Archive | 187.99 MB | jdk-21.0.13.0.3\\_windows-x64\\_bin.zip |\n| x64 Installer | 167.24 MB | jdk-21.0.13.0.3\\_windows-x64\\_bin.exe |\n| x64 MSI Installer | 166.01 MB | jdk-21.0.13.0.3\\_windows-x64\\_bin.msi |\n\n### Release information\n\n## Java SE Development Kit 17.0.21.0.3 downloads\n\nJava SE subscribers will receive JDK 17 updates until at least September 2029.",
+          "score": 0.80070794
+        },
+        {
+          "n": 5,
+          "title": "What is the latest version of Java JDK and Java Runtime Environment (JRE) respectively?",
+          "url": "https://stackoverflow.com/questions/62954622/what-is-the-latest-version-of-java-jdk-and-java-runtime-environment-jre-respec",
+          "content": "```java\n❯ java --version\njava 14.0.1 2020-04-14\nJava(TM) SE Runtime Environment (build 14.0.1+7)\nJava HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)\n❯ /usr/libexec/java_home -V\nMatching Java Virtual Machines (3):\n    14.0.1, x86_64: \"Java SE 14.0.1\"    /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home\n    13.0.1, x86_64: \"Java SE 13.0.1\"    /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home [...] /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home\n❯ /usr/bin/java --version\njava 14.0.1 2020-04-14\nJava(TM) SE Runtime Environment (build 14.0.1+7)\nJava HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)\n❯ /Library/Internet\\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version\njava version \"1.8.0_251\"\nJava(TM) SE Runtime Environment (build 1.8.0_251-b08)\nJava HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)```\n``` [...] Add a comment|\n\n SE Runtime Environment (build 14.0.1+7) Java HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)` Also even though there's no need of JRE if you installed JDK what is the latest version of just JRE?\n\n2020-07-17T13:15:38.207Z+00:00\n\n0\n\nReply\n\n   Copy link\n\nReport this ad\n\nImage 8\n\nDonggi Kim\n\nDonggi KimJul 17, 2020 at 13:46\n\nYes. If you want just execute some java programs, then JRE is enough. In your case, you installed JDK which contains JRE.",
+          "score": 0.7663815
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 2105,
+        "completionTokens": 172,
+        "latencyMs": 3410
+      }
+    },
+    {
+      "claim": {
+        "id": "sup-01",
+        "text": "Satya Nadella is the CEO of Microsoft.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current CEO of Microsoft"
+      },
+      "verdict": "supported",
+      "confidence": 1,
+      "freshness": {
+        "score": 100,
+        "label": "fresh",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 2,
+          "url": "https://www.unifygtm.com/insights/executives/microsoft-ceo",
+          "quote": "Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nUpdated September 18, 2026",
+          "match": "exact"
+        }
+      ],
+      "inference": "Source 2, which was updated in September 2026, explicitly states that Satya Nadella is the CEO of Microsoft and has held the position since 2014, confirming the claim is current as of the current date.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Satya Nadella - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Satya_Nadella",
+          "content": "On 4 February 2014, Nadella was announced as the new CEO of Microsoft, the third CEO in the company's history, following Bill Gates and Steve Ballmer.\n\nIn October 2014, Nadella attended an event on Women in Computing and courted controversy after he made a statement that women should not ask for a raise and should trust the system. Nadella was criticised for the statement and he later apologized on Twitter. He then sent an email to Microsoft employees admitting he was \"Completely wrong.\" [...] Satya Narayana Nadella (born 19 August 1967) is an Indian-American business executive. He is the chairman and chief executive officer (CEO) of Microsoft, succeeding Steve Ballmer in 2014 as CEO and John W. Thompson in 2021 as chairman. Before becoming CEO, he was the executive vice president of Microsoft's cloud and enterprise group, responsible for building and running the company's computing platforms.\n\n## Early life [...] | Nadella in 2017 |\n| Born | Satya Narayana Nadella   (1967-08-19) 19 August 1967 (age 59)  Hyderabad, Telangana, India |\n| Citizenship | American |\n| Education |  Manipal Institute of Technology  University of Wisconsin, Milwaukee  University of Chicago |\n| Occupation | Business executive |\n| Years active | 1992–present |\n| Title |  CEO of Microsoft (since 2014)  Chairman of Microsoft (since 2021) |\n| Predecessor |  Steve Ballmer  John W. Thompson |\n| Spouse | Anupama Nadella   ​ (m. 1992)​ |",
+          "score": 0.86413884
+        },
+        {
+          "n": 2,
+          "title": "Who is the CEO of Microsoft in 2026? Satya Nadella | Unify",
+          "url": "https://www.unifygtm.com/insights/executives/microsoft-ceo",
+          "content": "Summary\n\n Satya Nadella rose through Microsoft: Various positions of increasing authority from 1992, then Executive Vice President, Cloud and Enterprise from 2013, before taking the CEO seat in February 2014.\n Satya Nadella sat on the board of Starbucks from 2017 to 2024.\n The newest member of the leadership team is Judson B. Althoff, in seat since October 2025.\n\nCurrent company\n\nMicrosoft\n\nMicrosoft is an American multinational technology corporation. [...] Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nUpdated September 18, 2026\n\nResearch Satya in Unify\n\nTime in seat\n\n12 years\n\nCEO since February 2014\n\nYears at company\n\n34 years\n\nJoined Microsoft 1992\n\nPrevious employers\n\n3\n\nBefore Microsoft\n\nSummary [...] ## Frequently asked questions\n\nWho is the CEO of Microsoft?\n\nSatya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nWhen did Satya Nadella become CEO of Microsoft?\n\nSatya Nadella has been CEO of Microsoft since February 2014, according to Microsoft 2026 Form 10-K.\n\nHow long has Satya Nadella been CEO of Microsoft?\n\nSatya Nadella has been CEO of Microsoft for 12 years, since February 2014.",
+          "score": 0.8565368
+        },
+        {
+          "n": 3,
+          "title": "Who is the CEO of Microsoft in 2026? Satya Nadella's Bio | Clay",
+          "url": "https://www.clay.com/dossier/microsoft-ceo",
+          "content": "Satya Nadella is the CEO and executive chairman of Microsoft, having taken the reins from Steve Ballmer in 2014. With a background in electrical engineering and computer science, Nadella has played a pivotal role in Microsoft's shift towards cloud computing and the acquisition of LinkedIn. Under his leadership, the company has continued to innovate and expand its product offerings.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay [...] Joining Microsoft in 1992, Satya Nadella has held various leadership roles within the company before becoming the CEO in February 2014. With nearly three decades of experience at Microsoft, Nadella has played a crucial role in the company's transformation, particularly in the areas of cloud computing and enterprise services.\n\n## Index\n\nTOC Heading\n\n## Share Article\n\n Post on LinkedIn\n Post on X\n\n## Get access to more people and company data using Clay [...] ### Work History\n\n Microsoft: Chairman and CEO (February 2014 - present)\n University of Chicago: Member Board of Trustees (January 2018 - present)\n Starbucks: Board Member (January 2017 - present)\n The Business Council U.S.: Chairman (January 2021 - January 2023)\n Fred Hutch: Board Member (January 2016 - January 2022)\n\n### Education History",
+          "score": 0.8306082
+        },
+        {
+          "n": 4,
+          "title": "Satya Nadella | Biography | Research Starters | EBSCOhost",
+          "url": "https://www.ebsco.com/research-starters/biography/satya-nadella",
+          "content": "Satya Nadella is the CEO of Microsoft and has been a pivotal figure in transforming the company since his appointment in 2014. Born in Hyderabad, India, in 1967, Nadella pursued his education in electrical engineering at the Manipal Institute of Technology and later earned a master’s degree in computer science from the University of Wisconsin-Milwaukee, as well as an MBA from the University of Chicago. His career at Microsoft began in 1992, where he played crucial roles in developing key [...] culture. This direction, helped along by several major strategic acquisitions, proved quite successful: Microsoft's market value increased by 130 percent from 2014, when Nadella was appointed CEO, to 2018. Microsoft's resurgent stock price, improved image among consumers, and leading investments in AI led Time magazine to include Nadella on its list of the world's most influential people in 2018 and 2024. [...] culture. This direction, helped along by several major strategic acquisitions, proved quite successful: Microsoft's market value increased by 130 percent from 2014, when Nadella was appointed CEO, to 2018. Microsoft's resurgent stock price, improved image among consumers, and leading investments in AI led Time magazine to include Nadella on its list of the world's most influential people in 2018 and 2024.",
+          "score": 0.8266142
+        },
+        {
+          "n": 5,
+          "title": "Satya Nadella - Source",
+          "url": "https://news.microsoft.com/source/exec/satya-nadella",
+          "content": "Satya Nadella is Chairman and Chief Executive Officer of Microsoft. Before being named CEO in February 2014, Nadella held leadership roles in both enterprise and consumer businesses across the company. Joining Microsoft in 1992, he quickly became known as a leader who could span a breadth of technologies and businesses to transform some of Microsoft’s biggest product offerings. Most recently, Nadella was executive vice president of Microsoft’s Cloud and Enterprise group. In this role he led the [...] in electrical engineering from Mangalore University, a master’s degree in computer science from the University of Wisconsin – Milwaukee and a master’s degree in business administration from the University of Chicago. Nadella serves on the board of trustees to his alma mater the University of Chicago.",
+          "score": 0.8080827
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1482,
+        "completionTokens": 144,
+        "latencyMs": 2752
+      }
+    },
+    {
+      "claim": {
+        "id": "sup-02",
+        "text": "Jensen Huang is the CEO of Nvidia.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current CEO of Nvidia"
+      },
+      "verdict": "supported",
+      "confidence": 1,
+      "freshness": {
+        "score": 100,
+        "label": "fresh",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Jensen_Huang",
+          "quote": "Jen-Hsun \"Jensen\" Huang (born February 17, 1963) is a Taiwanese and American business executive and electrical engineer who is the co-founder, president, and CEO of Nvidia, the world's most valuable company.",
+          "match": "exact"
+        }
+      ],
+      "inference": "Multiple sources, including Wikipedia and NVIDIA's own official pages, confirm that Jensen Huang is the co-founder, president, and CEO of Nvidia. Source 1 specifically notes his status as of October 2026, which aligns with today's date.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Jensen Huang - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jensen_Huang",
+          "content": "Jen-Hsun \"Jensen\" Huang (born February 17, 1963) is a Taiwanese and American business executive and electrical engineer who is the co-founder, president, and CEO of Nvidia, the world's most valuable company. As of October 2026,( Forbes estimates his net worth at over US$200 billion, making him the seventh-wealthiest individual in the world. [...] 23. ↑ Berger, Chloe (August 28, 2024). \"Nvidia's billionaire boss: 'I used to clean bathrooms, and now I'm the CEO'\". Fortune \"Fortune (magazine)\"). Retrieved December 23, 2024.\n24. ↑ Anand, Nisha (August 28, 2024). \"Nvidia CEO Jensen Huang's experience as 'dishwasher' goes viral on LinkedIn\". Business Standard. Archived from the original on October 7, 2024. Retrieved December 24, 2024.\n25. ↑ Kim 2024, p. 21. [...] 55. ↑ Leswing, Kif (May 24, 2024). \"Nvidia CEO Jensen Huang's net worth swells from $3 billion to $90 billion in five years\". CNBC. Retrieved May 30, 2024.\n56. ↑ Tan, Kwan Wei Kevin (March 27, 2024). \"Mark Zuckerberg says Nvidia CEO Jensen Huang is basically the Taylor Swift of tech\". Business Insider. Retrieved June 15, 2024.",
+          "score": 0.82492816
+        },
+        {
+          "n": 2,
+          "title": "Jensen Huang | NVIDIA Newsroom",
+          "url": "http://nvidianews.nvidia.com/bios/jensen-huang",
+          "content": "### Jensen Huang\n\n###### Founder & CEO\n\nJensen Huang founded NVIDIA in 1993 and has served since its inception as president, chief executive officer, and a member of the board of directors. [...] of Science and Technology, and Linköping University. He has been named the world’s best CEO by Fortune, the Economist, and Brand Finance, as well as one of TIME magazine’s 100 most influential people. [...] Prior to founding NVIDIA, Huang worked at LSI Logic and Advanced Micro Devices. He holds a BSEE degree from Oregon State University and an MSEE degree from Stanford University.\n\nJensen Huang Founder & CEO\n\n Download Headshot\n Download Bio as a PDF\n Download All Files in ZIP\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information",
+          "score": 0.7493996
+        },
+        {
+          "n": 3,
+          "title": "Jensen Huang",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/board-of-directors/jensen-huang",
+          "content": "Jensen Huang founded NVIDIA in 1993 and has served since its inception as president, chief executive officer, and a member of the board of directors. Prior to founding NVIDIA, Mr. Huang held a variety of positions from 1985 to 1993 at LSI Logic Corp., a computer chip manufacturer, and from 1984 to 1985 at Advanced Micro Devices, Inc., a semiconductor company. In 2017, he was named Fortune’s Businessperson of the Year. In 2019, Harvard Business Review ranked him No. 1 on its list of the world’s",
+          "score": 0.7371019
+        },
+        {
+          "n": 4,
+          "title": "Jensen Huang - Founder and CEO, NVIDIA",
+          "url": "https://www.linkedin.com/in/jenhsunhuang",
+          "content": "# Jensen Huang\nFounder and CEO, NVIDIA\nLos Altos, California, United States, US  \n500 connections, 2021506 followers [...] ## About [...] We are consistently recognized as one of the “Best Places to Work” by Glassdoor, one of the “100 Best Companies to Work For” by Fortune magazine, a “TIME100 Most Influential Company,” the “Most Innovative Company of 2024” by Fast Company, and many more<br><br> We’re hiring, with openings in every corner of our company—and we are looking for talented, driven, and adventurous people who want to tackle challenges no one else can solve<br><br> NVIDIA employees build technology that moves humanity",
+          "score": 0.72814995
+        },
+        {
+          "n": 5,
+          "title": "Jensen Huang | NVIDIA",
+          "url": "https://www.nvidia.com/en-eu/about-nvidia/governance/management-team/jensen-huang",
+          "content": "Jensen Huang\n\n## Jensen Huang\n\n### Founder, President and CEO\n\nJensen Huang founded NVIDIA in 1993 and has served since its inception as president, chief executive officer and a member of the board of directors. [...] Huang is a recipient of the Dr. Morris Chang Exemplary Leadership Award from the Global Semiconductor Association in recognition of his exceptional contributions to driving the development, innovation, growth and long-term opportunities of the fabless semiconductor industry. He has received the Daniel J. Epstein Engineering Management Award from the University of Southern California, an honorary doctorate from Taiwan’s National Chiao Tung University, and the EB Lemon Distinguished Alumni Award [...] Alumni Award and an honorary doctorate from Oregon State University. He was named to the U.S. Immigrant Entrepreneur Hall of Fame when it was established in 2012. In 2017, Harvard Business Review ranked him No. 1 on its list of the world’s 100 best-performing CEOs, and, in 2016, No. 1 in the U.S., over the lifetime of their tenure.",
+          "score": 0.71995544
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1396,
+        "completionTokens": 148,
+        "latencyMs": 2786
+      }
+    },
+    {
+      "claim": {
+        "id": "sup-03",
+        "text": "Sundar Pichai is the CEO of Alphabet.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current CEO of Alphabet"
+      },
+      "verdict": "supported",
+      "confidence": 1,
+      "freshness": {
+        "score": 100,
+        "label": "fresh",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Sundar_Pichai",
+          "quote": "Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai, is an Indian–American business executive who has been the CEO of Google since 2015 and the CEO of its parent company Alphabet Inc. since 2019.",
+          "match": "exact"
+        }
+      ],
+      "inference": "Multiple sources confirm that Sundar Pichai has been the CEO of Alphabet Inc. since 2019, and there is no information indicating a change in this position.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Sundar Pichai - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sundar_Pichai",
+          "content": "Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai, is an Indian–American business executive who has been the CEO of Google since 2015 and the CEO of its parent company Alphabet Inc. since 2019. [...] 47. ↑ Feiner, Lauren (December 3, 2019). \"Larry Page steps down as CEO of Alphabet, Sundar Pichai to take over\". CNBC. Archived from the original on August 24, 2020. Retrieved December 4, 2019.\n48. ↑ \"Alphabet CEO's Pay Soars to $226 Million on Huge Stock Award (1)\". news.bloomberglaw.com. Archived from the original on April 23, 2023. Retrieved April 23, 2023. [...] In December 2019, Pichai became the CEO of Alphabet Inc. His compensation from the company topped $200 million in 2022, which many employees criticized in light of large scale layoffs that Google undertook in 2023.\n\nIn April 2024, after 28 Google employees were fired for protesting against Project Nimbus, Pichai stated that the office is not a place \"to fight over disruptive issues or debate politics\", and warned against using the company \"as a personal platform\".\n\n## Awards and recognition",
+          "score": 0.8351749
+        },
+        {
+          "n": 2,
+          "title": "Sundar Pichai's Career Rise to Google and Alphabet CEO - Business Insider",
+          "url": "https://www.businessinsider.com/sundar-pichai-google-alphabet-ceo-career-life",
+          "content": "Sundar Pichai has had a meteoric rise since joining Google as a 31-year-old product manager in 2004.\n\nIn the 11 years that followed his first steps on the Googleplex, Pichai was promoted four times, eventually becoming the CEO of Google in 2015.\n\nIn that role, he was responsible for the company's core businesses and cash cow — and did a good enough job that, in December 2019, he was promoted one more time, replacing Google cofounder Larry Page as the CEO of Alphabet, Google's parent company. [...] Two years later came his final promotion at the company. Alphabet's CEO, Page, and president, Sergey Brin, announced that they were stepping down, and Pichai would become Alphabet's CEO.\n\nPage and Brin cofounded Google in 1998. They announced the change in a letter saying that Alphabet and Google \"no longer need two CEOs and a President.\" [...] When Alphabet was established as Google's parent company in 2015, Pichai was made CEO at Google, which encompassed search, YouTube, and Android.\n\nIn July 2017, Pichai was named to Alphabet's board of directors.\n\n\"Sundar has been doing a great job as Google's CEO, driving strong growth, partnerships, and tremendous product innovation. I really enjoy working with him, and I'm excited that he is joining the Alphabet board,\" Page said at the time.",
+          "score": 0.7959917
+        },
+        {
+          "n": 3,
+          "title": "Sundar Pichai | Business Roundtable",
+          "url": "https://www.businessroundtable.org/members/sundar-pichai",
+          "content": "BRT Logo\n\n# Sundar Pichai\n\n## CEO\n\nAlphabet Inc.\n\nSundar is the CEO of Google and Alphabet and serves on Alphabet’s Board of Directors. [...] Under his leadership as CEO, Google has been focused on developing products and services, powered by the latest advances in AI, that offer help in moments big and small. It has invested in new opportunities such as Google Cloud and YouTube and has continued to be a leader in advanced technologies, including machine learning and quantum computing.\n\nIn December 2019, in addition to his role as CEO of Google, Sundar became the CEO of Google’s parent company, Alphabet. [...] He joined Google in 2004 and helped lead the development of Google Toolbar and then Google Chrome, which grew to become the world’s most popular internet browser. In 2014 he was appointed to lead product and engineering for all of Google’s products and platforms - including popular products such as Search, Maps, Play, Android, Chrome, Gmail and Google Apps (now Google Workspace). Sundar became Google’s CEO in August 2015. He joined the Board of Directors of Alphabet, Google's parent company, in",
+          "score": 0.77589405
+        },
+        {
+          "n": 4,
+          "title": "Sundar Pichai | Google Blog",
+          "url": "https://blog.google/authors/sundar-pichai",
+          "content": "Sundar Pichai, CEO of Google and Alphabet\n\n# Sundar Pichai\n\nCEO of Google and Alphabet\n\nSundar is the CEO of Google and Alphabet and serves on Alphabet’s Board of Directors. Under his leadership, Google has been focused on developing products and services, powered by the latest advances in AI, that offer help in moments big and small.\n\nBreadcrumb\n\n1. Home\n2. Featured authors\n\n## Featured story",
+          "score": 0.7557276
+        },
+        {
+          "n": 5,
+          "title": "Sundar Pichai: CEO of Google and Alphabet | Lex Fridman Podcast #471 | Sundar Pichai | 591 comments",
+          "url": "https://www.linkedin.com/posts/sundarpichai_sundar-pichai-ceo-of-google-and-alphabet-activity-7337199076850982912-JUTT",
+          "content": "You are just a worthless species [...] Investors: Sites doing well don't spam sponsored ads like Google is doing right now. You need to do your own research. They're bleeding users, but they're never going to tell you that. [...] ภาษาไทย (Thai) \n        Tagalog (Tagalog) \n        Türkçe (Turkish) \n        Українська (Ukrainian) \n        Tiếng Việt (Vietnamese) \n        简体中文 (Chinese (Simplified)) \n        正體中文 (Chinese (Traditional))",
+          "score": 0.5925965
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1436,
+        "completionTokens": 141,
+        "latencyMs": 2803
+      }
+    },
+    {
+      "claim": {
+        "id": "sup-04",
+        "text": "The US federal minimum wage is $7.25 per hour.",
+        "category": "law",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current US federal minimum wage"
+      },
+      "verdict": "supported",
+      "confidence": 1,
+      "freshness": {
+        "score": 100,
+        "label": "fresh",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 3,
+          "url": "https://statesminimumwage.com/blog/current-federal-minimum-wage-2026",
+          "quote": "The current federal minimum wage is $7.25 per hour, effective since July 24, 2009.",
+          "match": "exact"
+        }
+      ],
+      "inference": "Multiple sources, including a guide specifically for 2026, confirm that the federal minimum wage remains $7.25 per hour.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "State Minimum Wage Laws",
+          "url": "https://www.dol.gov/agencies/whd/minimum-wage/state",
+          "content": "Employers subject to the Fair Labor Standards Act must pay the current Federal minimum wage of $7.25 per hour.\n\nSome states set subminimum rates for minors and/or students or exempt them from coverage or have a training wage for new hires. Some local governments set minimum wage rates higher than their respective state minimum wage. Such differential provisions are not displayed in this table. [...] Employers subject to the Fair Labor Standards Act must pay the current Federal minimum wage of $7.25 per hour.\n\n## Texas\n\nBasic Minimum Rate (per hour): $7.25\n\nThe State law excludes from coverage any employment that is subject to the federal Fair Labor Standards Act.\n\nThe Texas State minimum wage law does not contain current dollar minimums. Instead the State adopts the federal minimum wage rate by reference.\n\n## Utah\n\nBasic Minimum Rate (per hour): $7.25 [...] The State law excludes from coverage any employment that is subject to the federal Fair Labor Standards Act when the federal rate is greater than the State rate.\n\nEmployers subject to the Fair Labor Standards Act must pay the current Federal minimum wage of $7.25 per hour.\n\n## Guam\n\nBasic Minimum Rate (per hour): $9.25\n\nPremium Pay After Designated Hours1:Weekly - 40\n\n## Hawaii\n\nBasic Minimum Rate (per hour): $16.00\n\nPremium Pay After Designated Hours1:Weekly - 40",
+          "score": 0.7927375
+        },
+        {
+          "n": 2,
+          "title": "What is the current federal minimum wage in the United...",
+          "url": "https://factually.co/fact-checks/business/current-federal-minimum-wage-united-states-588d01",
+          "content": "The current federal minimum wage in the United States is $7.25 per hour, a rate that has applied to covered, nonexempt employees since July 24, 2009, and has not changed through 2025. For tipped workers the federal cash wage is $2.13 per hour, provided tips raise total pay to at least the $7.25 hourly floor; many states and localities set higher floors that employers must follow when those rates exceed the federal minimum ( ( ( ( This summary synthesizes the available government and independent [...] treat $7.25 as the current federal baseline through 2025. Contemporary employer guidance and state-by-state compilations repeat the same figure and note its long tenure, reinforcing that federal law itself has not been amended to raise the rate since 2009 ( ( [...] Multiple legislative and public advocacy efforts have proposed raising the federal minimum wage — some plans have sought incremental increases (for example proposals referenced that would move toward $9.50 in 2025 and $15 by 2030) — but those proposals had not been enacted into federal law as of 2025, so they do not alter the current $7.25 statutory floor ( Reporting from 2024–2025 documents debate, introduced bills, and political messaging arguing for higher federal standards, but the legal",
+          "score": 0.9231018
+        },
+        {
+          "n": 3,
+          "title": "Current Federal Minimum Wage 2026: $7.25/hr Explained | States Minimum Wage",
+          "url": "https://statesminimumwage.com/blog/current-federal-minimum-wage-2026",
+          "content": "Quick Answer: The current federal minimum wage is $7.25 per hour, effective since July 24, 2009. It applies to most private-sector and government employees covered by the Fair Labor Standards Act (FLSA). However, 30 states and DC have set higher minimum wages, and for workers in those states, the higher state rate applies — not the federal rate. [...] Skip to content \n\nStates Minimum Wage\n\nNews\n\n# Current Federal Minimum Wage 2026: $7.25/hr Explained\n\nStates Minimum Wage Guide\n\nStates Minimum Wage Guide \n\n·  10 min read  ·  Updated\n\n Add Us to Google Sources  US Capitol building Washington DC [...] Current federal minimum wage is a common search query, but the answer requires context. While the federal rate is $7.25/hr, most American workers are actually covered by a higher state or local minimum wage. The federal rate serves as a floor — no covered worker can be paid less than $7.25/hr, but many are entitled to more under state law.\n\n## What Is the Current Federal Minimum Wage?",
+          "score": 0.8941352
+        },
+        {
+          "n": 4,
+          "title": "2026 minimum wage guide: Federal and state rates | Paylocity",
+          "url": "https://www.paylocity.com/resources/learn/articles/minimum-wage-guide",
+          "content": "Minimum wage is the lowest hourly rate of pay an employer can legally pay their employees. Rates vary between counties, states, and cities, largely depending on the area’s cost of living.\n\nIn the United States, the Fair Labor Standards Act (FLSA) of 1938 created the current federal minimum wage system and imposed an initial minimum wage rate of 25 cents per hour. Adjusted for inflation, that would equal around $5.88 in 2026. [...] ### Key takeaways\n\n## What is the federal minimum wage?\n\nThe federal minimum wage in 2026 is $7.25 per hour. However, the tipped wage rate is $2.13 per hour, so long as each employee earns enough actual tips during the workweek to make up the other $5.12 per hour. If they don’t earn enough tips, the employer must reduce the actual tip credit to ensure the employee receives the full minimum wage.\n\n| Minimum wage | Tipped minimum wage | Actual tip credits |\n --- \n| $7.25 | $2.13 | $5.12 |",
+          "score": 0.8066246
+        },
+        {
+          "n": 5,
+          "title": "Minimum wage in the United States - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Minimum_wage_in_the_United_States",
+          "content": "In the United States, each state is allowed to set its minimum wage independently of the federal government. Where the state and federal minimum wage differ, the higher wage prevails. As of August 2022,( 30 states had a minimum wage higher than the federal minimum. Washington, D.C. has the highest minimum wage at $17.50 per hour. Since 2009, multiple state legislatures have enacted state preemption laws which prohibit local governments from setting their own minimum wage amounts. As of 2017,( [...] [edit]\n\nIn 2021, the Congressional Budget Office released a report which estimated that incrementally raising the federal minimum wage to $15 an hour by 2025 would increase the federal budget deficit by $54 billion over ten years by increasing the cost of goods and services paid for by the federal government.\n\n## Commentary\n\n[edit]\n\n### Economists\n\n[edit]\n\nEffective minimum wage  \nadjusted for cost of living  \nfor select U.S. cities (2024) [...] Democratic candidates, elected officials, and activists support an increase in the minimum wage. In his 2013 State of the Union Address, President Barack Obama called for an increase in the federal minimum wage to $9 an hour; several months later, Democrats Tom Harkin and George Miller \"George Miller (California politician)\") proposed legislation to increase the federal minimum wage to $10.10; and in 2015, congressional Democrats introduced a proposal to increase the federal minimum wage to $12",
+          "score": 0.767638
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1549,
+        "completionTokens": 97,
+        "latencyMs": 7180
+      }
+    },
+    {
+      "claim": {
+        "id": "sup-05",
+        "text": "Emmanuel Macron is the President of France.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current President of France"
+      },
+      "verdict": "supported",
+      "confidence": 1,
+      "freshness": {
+        "score": 100,
+        "label": "fresh",
+        "confidence": "medium"
+      },
+      "evidence": [
+        {
+          "source": 3,
+          "url": "https://en.wikipedia.org/wiki/President_of_France",
+          "quote": "The current president is Emmanuel Macron, who succeeded François Hollande on 14 May 2017 following the 2017 presidential election, and was inaugurated for a second term on 7 May 2022 following the 2022 presidential election.",
+          "match": "exact"
+        }
+      ],
+      "inference": "The sources explicitly state that Emmanuel Macron is the current President of France and that he was inaugurated for a second term in 2022, with a mandate extending until 2027.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Emmanuel Macron | Biography, Political Party, Age, Presidency, & Facts",
+          "url": "https://www.britannica.com/biography/Emmanuel-Macron",
+          "content": "When legislative elections were held in June, En Marche! delivered a convincing victory, winning 308 of 577 seats in the National Assembly. With additional support from François Bayrou’s Democratic Movement (MoDem), Macron’s coalition commanded a total of 350 seats. Although the result marked a stunning performance for a party that was just 14 months old, turnout was just 42.6 percent, the lowest rate of voter participation in a parliamentary election in modern French history. [...] Show less \n\nEmmanuel Macron (born December 21, 1977, Amiens, France) is a French banker and politician who was elected president of France in 2017. Macron was the first person in the history of the Fifth Republic to win the presidency without the backing of either the Socialists or the Gaullists, and he was France’s youngest head of state since Napoleon I. He was reelected in 2022, becoming the first French president in two decades to win a second term.\n\n## Early life and start in politics [...] Emmanuel MacronFrench Pres. Emmanuel Macron, 2017.(more)\n\n# Emmanuel Macron\n\npresident of France\n\n Homework Help \n\nWritten by\n\nMichael Ray Michael Ray is an assistant managing editor who has worked at Britannica since 2003. In addition to leading the Geography and History team, he oversees coverage of European history and military affairs....\n\n Michael Ray\n\nFact-checked by",
+          "score": 0.88512594
+        },
+        {
+          "n": 2,
+          "title": "Emmanuel Macron - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Emmanuel_Macron",
+          "content": "Emmanuel Jean-Michel Frédéric Macron( (born 21 December 1977) is a French politician who has served as President of France since 2017. He has been a member of Renaissance \"Renaissance (French political party)\") since founding the party in 2016. Macron previously served as Deputy Secretary-General to the President from 2012 to 2014 and Minister of Economics and Finance \"Ministry of Economics and Finance (France)\") from 2014 to 2016 under President François Hollande. [...] On 7 May 2017, Macron was elected President of France with 66.1% of the vote to Marine Le Pen's 33.9%. The election had record abstention at 25.4%, and 8% of ballots were blank or spoiled.( Macron resigned from his role as president of En Marche( and Catherine Barbaroux became interim leader.(\n\n## Presidency (2017–present)\n\nMain article: Presidency of Emmanuel Macron\n\n### First term (2017–2022) [...] | Preceded by Jean Castex | Deputy Secretary-General to the President 2012–2014 Served alongside: Nicolas Revel | Succeeded by Laurence Boone |\n| Preceded by Arnaud Montebourg | Minister of Economics, Industry and Digital Affairs \"Ministry of the Economy and Finance (France)\") 2014–2016 | Succeeded by Michel Sapin |\n| Preceded by François Hollande | President of France 2017–present | Incumbent |\n| Party political offices |",
+          "score": 0.8467682
+        },
+        {
+          "n": 3,
+          "title": "President of France - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/President_of_France",
+          "content": "The current president is Emmanuel Macron, who succeeded François Hollande on 14 May 2017 following the 2017 presidential election, and was inaugurated for a second term on 7 May 2022 following the 2022 presidential election.\n\n## History\n\nThe presidency of France was first publicly proposed during the July Revolution of 1830, when it was offered to the Marquis de Lafayette. He demurred in favour of Prince Louis Phillipe, who became King of the French. [...] | President of the French Republic | |\n --- |\n| Président de la République française | |\n| Diplomatic emblem of France, used by the presidency | |\n| Presidential standard of France | |\n| Incumbent Emmanuel Macron since 14 May 2017 | |\n| Executive branch of the French Government | |\n| Style \"Style (form of address)\") |  Mr. President \"President (government title)\") (informal)  His Excellency (diplomatic) |\n| Status |  Executive President  Head of state  Commander-in-chief | [...] | Inaugural holder | Napoleon III (second French Republic) Charles de Gaulle (current fifth French republic) |\n| Formation |  20 December 1848; 177 years ago (1848-12-20) (Second Republic)  4 October 1958; 68 years ago (1958-10-04) (Fifth Republic) |\n| Deputy | President of the French Senate \"President of the Senate (France)\") (in the presidential line of succession) |\n| Salary | €182,000 per annum |\n| Website | www.elysee.fr Edit this at Wikidata |",
+          "score": 0.92825955
+        },
+        {
+          "n": 4,
+          "title": "Emmanuel Macron - President of the French Republic.",
+          "url": "https://fr.linkedin.com/in/emmanuelmacron/en",
+          "content": "# Emmanuel Macron\n\nHeadline: President of the French Republic.\nCurrent role: President Of The French Republic\nSeniority: President/Vice President, General Management\nLocation: Paris, Île-de-France, France\nExperience: 22 years 2 months\nLinkedIn:  · 3,098,310 followers [...] ## Experience\n- President of the French Republic at Présidence de la République (May 2017 to present)\n- Founder at En Marche (Apr 2016 to May 2017)\n- Minister of the Economy, Industry and Digital Sector at Gouvernement.fr (Aug 2014 to Aug 2016)\n- Deputy Secretary-General at Présidence de la République (May 2012 to Jun 2014)\n- Managing Director at Rothschild & Co (Jan 2008 to Jan 2012)\n- Special Assistant to the Head of Department at Inspection des finances (Jan 2004 to Jan 2010)",
+          "score": 0.8479807
+        },
+        {
+          "n": 5,
+          "title": "Emmanuel Macron: The Current President of France - Oreate AI Blog",
+          "url": "http://oreateai.com/blog/emmanuel-macron-the-current-president-of-france/92b8555535b8206d22121d8df93f143b",
+          "content": "In the heart of Europe, where history and modernity intertwine, Emmanuel Macron stands as a prominent figure in French politics. Since his first election in 2017, he has navigated the complexities of leadership with a blend of youthful energy and seasoned diplomacy. His journey to the presidency is nothing short of remarkable; at just 39 years old, he became one of the youngest leaders in French history. [...] Oreate AI Blog\n\nRead the latest guides, tips, and insights on smart Al writing and presentation generation!\n\n# Emmanuel Macron: The Current President of France [...] His vision for France includes ambitious reforms aimed at revitalizing the economy while maintaining social welfare—a balancing act that has drawn both praise and criticism. He successfully won re-election in April 2022 against Marine Le Pen, solidifying his mandate until 2027.",
+          "score": 0.8455478
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1573,
+        "completionTokens": 138,
+        "latencyMs": 2918
+      }
+    },
+    {
+      "claim": {
+        "id": "sup-06",
+        "text": "Narendra Modi is the Prime Minister of India.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current Prime Minister of India"
+      },
+      "verdict": "supported",
+      "confidence": 1,
+      "freshness": {
+        "score": 100,
+        "label": "fresh",
+        "confidence": "high"
+      },
+      "evidence": [
+        {
+          "source": 1,
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_India",
+          "quote": "Narendra Modi, who is the current prime minister of India, serving since 26 May 2014.",
+          "match": "exact"
+        },
+        {
+          "source": 2,
+          "url": "https://www.pmindia.gov.in/en/pms-profile",
+          "quote": "Shri Narendra Modi was sworn-in as India’s Prime Minister for the third time on 9th June 2024, following another decisive victory in the 2024 Parliamentary elections.",
+          "match": "exact"
+        }
+      ],
+      "inference": "Multiple sources confirm that Narendra Modi is the current Prime Minister of India, having been sworn in for his third term in June 2024.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Prime Minister of India - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_India",
+          "content": "of P. V. Narasimha Rao, Atal Bihari Vajpayee, Manmohan Singh, and Narendra Modi, who is the current prime minister of India, serving since 26 May 2014. He is the first non-Congress leader to become PM after consecutive general elections and secure a third successive term (2014, 2019, 2024). The first prime minister to do so was Jawaharlal Nehru, who secured successive terms following the victory in the general elections of 1946, 1952, 1957, and 1962. [...] | |  |  | Prime Minister of India Narendra Modi | | Prime Minister's Office \"Prime Minister's Office (India)\") Principal Secretary: Pramod Kumar Mishra | Ministry of Personnel, Public Grievances and Pensions Minister: Jitendra Singh | Cabinet Secretariat \"Cabinet Secretariat (India)\") Cabinet Secretary: T. V. Somanathan | | Department of Atomic Energy Secretary: Ajit Kumar Mohanty | Department of Space \"Department of Space (India)\") Secretary & ISRO Chairman: Dr. V. Narayanan | Department of [...] | Bhārata Gaṇarājya kē Pradhānamantrī (ISO) |\n| Logo of the Prime Minister of India |\n| Flag of India |\n| Incumbent Narendra Modi since 26 May 2014 |\n| Prime Minister's Office \"Prime Minister's Office (India)\") Union Council of Ministers Executive branch of the Union Government |\n| Style \"Style (form of address)\") |  The Honourable (formal)  Mr. Prime Minister (informal)  His Excellency (diplomatic) |\n| Type | Head of government |\n| Abbreviation | PM |",
+          "score": 0.9294982
+        },
+        {
+          "n": 2,
+          "title": "Know the PM | Prime Minister of India",
+          "url": "https://www.pmindia.gov.in/en/pms-profile",
+          "content": "PM IndiaShri Narendra Modi was sworn-in as India’s Prime Minister for the third time on 9th June 2024, following another decisive victory in the 2024 Parliamentary elections. This victory marked the third consecutive term for Shri Modi, further solidifying his leadership. [...] The first ever Prime Minister to be born after Independence, Shri Modi has previously served as the Prime Minister of India from 2014 to 2019, and from 2019 to 2024. He also has the distinction of being the longest serving Chief Minister of Gujarat with his term spanning from October 2001 to May 2014. [...] Narendra Modi is a ‘People’s Leader’, dedicated to solving their problems and improving their well-being. Nothing is more satisfying to him than being amongst the people, sharing their joys and alleviating their sorrows. His powerful ‘personal connect’ with the people on ground is complemented by a strong online presence. He is known as India’s most techno-savvy leader, using the web to reach people and bring about change in their lives. He is very active on social media platforms including",
+          "score": 0.8652358
+        },
+        {
+          "n": 3,
+          "title": "Narendra Modi - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Narendra_Modi",
+          "content": "Narendra Damodardas Modi (born 17 September 1950) is an Indian politician who has served as the prime minister of India since 26 May 2014. Modi was the chief minister of Gujarat from 2001 to 2014 and is the Member of Parliament (MP) for Varanasi \"Varanasi (Lok Sabha constituency)\"). He is a member of the Bharatiya Janata Party (BJP) and of the Rashtriya Swayamsevak Sangh (RSS), a right-wing Hindutva paramilitary volunteer organisation. He is India's third-longest-serving prime minister, and the [...] Dattatreya Hosabale (2021–present)  Suresh Joshi \"Suresh Joshi (RSS-Sarkaryavah)\") (2009–2021)  Mohan Bhagwat (2000–2009)  H. V. Seshadri (1987–2000)  M. S. Golwalkar (1939–1940)  Gopal Mukund Huddar (1926/1928–1931) | | | Other major figures | |  |  |  --- | | Senior Constitutional Officeholders |  Atal Bihari Vajpayee (Prime Minister of India)  Lal Krishna Advani (Deputy Prime Minister of India)  Narendra Modi (Prime Minister of India)  Ram Nath Kovind (President of India)  Venkaiah Naidu [...] (India)\") | Raksha Khadse | | Prime Minister's Office \"Prime Minister's Office (India)\") | Jitendra Singh | | Personnel, Public Grievances and Pensions | Jitendra Singh | | Atomic Energy | Jitendra Singh | | Space | Jitendra Singh | | | |    |  v  t  e  BRICS |  | Membership |  Brazil  Russia  India  China  South Africa  Egypt  Ethiopia  Iran  United Arab Emirates  Indonesia | | Summits | 1. Yekaterinburg 2009 2. Brasília 2010 3. Sanya 2011 4. New Delhi 2012 5. Durban 2013 6. Fortaleza 2014 7.",
+          "score": 0.85538095
+        },
+        {
+          "n": 4,
+          "title": "Prime Minister of India",
+          "url": "https://www.pmindia.gov.in/en",
+          "content": "Shri Narendra Modi was sworn-in as India’s Prime Minister for the third time on 9th June 2024, following another decisive victory in the 2024 Parliamentary elections. This victory marked the third consecutive term for Shri Modi, further solidifying his leadership. The 2024 elections saw a remarkable voter turnout, with a significant portion of the electorate showing continued confidence in Shri Modi’s leadership and vision for the country. His campaign focused on a blend of economic [...] Image 1: Indian Flag\n   भारत सरकार\n   Government of India\n\nSkip to main content\n\n   A-; \"Decrease font size\")\n   A; \"Reset font size\")\n   A+; \"Increase font size\")\n   A; \"Dark\")\n   A; \"Light\")\n\n   Image 2: PMO twitter\n   Image 3: PMO facebook\n   Image 4: PMO Youtube\n   Image 5: PMO narendramodi\n\nSearch _\\_Search\\__; \"Search\")\n\n\n\nLanguage \n\nImage 6: PMINDIA PRIME MINISTER OF INDIA # PMINDIA\n\nMenu; \"Menu\")\n\n   Home\n   News\n       News Updates\n       Media Coverage [...] Image 21: Dr. Manmohan Singh\n   Image 22: Shri Atal Bihari Vajpayee\n   Image 23: Shri_Inder_Kumar_Gujral\n   Image 24: Shri_HD_Deve_Gowda\n   Image 25: Shri Atal Bihari Vajpayee\n   Image 26: Shri_PV_Narasimha_Rao\n   Image 27: Shri_Chandra_Shekhar\n   Image 28: Shri_Vishwanath_Pratap_Singh\n   Image 29: Shri_Rajiv_Gandhi\n   Image 30: Smt_Indira_Gandhi\n   Image 31: Shri_Charan_Singh\n   Image 32: Shri_Morarji_Desai\n   Image 33: Smt_Indira_Gandhi\n   Image 34: Shri_Gulzari_Lal_Nanda",
+          "score": 0.82254606
+        },
+        {
+          "n": 5,
+          "title": "Narendra Modi - Prime Minister of India",
+          "url": "https://in.linkedin.com/in/narendramodi",
+          "content": "Headline: Prime Minister of India\nCurrent role: Prime Minister Of India\nSeniority: Head, General Management\nLocation: Delhi, India\nExperience: 24 years 10 months\nLinkedIn:  · 5,581,898 followers [...] # Narendra Modi [...] Description: Dynamic, dedicated and determined, Narendra Modi arrives as a ray of hope in the lives of a billion Indians. His laser focus on development and proven ability to deliver results have made him one of India’s most popular leaders. His promise is to build a nation that is strong, prosperous and inclusive, where each and every Indian can realize their hopes and aspirations. Narendra Modi made his mark on both the Indian and global stage as the chief minister of the western state of",
+          "score": 0.7997713
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1576,
+        "completionTokens": 149,
+        "latencyMs": 3066
+      }
+    },
+    {
+      "claim": {
+        "id": "unv-01",
+        "text": "Zentrovix Labs, a startup in Tallinn, charges 49 euros per month for its Pro plan.",
+        "category": "price",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "Zentrovix Labs Pro plan monthly price"
+      },
+      "verdict": "unverifiable",
+      "confidence": 1,
+      "freshness": {
+        "score": null,
+        "label": "unknown",
+        "confidence": "low"
+      },
+      "evidence": [],
+      "inference": "The provided sources contain information regarding the pricing for Zed and ElevenLabs, but none of the sources mention a company named 'Zentrovix Labs' or its pricing plans.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Plans & Pricing | Plans & Pricing",
+          "url": "https://zed.dev/docs/account/plans-and-pricing",
+          "content": "The default value for Pro users is $10, for a total monthly spend with Zed of $20 ($10 for your Pro subscription, $10 in incremental token spend). This can be set to $0 to limit your spend with Zed to exactly $10/month. If you adjust this limit higher than $10 and consume more than $10 of incremental token spend, that usage may be billed during the month via Zed Pro threshold billing.\n\nOnce the spend limit is hit, we’ll stop any further usage until your token spend limit resets. [...] ### Zed Pro\n\nZed Pro includes access to all hosted AI models and Edit Predictions. The plan includes $5 of monthly token credit; usage beyond that is billed at the rates listed on Zed-Hosted Models. A trial of Zed Pro includes $5 of GPT-6 Luna usage and unlimited Edit Predictions for 14 days from when you start the trial.\n\nFor details on billing and payment, see Individual Billing.\n\n### Zed Business",
+          "score": 0.4594405
+        },
+        {
+          "n": 2,
+          "title": "ElevenLabs Pricing 2026: Starter, Creator, or Pro? | PromptsRush",
+          "url": "https://promptsrush.com/blog/elevenlabs-pricing-starter-creator-pro",
+          "content": "Skip Creator if: you are consistently running out of credits before the month ends. At that point you are paying overage friction on top of a plan, and Pro's larger pool is the cleaner answer.\n\n## Pro — $99/month\n\nWhat it unlocks: 600,000 credits, 44.1kHz PCM audio output via API, and 192kbps quality audio. [...] Roughly 17% across every tier. Starter drops to $5/month ($60/year), Creator to $18.33 ($220/year), Pro to $82.50 ($990/year), Scale to $249.17 ($2,990/year) and Business to $825 ($9,900/year). The relative value between plans does not change — every tier moves down together. [...] ## Where the Cost Curve Flattens\n\nRising pricing tiers with the middle tier highlighted\n\nThis is the part worth your attention. Divide the monthly price by the minutes it buys:\n\n| Plan | Cost per minute (monthly) | Cost per minute (annual) |\n --- \n| Starter | $0.200 | $0.167 |\n| Creator | $0.182 | $0.152 |\n| Pro | $0.165 | $0.138 |\n| Scale | $0.166 | $0.138 |\n| Business | $0.165 | $0.138 |",
+          "score": 0.31349382
+        },
+        {
+          "n": 3,
+          "title": "ElevenLabs Pricing 2026: All 6 Plans, Credits & Per-Character API Rates | TextToLab",
+          "url": "https://texttolab.com/blog/elevenlabs-pricing",
+          "content": "Overages kick in here: Once you exceed your 121,000 credits, ElevenLabs bills extra usage as pay-as-you-go top-up credits — priced above your plan's effective per-character rate. If you consistently run over by 50% or more, the Pro plan works out cheaper.\n\n## Pro ($99/mo): For Volume Production [...] ## Annual vs. Monthly: Worth the Commitment?\n\nAnnual billing saves roughly 17% across all plans — about 2 free months. Here's the actual math:\n\n Starter: $6/mo monthly → ~$5/mo annual. Saves ~$12/year.\n Creator: $22/mo monthly → ~$18.30/mo annual. Saves $44/year.\n Pro: $99/mo monthly → ~$82.50/mo annual. Saves $198/year. [...] The breakeven math: If you're on Creator and regularly blowing past your 121,000 credits into top-up territory every month, Pro's 600,000 credits almost always come out cheaper than stacking pay-as-you-go overages — and you get roughly 5x the base credits.\n\n## Scale ($299/mo) and Business ($990/mo): Enterprise-Adjacent",
+          "score": 0.30309245
+        },
+        {
+          "n": 4,
+          "title": "ElevenLabs Pricing 2026: Plans from $6 to $990 a Month",
+          "url": "https://www.layer3labs.io/guides/elevenlabs-pricing",
+          "content": "ElevenLabs costs $0 to start, then $6/month (Starter), $22/month (Creator), $99/month (Pro), $299/month (Scale), and $990/month (Business), with a custom Enterprise plan above that. Prices are for monthly billing; annual billing gives you roughly two months free.\n\nThe free plan includes about 10,000 credits per month, which is enough to test the voices but not to run a business on. A commercial-use license starts at the Starter plan. [...] In other words, your monthly plan gives you a bundle of included characters, and overage beyond that is charged at the per-1,000-character rate. Developers on Pro and above get higher audio quality and API access to the faster models. [...] Most small businesses land on Creator ($22) or Pro ($99). Creator unlocks professional voice cloning; Pro adds higher audio quality and a much larger credit pool. Figures below are from the ElevenLabs pricing page and may change, so confirm before you buy.\n\n## ElevenLabs Plans Compared: Price, Credits, and Who Each Is For",
+          "score": 0.29865548
+        },
+        {
+          "n": 5,
+          "title": "ElevenLabs Pricing for Creators & Businesses of All Sizes",
+          "url": "https://elevenlabs.io/pricing",
+          "content": "Yes. Annual billing works out to two months free — you pay for 10 months (annual price = monthly price × 10). The equivalent monthly price on an annual plan is $5 for Starter, $18.33 for Creator, $82.50 for Pro, $249.17 for Scale, and $825 for Business.\n\nYes. There is a maximum number of credits that can be used in a single generation request. The limit depends on whether you are on the Free tier or a paid subscription. [...] 25\n\n## FAQs\n\nMonthly price and included credits per plan: Free $0 (10,000 credits); Starter $6 (30,000 credits); Creator $22 (121,000 credits, $11 for the first month); Pro $99 (600,000 credits); Scale $299 (1,800,000 credits, 3 seats); Business $990 (6,000,000 credits, 10 seats); Enterprise is custom. Credits are shared across every product — see the per-product credit costs below.",
+          "score": 0.27237868
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1743,
+        "completionTokens": 68,
+        "latencyMs": 1994
+      }
+    },
+    {
+      "claim": {
+        "id": "unv-02",
+        "text": "The internal codename of Harbor Analytics' next database engine is Bluefin.",
+        "category": "product",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "Harbor Analytics next database engine internal codename"
+      },
+      "verdict": "unverifiable",
+      "confidence": 1,
+      "freshness": {
+        "score": null,
+        "label": "unknown",
+        "confidence": "low"
+      },
+      "evidence": [],
+      "inference": "None of the provided sources contain any information regarding an internal codename 'Bluefin' or any upcoming database engine for a company named Harbor Analytics.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Harbor Analytics",
+          "url": "https://tavily.com/knowledge/company/XKCycHf6dXYc",
+          "content": "# Solstice Harbor Analytics\nID: XKCycHf6dXYc\nWebsite: www.sites.google.com/view/wisdom-wellspring/home\nHeadquarters: Winterport, Maine, United States\nLinkedIn: www.linkedin.com/company/solstice-harbor-analytics · 57 followers\nIndustry: Internet News\nCompany type: Public Company [...] Description: Solstice Harbor Analytics empowers businesses to navigate complexity with clarity. Specializing in market intelligence, data-driven strategy, and predictive insights, we help organizations uncover trends, seize growth opportunities, and make confident decisions. Our team blends deep analytical expertise with a human-centered approach to deliver custom solutions that drive measurable impact. Whether you're refining your strategy or exploring new markets, Solstice Harbor is your [...] Harbor is your trusted partner in turning data into direction.",
+          "score": 0.3804832
+        },
+        {
+          "n": 2,
+          "title": "Competitive Edge in Affordable Housing",
+          "url": "https://newharboranalytics.com",
+          "content": "Early Insights to Critical HUD Data\n\n# Gain a Competitive Edge inAffordable Housing\n\nNew Harbor Analytics provides the most timely and accurate income limits and basis boost designations—giving you a strategic advantage in the market.\n\nTry Our Tools\n\n0+\n\nYear Track Record\n\n2027\n\nBasis Boost Data Available\n\n2027\n\nIncome Limit Data Available\n\n0+\n\nTrusted Clients\n\n## Why Choose Compass?\n\nUnlock the insights you need to make smarter, faster decisions in the affordable housing market.",
+          "score": 0.14600226
+        },
+        {
+          "n": 3,
+          "title": "Data & advanced analytics | Harbor Global",
+          "url": "https://harborglobal.com/services/operate-evolve/technology-optimization/data-analytics-science",
+          "content": "Our Advanced Analytics managed services consultants—business analysts, developers, domain experts, and data science professionals—bring decades of experience in systems integration, data modelling, visualizations, and analytics to help you deliver faster against analytics roadmaps. [...] # Data & advanced analytics\n\n Services\n Operate & Evolve\n Data & advanced analytics\n\n### Accelerate your data initiatives with our deep technical and business expertise\n\nWith the marketplace for legal services becoming increasingly competitive, the need for a data-backed business strategy is urgent. Law firms and law departments worldwide are looking to make better use of data and technology to enhance business performance. [...] Our partnerships with Microsoft and other major and emerging technology providers in the industry mean that we are well placed to advise you on your roadmap. Plus, our roots in data integration and governance make us an invaluable partner to CIOs who worry about creating data “Frankensteins”.",
+          "score": 0.12873335
+        },
+        {
+          "n": 4,
+          "title": "Announcing the Next Generation of Databases and Data Lakes from Microsoft - Microsoft SQL Server Blog",
+          "url": "https://www.microsoft.com/en-us/sql-server/blog/2016/11/16/announcing-the-next-generation-of-databases-and-data-lakes-from-microsoft",
+          "content": "Azure Data Lake Analytics is a cloud analytics service that allows you to develop and run massively parallel data transformations and processing programs in U-SQL, R, Python and .Net over petabytes of data with just a few lines of code. There is no infrastructure to manage, and you can process data on demand allowing you to scale in seconds, and only pay for the resources used. U-SQL is a simple, expressive, and super-extensible language that combines the power of C# with the simplicity of SQL. [...] Another exciting news is the availability of Operational Analytics for Azure SQL Database. It’s the first fully managed Hybrid Transactional and Analytical Processing (HTAP) database service in the cloud. The ability to run both analytics (OLAP) and OLTP workloads on the same database tables at the same time allows developers to build a new level of analytical sophistication into their applications.  Developers can eliminate the need for ETL and a data warehouse in some cases (using one system [...] Azure Data Lake Store is a cloud analytics data lake for enterprises that is secure, massively scalable and built to the open HDFS standard. You can store trillions of files, and single files can be greater than a petabyte in size. It provides massive throughput optimized to run big analytic jobs. It has data encryption in motion and at rest, single sign-on (SSO), multi-factor authentication and management of identities built-in through Azure Active Directory, and fine-grained POSIX-based ACLS",
+          "score": 0.10426756
+        },
+        {
+          "n": 5,
+          "title": "How we built an internal data analytics agent - The GitHub Blog",
+          "url": "https://github.blog/ai-and-ml/github-copilot/how-we-built-an-internal-data-analytics-agent",
+          "content": "The end-to-end flow is: define test cases → run Qubot N times per case → collect results → aggregate stats → compare configurations.\n\n### Query engine [...] ### Query engine\n\nQubot connects to both Kusto and Trino, the two query engines that power most of GitHub’s analytics workloads, via a MCP server. We developed a custom implementation of the Trino MCP server, while for Kusto we deployed a local version of the Fabric RTI MCP Server. Kusto is fast and well-suited to exploratory questions over recent event data. Trino handles complex joins and deeper historical analysis. [...] Enter Qubot, our internal GitHub Copilot-powered analytics agent. Qubot allows any Hubber (that’s what we call GitHub employees) to ask questions about any data model in GitHub’s data warehouse in plain language and get an answer within seconds.",
+          "score": 0.081293546
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1318,
+        "completionTokens": 62,
+        "latencyMs": 1559
+      }
+    },
+    {
+      "claim": {
+        "id": "unv-03",
+        "text": "Mirelle Okafor is the current head of procurement at the Lisbon municipal water utility.",
+        "category": "office_holder",
+        "timeSensitive": true,
+        "sensitivity": "high",
+        "searchQuery": "current head of procurement Lisbon municipal water utility"
+      },
+      "verdict": "unverifiable",
+      "confidence": 1,
+      "freshness": {
+        "score": null,
+        "label": "unknown",
+        "confidence": "low"
+      },
+      "evidence": [],
+      "inference": "None of the provided sources mention Mirelle Okafor or her role in procurement at the Lisbon municipal water utility. Therefore, the claim cannot be verified using the given information.",
+      "currentValue": null,
+      "sources": [
+        {
+          "n": 1,
+          "title": "Ricardo Vila Selas - Procurement Specialist",
+          "url": "https://pt.linkedin.com/in/ricardo-vila-selas-b503762b/en",
+          "content": "# Ricardo Vila Selas\n\nHeadline: Procurement Manager\nCurrent role: Procurement And Purchasing Specialist\nSeniority: Specialist, Operations\nLocation: Lisbon Metropolitan Area Portugal\nExperience: 31 years 11 months\nLinkedIn:  · 1,399 followers\nDescription: Professional with approximately 30 years of experience in Purchasing and Procurement… [...] - Liked By: A BBL Engenharia, empresa do Grupo MIYA, é líder do Consórcio Eficiência Hídrica, formado em parceria com a CSS Construtora, atuará em um... [...] ## Skills\nprocurement, specialized consulting, development, proposal writing, restructuring, engineering, supervision, business development, refrigeration, acquisition processes, agribusiness, consulting, negotiation, pilot project, supervisor",
+          "score": 0.7803451
+        },
+        {
+          "n": 2,
+          "title": "Procura+ | Speakers",
+          "url": "http://www.procuraplus.org/speakers",
+          "content": "##### Paula Alves\n\nPaula Alves has been working in the field of participation, climate action, organizational change, and at the last two years in sustainable procurement at the Lisbon Municipality. She is currently the coordinator of the Mission Team for Sustainable Procurement in Lisbon Municipality leading on implementing Sustainable Procurement Policy.\n\nTrine Amundsen\n\n##### Trine Amundsen [...] de Lisboa. In March 2021, Carlos Moedas announced his candidacy as Mayor of Lisbon in the 2021 local elections, and was elected on 26 September of the same year, taking office on 18 October 2023.  Currently, he  is President of União das Cidades Capitais de Língua Portuguesa (Union of Portuguese Speaking Capital Cities - UCCLA), President of Casa da América Latina (Latin America House) and Chairman of Associação de Turismo de Lisboa (Lisbon Tourism Association). [...] # Conference Speakers\n\nCarlos Moedas\n\n##### Carlos Moedas\n\nCarlos Manuel Félix Moedas (born 10 August 1970) is a Portuguese civil engineer, economist and politician of the Social Democratic Party \"Social Democratic Party (Portugal)\") (PSD), who is the current Mayor of Lisbon.",
+          "score": 0.65914243
+        },
+        {
+          "n": 3,
+          "title": "Water supply and sanitation in Portugal - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Water_supply_and_sanitation_in_Portugal",
+          "content": "and, since 2015, delegated management responsibility for the multi-municipal water supply and sanitation systems of Lisbon and the Tagus Valley, which integrates 86 municipalities and a population of around 3.8 million inhabitants in a territorial area making up 33% of mainland Portugal. [...] Empresa Portuguesa das Águas Livres, SA (EPAL) is a special case. The water company serving Lisbon and surrounding municipalities is a fully owned subsidiary of Águas de Portugal, in charge of bulk water supply and of water distribution. EPAL is the company responsible for the delivery of water to households in the capital (Lisboa) where it has around 350,000 clients. In terms of its bulk operations, EPAL supplies water to 35 municipalities on the north bank of the river Tagus and, since 2015, [...] are appointed upon the recommendation of the Minister of Environment.",
+          "score": 0.27000102
+        },
+        {
+          "n": 4,
+          "title": "The World Bank Group and LIS-Water Partner to Strengthen Global Water Governance",
+          "url": "https://www.worldbank.org/en/news/press-release/2026/10/26/the-world-bank-group-and-lis-water-partner-to-strengthen-global-water-governance",
+          "content": "The partnership, announced at the Water and Sanitation Governance Leadership Program in Lisbon, with Minister for Environment and Energy, Maria da Graça Carvalho, at the opening ceremony, will help governments turn reforms into investment-ready projects to attract private finance and innovation. Attended by policymakers from over 40 countries, and supported by the Government of Portugal, the partnership directly supports Water Forward, a multi-stakeholder coalition launched by the World Bank [...] WASHINGTON AND LISBON, OCTOBER 26, 2026 — The World Bank Group and the Lisbon International Centre for Water (LIS-Water), today announced a multi-year partnership to help countries strengthen water and sanitation services through better policies, stronger institutions and more effective regulation. [...] This partnership is fully in line with the Portuguese Government’s commitment to better water governance and strong water and sanitation services. Portugal has been working with several partners around the world, including the World Bank, to help close the gap in the implementation of SDG 6 by 2030. We believe this partnership between the World Bank and LIS-Water will be a step in the right direction, providing capacity-building support and high-quality expertise and know-how to organizations",
+          "score": 0.101189256
+        },
+        {
+          "n": 5,
+          "title": "Instagram",
+          "url": "https://www.instagram.com/reel/DZqT6qHDfXb",
+          "content": "the_waterloop's profile picture\nVideo by waterloop on June 16, 2026.\nthe_waterloop's profile picture\nthe_waterloop's profile picture\n\n## No comments yet. [...] Video by waterloop on September 23, 2026. May be an image of poster and text.\nVideo by waterloop on October 30, 2026. May be a meme of one or more people and text.\nVideo by waterloop on October 30, 2026. May be an image of plant and text.\nVideo by waterloop on October 29, 2026. May be an image of one or more people and text.\nVideo by waterloop on October 28, 2026. May be an image of one or more people, water filter, body of water and text. [...] Photo by waterloop on October 28, 2026. May be an image of text.\nVideo by waterloop on October 27, 2026. May be an image of one or more people and text.\nVideo by waterloop on October 27, 2026. May be an image of one or more people, ship and text.\nVideo by waterloop on October 27, 2026. May be an image of one or more people, water filter, office and text.",
+          "score": 0.023102712
+        }
+      ],
+      "notes": [],
+      "judge": {
+        "purpose": "judge",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 1522,
+        "completionTokens": 67,
+        "latencyMs": 1654
+      }
+    }
+  ]
+}

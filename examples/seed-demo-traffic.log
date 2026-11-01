@@ -1,0 +1,20 @@
+[ollama/exaone-3.5-2.4b:latest] Who is the current CEO of Intel? Answer in one or two sentences.
+  -> The current CEO of Intel Corporation is Jim Kelly, who took office in January 2023, succeeding Brian Kracklauer. Kelly leads Intel through ongoing technological advancements and strategic initiatives 
+[ollama/exaone-3.5-2.4b:latest] What is the latest stable version of Python? Answer in one or two sentences.
+  -> The latest stable version of Python as of early 2023 is Python 3.11, officially released on October 28, 2022, offering performance improvements and new features while maintaining backward compatibilit
+[ollama/exaone-3.5-2.4b:latest] Who is the current Chancellor of Germany? Answer in one or two sentences.
+  -> The current Chancellor of Germany is Olaf Scholz, who assumed office on December 8, 2021. He leads a coalition government comprising the Social Democratic Party (SPD), the Green Party, and the Free De
+[ollama/exaone-3.5-2.4b:latest] Who is the current Pope? Answer in one or two sentences.
+  -> The current Pope is Pope Francis, who has been serving since October 2013. His pontificate continues under the title "Francis I."
+[ollama/exaone-3.5-2.4b:latest] Who is the current CEO of Microsoft? Answer in one or two sentences.
+  -> The current CEO of Microsoft is Satya Nadella. He has led the company since 2014, focusing on innovation in cloud computing, artificial intelligence, and enterprise solutions.
+[ollama/gemma4:e4b-it-q4km-chat] Who is the current CEO of Intel? Answer in one or two sentences.
+  -> The current CEO of Intel is Pat Gelsinger. He took over the role in January 2021.
+[ollama/gemma4:e4b-it-q4km-chat] What is the latest stable version of Python? Answer in one or two sentences.
+  -> As of my last update, the latest stable version of Python is generally the newest release in the 3.x series. For the most precise and up-to-date information, you should check the official Python websi
+[ollama/gemma4:e4b-it-q4km-chat] Who is the current Chancellor of Germany? Answer in one or two sentences.
+  -> The current Chancellor of Germany is Olaf Scholz. He has held this position since December 2021.
+[ollama/gemma4:e4b-it-q4km-chat] Who is the current Pope? Answer in one or two sentences.
+  -> The current Pope is Pope Francis. He is the head of the Catholic Church.
+[ollama/gemma4:e4b-it-q4km-chat] Who is the current CEO of Microsoft? Answer in one or two sentences.
+  -> The current CEO of Microsoft is Satya Nadella. He has been in this role since February 2014.

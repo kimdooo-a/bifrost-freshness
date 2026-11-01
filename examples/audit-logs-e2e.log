@@ -1,0 +1,69 @@
+Bifrost http://localhost:8080 - auditor primary ollama/gemma4:26b-a4b-chat, fallbacks [ollama/gemma4:e4b-it-q4km-chat]
+Found 10 answer(s) in Bifrost logs to audit.
+[1/10] ollama/gemma4:e4b-it-q4km-chat log 7f03321a-db2b-4cf8-8f1e-0fcca978f0b9
+  2 claim(s), 1 time-sensitive
+  [supported] Satya Nadella is the current CEO of Microsoft.
+[2/10] ollama/gemma4:e4b-it-q4km-chat log 466798c7-b0ce-4ed3-9d83-06d14f2a3b5f
+  1 claim(s), 1 time-sensitive
+  [changed] The current Pope is Pope Francis.
+[3/10] ollama/gemma4:e4b-it-q4km-chat log 938cf0c3-ac4d-4d1e-a490-aedaa39b7d40
+  2 claim(s), 1 time-sensitive
+  [changed] Olaf Scholz is the current Chancellor of Germany.
+[4/10] ollama/gemma4:e4b-it-q4km-chat log 90918925-a5f2-4983-8aea-efd920c2df76
+  0 claim(s), 0 time-sensitive
+[5/10] ollama/gemma4:e4b-it-q4km-chat log eda0bb58-e927-4f3a-9e77-c2970712010b
+  2 claim(s), 1 time-sensitive
+  [changed] Pat Gelsinger is the current CEO of Intel.
+[6/10] ollama/exaone-3.5-2.4b:latest log 7c1589da-ad19-4dab-9025-966ee5a6eaff
+  2 claim(s), 1 time-sensitive
+  [supported] Satya Nadella is the current CEO of Microsoft.
+[7/10] ollama/exaone-3.5-2.4b:latest log 2d59bc6f-59f1-4692-8b12-74a694c2a699
+  2 claim(s), 1 time-sensitive
+  [changed] The current Pope is Pope Francis.
+[8/10] ollama/exaone-3.5-2.4b:latest log f150b8e8-6bbf-4aa3-a47b-a7c5e104512d
+  3 claim(s), 2 time-sensitive
+  [changed] The current Chancellor of Germany is Olaf Scholz.
+  [changed] The German coalition government comprises the Social Democratic Party (SPD), the Green Party, and the Free Democratic Party (FDP).
+[9/10] ollama/exaone-3.5-2.4b:latest log e4050ee1-ea07-4a40-baf3-9c0a5683c8ab
+  2 claim(s), 1 time-sensitive
+  [changed] The latest stable version of Python is Python 3.11.
+[10/10] ollama/exaone-3.5-2.4b:latest log 9b47086a-f416-4c73-b7f6-6ae692f68397
+  2 claim(s), 1 time-sensitive
+  [changed] The current CEO of Intel Corporation is Jim Kelly.
+
+SUPPORTED     freshness 100  Satya Nadella is the current CEO of Microsoft.
+              evidence: https://www.unifygtm.com/insights/executives/microsoft-ceo
+CHANGED       freshness   0  The current Pope is Pope Francis.
+              now: Pope Leo XIV
+              evidence: https://en.wikipedia.org/wiki/Pope
+CHANGED       freshness   0  Olaf Scholz is the current Chancellor of Germany.
+              now: Friedrich Merz
+              evidence: https://en.wikipedia.org/wiki/Chancellor_of_Germany
+CHANGED       freshness   0  Pat Gelsinger is the current CEO of Intel.
+              now: Lip-Bu Tan
+              evidence: https://en.wikipedia.org/wiki/Intel
+SUPPORTED     freshness 100  Satya Nadella is the current CEO of Microsoft.
+              evidence: https://www.unifygtm.com/insights/executives/microsoft-ceo
+CHANGED       freshness   0  The current Pope is Pope Francis.
+              now: Pope Leo XIV
+              evidence: https://en.wikipedia.org/wiki/Pope
+CHANGED       freshness   0  The current Chancellor of Germany is Olaf Scholz.
+              now: Friedrich Merz
+              evidence: https://en.wikipedia.org/wiki/Chancellor_of_Germany
+CHANGED       freshness   0  The German coalition government comprises the Social Democratic Party (SPD), the Green Party, and the Free Democratic Party (FDP).
+              now: Christian Democratic Union (CDU), Christian Social Union (CSU), and Social Democratic Party (SPD)
+              evidence: https://en.wikipedia.org/wiki/Merz_cabinet
+CHANGED       freshness   0  The latest stable version of Python is Python 3.11.
+              now: Python 3.14
+              evidence: https://www.liquidweb.com/blog/latest-python-version
+CHANGED       freshness   0  The current CEO of Intel Corporation is Jim Kelly.
+              now: Lip-Bu Tan
+              evidence: https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html
+
+Totals: 10 researched - 2 supported, 8 changed, 0 unverifiable
+Auditor LLM: 20 calls via Bifrost, primary ollama/gemma4:26b-a4b-chat
+Virtual key vk-freshness-auditor: 22918/400000 tokens, 21/400 requests in window
+Tavily: 10 searches this run
+Report: examples\audit-logs-e2e.html
+        examples\audit-logs-e2e.json
+Suggested routing rules: freshness-avoid-exaone-3-5-2-4b-latest

@@ -1,0 +1,1340 @@
+{
+  "generatedAt": "2026-11-01T23:17:14.060Z",
+  "today": "2026-11-01",
+  "mode": "logs",
+  "gateway": {
+    "baseUrl": "http://localhost:8080",
+    "vkBefore": {
+      "id": "vk-freshness-auditor",
+      "tokensUsed": 2276,
+      "tokenLimit": 400000,
+      "requestsUsed": 2,
+      "requestLimit": 400,
+      "budgets": [
+        {
+          "id": "budget-freshness-auditor",
+          "usedUsd": 0,
+          "limitUsd": 1,
+          "resetDuration": "1d"
+        }
+      ]
+    },
+    "vkAfter": {
+      "id": "vk-freshness-auditor",
+      "tokensUsed": 22918,
+      "tokenLimit": 400000,
+      "requestsUsed": 21,
+      "requestLimit": 400,
+      "budgets": [
+        {
+          "id": "budget-freshness-auditor",
+          "usedUsd": 0,
+          "limitUsd": 1,
+          "resetDuration": "1d"
+        }
+      ]
+    }
+  },
+  "auditor": {
+    "primaryModel": "ollama/gemma4:26b-a4b-chat",
+    "fallbackModels": [
+      "ollama/gemma4:e4b-it-q4km-chat"
+    ],
+    "calls": 20,
+    "fallbackCalls": 0,
+    "servedBy": {
+      "ollama/gemma4:26b-a4b-chat": 20
+    },
+    "promptTokens": 19637,
+    "completionTokens": 2773,
+    "stoppedEarly": null
+  },
+  "tavily": {
+    "callsThisRun": 10,
+    "creditsThisRun": 10,
+    "ledgerTotalCalls": 12
+  },
+  "totals": {
+    "answers": 10,
+    "claims": 18,
+    "checked": 10,
+    "supported": 2,
+    "changed": 8,
+    "unverifiable": 0,
+    "skipped": 8,
+    "stalenessRate": 0.8
+  },
+  "byModel": {
+    "ollama/gemma4:e4b-it-q4km-chat": {
+      "answers": 5,
+      "claims": 7,
+      "checked": 4,
+      "supported": 1,
+      "changed": 3,
+      "unverifiable": 0,
+      "skipped": 3,
+      "stalenessRate": 0.75
+    },
+    "ollama/exaone-3.5-2.4b:latest": {
+      "answers": 5,
+      "claims": 11,
+      "checked": 6,
+      "supported": 1,
+      "changed": 5,
+      "unverifiable": 0,
+      "skipped": 5,
+      "stalenessRate": 0.833
+    }
+  },
+  "byCategory": {
+    "office_holder": {
+      "answers": 0,
+      "claims": 8,
+      "checked": 8,
+      "supported": 2,
+      "changed": 6,
+      "unverifiable": 0,
+      "skipped": 0,
+      "stalenessRate": 0.75
+    },
+    "other": {
+      "answers": 0,
+      "claims": 1,
+      "checked": 1,
+      "supported": 0,
+      "changed": 1,
+      "unverifiable": 0,
+      "skipped": 0,
+      "stalenessRate": 1
+    },
+    "version": {
+      "answers": 0,
+      "claims": 1,
+      "checked": 1,
+      "supported": 0,
+      "changed": 1,
+      "unverifiable": 0,
+      "skipped": 0,
+      "stalenessRate": 1
+    }
+  },
+  "routingSuggestions": [
+    {
+      "id": "freshness-avoid-exaone-3-5-2-4b-latest",
+      "name": "Freshness: route time-sensitive exaone-3.5-2.4b:latest traffic to gemma4:e4b-it-q4km-chat",
+      "description": "ollama/exaone-3.5-2.4b:latest was stale on 5/6 researched claims (83%) vs 75% for ollama/gemma4:e4b-it-q4km-chat.",
+      "cel_expression": "provider == \"ollama\" && model == \"exaone-3.5-2.4b:latest\" && headers[\"x-freshness-sensitive\"] == \"true\"",
+      "targets": [
+        {
+          "provider": "ollama",
+          "model": "gemma4:e4b-it-q4km-chat",
+          "weight": 1
+        }
+      ],
+      "enabled": true,
+      "priority": 10,
+      "scope": "global"
+    }
+  ],
+  "audits": [
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "7f03321a-db2b-4cf8-8f1e-0fcca978f0b9",
+        "provider": "ollama",
+        "model": "ollama/gemma4:e4b-it-q4km-chat",
+        "timestamp": "2026-11-01T23:15:48.7487836Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current CEO of Microsoft? Answer in one or two sentences.",
+      "answer": "The current CEO of Microsoft is Satya Nadella. He has been in this role since February 2014.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "Satya Nadella is the current CEO of Microsoft.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current CEO of Microsoft"
+          },
+          "verdict": "supported",
+          "confidence": 1,
+          "freshness": {
+            "score": 100,
+            "label": "fresh",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 2,
+              "url": "https://www.unifygtm.com/insights/executives/microsoft-ceo",
+              "quote": "Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nUpdated September 18, 2026",
+              "match": "exact"
+            }
+          ],
+          "inference": "Source 2, which was updated in September 2026, explicitly states that Satya Nadella is the CEO of Microsoft and has held the position since 2014, confirming the claim is current as of the current date of November 2026.",
+          "currentValue": null,
+          "sources": [
+            {
+              "n": 1,
+              "title": "Satya Nadella - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Satya_Nadella",
+              "content": "On 4 February 2014, Nadella was announced as the new CEO of Microsoft, the third CEO in the company's history, following Bill Gates and Steve Ballmer.\n\nIn October 2014, Nadella attended an event on Women in Computing and courted controversy after he made a statement that women should not ask for a raise and should trust the system. Nadella was criticised for the statement and he later apologized on Twitter. He then sent an email to Microsoft employees admitting he was \"Completely wrong.\" [...] Satya Narayana Nadella (born 19 August 1967) is an Indian-American business executive. He is the chairman and chief executive officer (CEO) of Microsoft, succeeding Steve Ballmer in 2014 as CEO and John W. Thompson in 2021 as chairman. Before becoming CEO, he was the executive vice president of Microsoft's cloud and enterprise group, responsible for building and running the company's computing platforms.\n\n## Early life [...] | Nadella in 2017 |\n| Born | Satya Narayana Nadella   (1967-08-19) 19 August 1967 (age 59)  Hyderabad, Telangana, India |\n| Citizenship | American |\n| Education |  Manipal Institute of Technology  University of Wisconsin, Milwaukee  University of Chicago |\n| Occupation | Business executive |\n| Years active | 1992–present |\n| Title |  CEO of Microsoft (since 2014)  Chairman of Microsoft (since 2021) |\n| Predecessor |  Steve Ballmer  John W. Thompson |\n| Spouse | Anupama Nadella   ​ (m. 1992)​ |",
+              "score": 0.86413884
+            },
+            {
+              "n": 2,
+              "title": "Who is the CEO of Microsoft in 2026? Satya Nadella | Unify",
+              "url": "https://www.unifygtm.com/insights/executives/microsoft-ceo",
+              "content": "Summary\n\n Satya Nadella rose through Microsoft: Various positions of increasing authority from 1992, then Executive Vice President, Cloud and Enterprise from 2013, before taking the CEO seat in February 2014.\n Satya Nadella sat on the board of Starbucks from 2017 to 2024.\n The newest member of the leadership team is Judson B. Althoff, in seat since October 2025.\n\nCurrent company\n\nMicrosoft\n\nMicrosoft is an American multinational technology corporation. [...] Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nUpdated September 18, 2026\n\nResearch Satya in Unify\n\nTime in seat\n\n12 years\n\nCEO since February 2014\n\nYears at company\n\n34 years\n\nJoined Microsoft 1992\n\nPrevious employers\n\n3\n\nBefore Microsoft\n\nSummary [...] ## Frequently asked questions\n\nWho is the CEO of Microsoft?\n\nSatya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nWhen did Satya Nadella become CEO of Microsoft?\n\nSatya Nadella has been CEO of Microsoft since February 2014, according to Microsoft 2026 Form 10-K.\n\nHow long has Satya Nadella been CEO of Microsoft?\n\nSatya Nadella has been CEO of Microsoft for 12 years, since February 2014.",
+              "score": 0.8565368
+            },
+            {
+              "n": 3,
+              "title": "Who is the CEO of Microsoft in 2026? Satya Nadella's Bio | Clay",
+              "url": "https://www.clay.com/dossier/microsoft-ceo",
+              "content": "Satya Nadella is the CEO and executive chairman of Microsoft, having taken the reins from Steve Ballmer in 2014. With a background in electrical engineering and computer science, Nadella has played a pivotal role in Microsoft's shift towards cloud computing and the acquisition of LinkedIn. Under his leadership, the company has continued to innovate and expand its product offerings.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay [...] Joining Microsoft in 1992, Satya Nadella has held various leadership roles within the company before becoming the CEO in February 2014. With nearly three decades of experience at Microsoft, Nadella has played a crucial role in the company's transformation, particularly in the areas of cloud computing and enterprise services.\n\n## Index\n\nTOC Heading\n\n## Share Article\n\n Post on LinkedIn\n Post on X\n\n## Get access to more people and company data using Clay [...] ### Work History\n\n Microsoft: Chairman and CEO (February 2014 - present)\n University of Chicago: Member Board of Trustees (January 2018 - present)\n Starbucks: Board Member (January 2017 - present)\n The Business Council U.S.: Chairman (January 2021 - January 2023)\n Fred Hutch: Board Member (January 2016 - January 2022)\n\n### Education History",
+              "score": 0.8306082
+            },
+            {
+              "n": 4,
+              "title": "Satya Nadella | Biography | Research Starters | EBSCOhost",
+              "url": "https://www.ebsco.com/research-starters/biography/satya-nadella",
+              "content": "Satya Nadella is the CEO of Microsoft and has been a pivotal figure in transforming the company since his appointment in 2014. Born in Hyderabad, India, in 1967, Nadella pursued his education in electrical engineering at the Manipal Institute of Technology and later earned a master’s degree in computer science from the University of Wisconsin-Milwaukee, as well as an MBA from the University of Chicago. His career at Microsoft began in 1992, where he played crucial roles in developing key [...] culture. This direction, helped along by several major strategic acquisitions, proved quite successful: Microsoft's market value increased by 130 percent from 2014, when Nadella was appointed CEO, to 2018. Microsoft's resurgent stock price, improved image among consumers, and leading investments in AI led Time magazine to include Nadella on its list of the world's most influential people in 2018 and 2024. [...] culture. This direction, helped along by several major strategic acquisitions, proved quite successful: Microsoft's market value increased by 130 percent from 2014, when Nadella was appointed CEO, to 2018. Microsoft's resurgent stock price, improved image among consumers, and leading investments in AI led Time magazine to include Nadella on its list of the world's most influential people in 2018 and 2024.",
+              "score": 0.8266142
+            },
+            {
+              "n": 5,
+              "title": "Satya Nadella - Source",
+              "url": "https://news.microsoft.com/source/exec/satya-nadella",
+              "content": "Satya Nadella is Chairman and Chief Executive Officer of Microsoft. Before being named CEO in February 2014, Nadella held leadership roles in both enterprise and consumer businesses across the company. Joining Microsoft in 1992, he quickly became known as a leader who could span a breadth of technologies and businesses to transform some of Microsoft’s biggest product offerings. Most recently, Nadella was executive vice president of Microsoft’s Cloud and Enterprise group. In this role he led the [...] in electrical engineering from Mangalore University, a master’s degree in computer science from the University of Wisconsin – Milwaukee and a master’s degree in business administration from the University of Chicago. Nadella serves on the board of trustees to his alma mater the University of Chicago.",
+              "score": 0.8080827
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1483,
+            "completionTokens": 151,
+            "latencyMs": 3081
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Satya Nadella has been the CEO of Microsoft since February 2014.",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Satya Nadella become CEO of Microsoft"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 341,
+        "completionTokens": 144,
+        "latencyMs": 13007
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "466798c7-b0ce-4ed3-9d83-06d14f2a3b5f",
+        "provider": "ollama",
+        "model": "ollama/gemma4:e4b-it-q4km-chat",
+        "timestamp": "2026-11-01T23:15:48.5952678Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current Pope? Answer in one or two sentences.",
+      "answer": "The current Pope is Pope Francis. He is the head of the Catholic Church.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "The current Pope is Pope Francis.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current Pope"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 2,
+              "url": "https://en.wikipedia.org/wiki/Pope",
+              "quote": "The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave.",
+              "match": "exact"
+            }
+          ],
+          "inference": "While source 1 states Pope Francis was the current pope as of 2024, sources 2, 3, 4, and 5 all confirm that Pope Leo XIV was elected on May 8, 2025, and is the current pope.",
+          "currentValue": "Pope Leo XIV",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Who is the Current Pope? - Questions and Answers",
+              "url": "https://spiritualculture.org/who-is-the-current-pope",
+              "content": "As of 2024, the current pope is Pope Francis, born Jorge Mario Bergoglio on December 17, 1936. He is the 266th pope in the history of the Catholic Church and took office on March 13, 2013. Pope Francis’s election marked a historic moment, as he became the first pope from the Americas, hailing from Argentina. He also bears the distinction of being the first Jesuit pope and the first pope to choose the name Francis, inspired by Saint Francis of Assisi, who epitomized humility and a deep concern [...] Pope Francis is currently 87 years old. His health has been a matter of public interest, especially considering he underwent surgery for colon cancer in July 2021. Although he has faced challenges relating to mobility, including issues with his knee that necessitated the use of a wheelchair for a time, he remains active in fulfilling his papal duties. The Vatican has communicated that he is in stable condition, continuing to prioritize his role as pope despite the challenges posed by age and [...] Religion and belief\n\n# Who is the Current Pope?\n\n## In this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nIn this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nThe papacy, one of the oldest and most influential religious institutions in the world, has seen a profound evolution over the centuries.",
+              "score": 0.8997663
+            },
+            {
+              "n": 2,
+              "title": "Pope - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Pope",
+              "content": "by Jesus, who gave Peter the Keys of Heaven and the powers of \"binding and loosing\", naming him as the \"rock\" upon which the Church would be built. The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave. [...] before. The most recent election, of Pope Leo XIV (formerly Cardinal Robert Prevost), continues this new tradition of papal selection from a global pool: the current pope was born and lived until his mid-20s in the United States, is a citizen by naturalization of Peru (where he served as an Augustinian priest and bishop for approximately 20 years), and had by the time of his election spent almost 20 years in Italy and the Vatican studying and in various Church leadership roles. [...] The pope's regnal name is not his real or legal name, which remains unchanged in legal and governmental documents; neither is it connected in any way to his real name. The current pope was born with the name Robert Francis Prevost.\n\n### Official list of titles\n\nThe official list of titles of the pope, in the order in which they are given in the Annuario Pontificio, is:",
+              "score": 0.8740022
+            },
+            {
+              "n": 3,
+              "title": "Who is the current Pope? at DuckDuckGo",
+              "url": "https://duckduckgo.com?q=Who+is+the+current+Pope%3F",
+              "content": "Only include results for this siteRedo search without this siteBlock this site from all results Share feedback about this site     Image 10visitingthevatican.com\n\n   ## Who is The Present Pope? - Visiting The Vatican Sep 2, 2025WHOISTHE PRESENT POPE? Meet Pope Leo XIV, elected in May 2025 as the first U.S.-born pontiff, leading the Catholic Church with unity, peace, and inclusion.   \n7.   vaticannews.va [...] › Pope_Leo_XIV   ## Pope Leo XIV - Wikipedia Pope Leo XIV[a] (born Robert Francis Prevost, [b] pronounced / ˈpriːvoʊst / PREE-vohst, [c] September 14, 1955) is the head of the Catholic Church and sovereign of Vatican City. He is the first pope to have been born in the United States, the first to hold either U.S. or Peruvian citizenship, the first from the Order of Saint Augustine, and the second (after his immediate predecessor ...   \n3.   ewtnnews.com [...] › pope › news › 2026-04 › pope-leo-xiv-africa-apostolic-journey-press-office.html   ## Pope Leo XIV: A pilgrim in Africa - Vatican News 5 days ago Vatican News The Director of the Holy See Press Office, Matteo Bruni, outlined the Apostolic Journey that Pope Leo XIV will undertake from 13 to 23 April in Algeria, Cameroon, Angola and Equatorial Guinea. Briefing journalists during a press conference on Thursday, he illustrated the visit which spans four countries over eleven days and will include",
+              "score": 0.79939574
+            },
+            {
+              "n": 4,
+              "title": "Pope Leo XIV | The Current Pope of the Catholic Church | Catholic Answers Tract",
+              "url": "https://www.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church",
+              "content": "On May 8, 2025, Cardinal Robert Prevost became the first American-born pope, and the native of Illinois seems to have providentially anticipated his pontificate in choosing his episcopal motto: In Illo uno unum. That is, “In the One [Jesus Christ], we are one” (see John 17:20-23), and the vicar of Christ, the pope, is at the service of fostering and safeguarding that unity. [...] Accessibility feedback\n\n☰Catholic Answers LogoCatholic Answers Logo\n\nAbout\n\nwww.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church\n\ntract\n\n# Pope Leo XIV | The Pope of the Catholic Church\n\n2026-06-18T11:10:39\n\n## Who Is Pope Leo XIV?\n\nPope Leo XIV is the current pope of the Catholic Church, the Successor of St. Peter and thus visible leader in unifying the faithful and advancing the Church’s God-given mission to “make disciples of all nations” (Matt. 28:18-20; CCC 882; see CCC 815). [...] Who is the new pope in 2025? Pope Leo XIV, formerly Cardinal Robert Francis Prevost.\n How old is Pope Leo XIV? Pope Leo XIV was born September 14, 1955, making him 70 years old.\n Where is Pope Leo XIV from? He is from Chicago, Illinois, in the United States of America.",
+              "score": 0.7711725
+            },
+            {
+              "n": 5,
+              "title": "Everything You’ve Ever Wanted to Know About Pope Leo XIV",
+              "url": "https://www.4lpi.com/blog/everything-youve-ever-wanted-to-know-about-pope-leo-xiv",
+              "content": "Pope Leo XIV was elected on May 8, 2025 by the Catholic College of Cardinals to be pope, the head of the global Catholic Church. His historic election as the first American-born pope has garnered interest from Catholics and non-Catholics worldwide. In this guide, we cover Pope Leo XIV’s past, missionary work, path to the papacy, and what he’s currently focusing on as the leader of the Catholic church. [...] Birth Name: His birth name is Robert Francis Prevost.\n Age: Pope Leo XIV is currently 70 years old. He was born on September 14, 1955.\n Birthplace: He was born in Chicago, Ill., and lived in the south suburb of Dolton until 1969.\n Nationality: Pope Leo XIV is a citizen of the United States and has a dual nationality with Peru.\n Ethnicity: Pope Leo XIV is a mixed-race American with heritage that includes French, Italian, Spanish, Cuban, and African American (Louisiana Creole). [...] Born in September 1955, the 70-year-old pope grew up in Chicago, currently speaks five languages fluently, and is also the very first pope elected from the Order of Saint Augustine (O.S.A). This priestly order, inspired by the life and spirituality of St. Augustine of Hippo, was established in 1244. They take a vow of obedience, chastity, and poverty. On the order’s official website, they proclaim, “United in community and rooted in a shared search for God, we serve the Church and the world",
+              "score": 0.7011614
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1642,
+            "completionTokens": 135,
+            "latencyMs": 2946
+          }
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 330,
+        "completionTokens": 46,
+        "latencyMs": 1103
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "938cf0c3-ac4d-4d1e-a490-aedaa39b7d40",
+        "provider": "ollama",
+        "model": "ollama/gemma4:e4b-it-q4km-chat",
+        "timestamp": "2026-11-01T23:15:48.3948392Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current Chancellor of Germany? Answer in one or two sentences.",
+      "answer": "The current Chancellor of Germany is Olaf Scholz. He has held this position since December 2021.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "Olaf Scholz is the current Chancellor of Germany.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "current Chancellor of Germany"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "high"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+              "quote": "The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.",
+              "match": "exact"
+            },
+            {
+              "source": 2,
+              "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+              "quote": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025.",
+              "match": "exact"
+            },
+            {
+              "source": 4,
+              "url": "https://www.bundeskanzler.de/bk-en",
+              "quote": "Federal Chancellor ### Friedrich Merz",
+              "match": "exact"
+            }
+          ],
+          "inference": "The sources state that Friedrich Merz is the current Chancellor of Germany, having been sworn in on May 6, 2025, and Olaf Scholz is listed as his predecessor.",
+          "currentValue": "Friedrich Merz",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Chancellor of Germany - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+              "content": "Ten people (nine men and one woman) have served as chancellor of the Federal Republic of Germany, the first being Konrad Adenauer from 1949 to 1963. (Another 26 men had served as \"Reich chancellors\" of the previous German Empire from 1871 to 1945.) The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.\n\n## History of the office (pre-1949)\n\n[edit\")]\n\n|  | [...] Scheel not taken into account, three persons, Ludwig Erhard, Willy Brandt, and Olaf Scholz, have held both the office of Vice Chancellor and that of Chancellor of Germany.\n\nThe current vice chancellor of Germany is Lars Klingbeil, who also serves as Minister of Finance \"Federal Ministry of Finance (Germany)\") in the Merz cabinet.\n\n#### List of vice chancellors (1949–present)\n\n[edit\")] [...] | This article is part of a series on the |\n| Politics of  Germany |\n| Constitution (Basic Law)   Federal Constitutional Court  Human rights |\n| Head of state   President of Germany   Frank-Walter Steinmeier (SPD) |\n| Executive   Chancellor of Germany \"Chancellor of Germany (1949–)\") (list)   Friedrich Merz (CDU)   Vice Chancellor of Germany   Lars Klingbeil (SPD)  ---   Cabinet Merz  Federal agencies \"Federal agency (Germany)\")  Federal ministries \"Federal ministry (Germany)\") |",
+              "score": 0.88705814
+            },
+            {
+              "n": 2,
+              "title": "Friedrich Merz - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+              "content": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025. He has also served as Leader of the Christian Democratic Union (CDU) since January 2022, leading the CDU/CSU (Union) parliamentary group as Leader of the Opposition \"Leader of the Opposition (Germany)\") in the Bundestag from February 2022 to May 2025. [...] | Head shot of Merz smiling.jpg) Merz in 2024 |\n| Chancellor of Germany |\n| Incumbent |\n| Assumed office  6 May 2025 |\n| President | Frank-Walter Steinmeier |\n| Vice Chancellor | Lars Klingbeil |\n| Preceded by | Olaf Scholz |\n| Leader of the Christian Democratic Union |\n| Incumbent |\n| Assumed office  31 January 2022 |\n| General Secretary | Mario Czaja Carsten Linnemann |\n| Deputy | Andreas Jung Karin Prien Silvia Breher Michael Kretschmer Karl-Josef Laumann |\n| Preceded by | Armin Laschet | [...] | Leader of the Opposition \"Leader of the Opposition (Germany)\") |\n| In office 15 February 2022 – 6 May 2025 |\n| Chancellor | Olaf Scholz |\n| Preceded by | Ralph Brinkhaus |\n| Succeeded by | Tino Chrupalla Alice Weidel |\n| In office 29 February 2000 – 22 September 2002 |\n| Chancellor | Gerhard Schröder |\n| Preceded by | Wolfgang Schäuble |\n| Succeeded by | Angela Merkel |",
+              "score": 0.87681407
+            },
+            {
+              "n": 3,
+              "title": "As Germany selects a new conservative chancellor, a look at the challenges he inherits | PBS News",
+              "url": "https://www.pbs.org/newshour/show/as-germany-selects-a-new-conservative-chancellor-a-look-at-the-challenges-he-inherits",
+              "content": "Nick Schifrin:\n\nToday, in Germany, a bitter victory. Friedrich Merz became Germany's 10th post-World War II chancellor and the first to lose an initial secret round of voting.\n\nMerz had promised to begin his chancellorship forcefully and today showed the fragility of his leadership and coalition. But, this evening, at the official handover ceremony without going Chancellor Olaf Scholz, Merz brushed it aside.\n\nFriedrich Merz, German Chancellor (through interpreter): [...] Watch the Full Episode\n\n## Related\n\nMay 06\n\nFriedrich Merz of the Christian Democratic Union (CDU) is sworn in as the new German Chancellor, in Berlin\n\nBy Stefanie Dazio, Kirsten Grieshaber, Associated Press\n\nApr 30\n\nChristian Democratic Union (CDU) party conference to formally sign off on a coalition agreement reached with the Social De...\n\nBy Associated Press\n\nApr 01\n\nA view shows Marinka town destroyed in the course of Russia-Ukraine conflict\n\nBy Illia Novikov, Associated Press\n\nMar 10 [...] Amna Nawaz:\n\nIn Berlin today, Friedrich Merz was elected Germany's chancellor, but not without a surprising setback. For the first time in Germany's modern history, he lost the Parliament's initial vote and needed a second round to secure a majority.\n\nNick Schifrin is back now with this report on the challenges that Merz inherits, from a politically divided Germany to an American president who's questioned the transatlantic alliance.\n\nNick Schifrin:",
+              "score": 0.76554126
+            },
+            {
+              "n": 4,
+              "title": "The Federal Chancellor of the Federal Republic of Germany | Home page",
+              "url": "https://www.bundeskanzler.de/bk-en",
+              "content": "## Main-navigation\n\n Federal Chancellor\n ### Friedrich Merz\n ### News\n ### Chancellery\n\n  + Tasks of the Chancellor\n  + The election of the Federal Chancellor\n  + Federal Cabinet\n  + Federal Chancellors since 1949 show more\n ### Service\n\n  + Contact\n  + Data privacy information\n\nFollow the Federal Chancellor:\n\n To the Federal Government's Instagram channel\")\n To the Federal Government's X channel\")\n To the Federal Government's TikTok- channel\")\n\nFollow the Federal Government: [...] Deutsch\n\nFederal Chancellor Merz and BDA President Rainer Dulger \n\n## Speech by Federal Chancellor Merz on the occasion of the 2026 German Employers’ Day Reforms for a bright future in Germany\n\nBundeskanzler Friedrich Merz und der britische Premierminister Andrew Burnham \n\n## Pressestatement von Kanzler Merz zum Empfang britischen Premier Burnham  Vereinigtes Königreich und Deutschland gehören zusammen [...] Smiles all round as Federal Chancellor Merz meets Kazakh President Tokayev. \n\n## Press conference with Federal Chancellor Merz and President Tokayev of Kazakhstan Close partners for energy and peace\")\n\nFinnish Prime Minister Orpo is sitting next to Chancellor Merz and gesticulating. \n\n## Federal Chancellor Friedrich Merz at the EU-Arctic Summit European partners discuss geopolitical changes in the Arctic\n\n Blick von oben auf den Plenarsaal des Bundestages",
+              "score": 0.73891455
+            },
+            {
+              "n": 5,
+              "title": "Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News",
+              "url": "https://www.youtube.com/watch?v=qslX7zcx4Gw",
+              "content": "### Transcript\n[0:00] extensions one.\n[0:12] There will be time to applaud in a moment, but I would like to note that MP\n[0:19] Fredish Mattz has now got the necessary majority of 316 votes according to\n[0:27] article 63 power 2. He has now been elected chancellor of the Federal Republic of Germany.\n[0:43] Now before you all come and congratulate him, I would like to ask you for a\n[0:49] moment here because we have to ask the chancellor whether he wishes to accept the result. [...] # Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News\n## Channel: DW News (verified)\n6.46M subscribers\n1.7K likes\n\n### Description\n91,550 views\nPosted: 2025-05-06\nGerman lawmakers have elected conservative Friedrich Merz as chancellor - after his historic defeat in the first round earlier today. [...] Follow DW on social media:\n►Instagram:   / dwnews  \n►TikTok:   / dwnews  \n►Facebook:   / deutschewellenews  \n►Twitter:   / dwnews  \n\nFür Videos in deutscher Sprache besuchen Sie:    / dwdeutsch  \n\nSubscribe: \n\n#germany #friedrichmerz #chancellor",
+              "score": 0.7055624
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1659,
+            "completionTokens": 178,
+            "latencyMs": 3564
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Olaf Scholz has held the position of Chancellor of Germany since December 2021.",
+            "category": "office_holder",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Olaf Scholz become Chancellor of Germany"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 338,
+        "completionTokens": 144,
+        "latencyMs": 2564
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "90918925-a5f2-4983-8aea-efd920c2df76",
+        "provider": "ollama",
+        "model": "ollama/gemma4:e4b-it-q4km-chat",
+        "timestamp": "2026-11-01T23:15:48.0431239Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "What is the latest stable version of Python? Answer in one or two sentences.",
+      "answer": "As of my last update, the latest stable version of Python is generally the newest release in the 3.x series. For the most precise and up-to-date information, you should check the official Python website.",
+      "claims": [],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 362,
+        "completionTokens": 6,
+        "latencyMs": 522
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "eda0bb58-e927-4f3a-9e77-c2970712010b",
+        "provider": "ollama",
+        "model": "ollama/gemma4:e4b-it-q4km-chat",
+        "timestamp": "2026-11-01T23:15:44.594381Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current CEO of Intel? Answer in one or two sentences.",
+      "answer": "The current CEO of Intel is Pat Gelsinger. He took over the role in January 2021.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "Pat Gelsinger is the current CEO of Intel.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "current CEO of Intel"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "high"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://en.wikipedia.org/wiki/Intel",
+              "quote": "On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company's board of directors.",
+              "match": "exact"
+            },
+            {
+              "source": 2,
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html",
+              "quote": "Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18.",
+              "match": "exact"
+            }
+          ],
+          "inference": "Pat Gelsinger retired as CEO on December 1, 2024, and was succeeded by Lip-Bu Tan, who took office on March 18, 2025.",
+          "currentValue": "Lip-Bu Tan",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Intel - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Intel",
+              "content": "On June 21, 2018, Intel announced the resignation of Brian Krzanich as CEO, with the exposure of a relationship he had with an employee. Bob Swan was named interim CEO, as the Board began a search for a permanent CEO.\n\nOn January 31, 2019, Swan transitioned from his role as CFO and interim CEO and was named by the Board as the seventh CEO to lead the company. [...] On December 1, 2024, Pat Gelsinger retired from the position of Intel CEO and stepped down from the company's board of directors. David Zinsner and Michelle Johnston Holthaus were named as interim co-CEOs. On March 13, 2025, it was announced that he would be formally replaced by American Lip-Bu Tan starting March 18, 2025. [...] On May 2, 2013, Executive Vice President and COO Brian Krzanich was elected as Intel's sixth CEO, a selection that became effective on May 16, 2013, at the company's annual meeting. Reportedly, the board concluded that an insider could proceed with the role and exert an impact more quickly, without the need to learn Intel's processes, and Krzanich was selected on such a basis. Intel's software head Renée James was selected as president of the company, a role that is second to the CEO position.",
+              "score": 0.9049283
+            },
+            {
+              "n": 2,
+              "title": "Intel Appoints Lip-Bu Tan as Chief Executive Officer",
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html",
+              "content": "SANTA CLARA, Calif., March 12, 2025 – Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18. He succeeds Interim Co-CEOs David Zinsner and Michelle (MJ) Johnston Holthaus. Tan will also rejoin the Intel board of directors after stepping down from the board in August 2024. [...] Zinsner will remain executive vice president and chief financial officer, and Johnston Holthaus will remain CEO of Intel Products. Frank D. Yeary, who took on the role of interim executive chair of the board during the search for a new CEO, will revert to being the independent chair of the board upon Tan becoming CEO. [...] On his appointment, Tan said, “I am honored to join Intel as CEO. I have tremendous respect and admiration for this iconic company, and I see significant opportunities to remake our business in ways that serve our customers better and create value for our shareholders.",
+              "score": 0.88420963
+            },
+            {
+              "n": 3,
+              "title": "Lip-Bu Tan - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Lip-Bu_Tan",
+              "content": "Lip-Bu Tan (born November 12, 1959) is an American business executive who has been chief executive officer (CEO) of Intel since 2025. He is also chairman of Walden International, a venture capital firm; a founding managing partner of Walden Catalyst Ventures and Celesta Capital; and holds numerous board positions. Tan was CEO of Cadence Design Systems from 2009 to 2021.\n\n## Early life and education\n\n[edit] [...] | 陳立武 |\n| Tan in 2025 |\n| Born | (1959-11-12) November 12, 1959 (age 66)  Muar \"Muar (town)\"), Federation of Malaya |\n| Citizenship | United States |\n| Education |  + Nanyang University (BS)   + Massachusetts Institute of Technology (MS)   + University of San Francisco (MBA) |\n| Occupation | Business executive |\n| Title |  + CEO of Intel (2025–present)   + CEO of Cadence Design Systems (2009–2021) |\n| Predecessor | Pat Gelsinger |\n| Spouse | Ysa Loo |\n| Children | 2 |\n| Chinese name | [...] ### Intel\n\n[edit]\n\nIn March 2025, Tan was named CEO of Intel, effective from March 18, 2025. Tan had been on Intel's board of directors from 2022 to 2024.\n\n## Board memberships\n\n[edit]\n\n### Academic boards\n\n[edit]",
+              "score": 0.8437023
+            },
+            {
+              "n": 4,
+              "title": "Who is the CEO of Intel in 2026? Lip-Bu Tan's Bio | Clay",
+              "url": "https://www.clay.com/dossier/intel-ceo",
+              "content": "Lip-Bu Tan is the CEO of Intel Corporation, an experienced executive with a demonstrated history of working in the computer software and semiconductor industries. He brings deep expertise in EDA, Software as a Service (SaaS), Mergers & Acquisitions (M&A), Application-Specific Integrated Circuits (ASIC), and start-ups. [...] Lip-Bu Tan is the CEO of Intel Corporation, bringing extensive experience in the technology and semiconductor industries to the role. With a strong background in business development, mergers and acquisitions, and start-ups, Tan also serves as Chairman of Walden International and Founding Managing Partner of Walden Catalyst Ventures.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay\n\nTry for free\n\nLip-Bu Tan\n\nintel.com [...] In addition to his role at Intel, Tan serves as Chairman of Walden International and as Founding Managing Partner of Walden Catalyst Ventures, reflecting his long-standing commitment to technology investment and innovation.\n\n### Work History\n\n Intel: CEO, March 2025 - Present\n SambaNova: Chairman of the Board, March 2025 - Present\n SambaNova: Executive Chairman, April 2024 - March 2025\n Inphi Corporation: Board Member, May 2002 - December 2012\n\n### Education History",
+              "score": 0.8396422
+            },
+            {
+              "n": 5,
+              "title": "Intel appoints Lip-Bu Tan as CEO",
+              "url": "https://www.youtube.com/watch?v=smicjh7yyro",
+              "content": "### Transcript\n[0:01] us. First on overtime. >> Thanks for having me, John.\n[0:05] >> Well, I mentioned that breaking news on Intel a moment ago around a new CEO. Let's get to Christina Betsy Devos for more. Christina.\n[0:12] >> Well, thank you, John. Intel shares right now are jumping 11% after naming Lipton as its new CEO. This is effective as of\n[0:20] March 18th. He's well known in the tech world as an investor. [...] [0:23] He also has extensive about 20 years of. Semiconductor industry experience, and he will succeed interim co-CEOs David Zissner and Michelle Holthaus. House, I\n[0:32] should say ten, will also rejoin Intel's board. >> Of.\n[0:35] >> Directors after stepping down in August 2024. Reuters reported back in August that ten had resigned over differences with former CEO Pat Gelsinger and other directors, but he's back [...] [0:43] now. David Zissner will remain CFO. Michelle will continue as CEO of Holt House, I should say of CEO of Intel Products. And\n[0:51] then Frank Geary will return to his rol",
+              "score": 0.81875163
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1646,
+            "completionTokens": 174,
+            "latencyMs": 3449
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Pat Gelsinger took over the role of Intel CEO in January 2021.",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Pat Gelsinger become CEO of Intel"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 340,
+        "completionTokens": 145,
+        "latencyMs": 2349
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "7c1589da-ad19-4dab-9025-966ee5a6eaff",
+        "provider": "ollama",
+        "model": "ollama/exaone-3.5-2.4b:latest",
+        "timestamp": "2026-11-01T23:15:44.4468392Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current CEO of Microsoft? Answer in one or two sentences.",
+      "answer": "The current CEO of Microsoft is Satya Nadella. He has led the company since 2014, focusing on innovation in cloud computing, artificial intelligence, and enterprise solutions.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "Satya Nadella is the current CEO of Microsoft.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current CEO of Microsoft"
+          },
+          "verdict": "supported",
+          "confidence": 1,
+          "freshness": {
+            "score": 100,
+            "label": "fresh",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 2,
+              "url": "https://www.unifygtm.com/insights/executives/microsoft-ceo",
+              "quote": "Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nUpdated September 18, 2026",
+              "match": "exact"
+            }
+          ],
+          "inference": "Source 2, which was updated in September 2026, explicitly states that Satya Nadella is the Chief Executive Officer of Microsoft and has held the position since 2014, confirming the claim is current as of the current date of November 2026.",
+          "currentValue": null,
+          "sources": [
+            {
+              "n": 1,
+              "title": "Satya Nadella - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Satya_Nadella",
+              "content": "On 4 February 2014, Nadella was announced as the new CEO of Microsoft, the third CEO in the company's history, following Bill Gates and Steve Ballmer.\n\nIn October 2014, Nadella attended an event on Women in Computing and courted controversy after he made a statement that women should not ask for a raise and should trust the system. Nadella was criticised for the statement and he later apologized on Twitter. He then sent an email to Microsoft employees admitting he was \"Completely wrong.\" [...] Satya Narayana Nadella (born 19 August 1967) is an Indian-American business executive. He is the chairman and chief executive officer (CEO) of Microsoft, succeeding Steve Ballmer in 2014 as CEO and John W. Thompson in 2021 as chairman. Before becoming CEO, he was the executive vice president of Microsoft's cloud and enterprise group, responsible for building and running the company's computing platforms.\n\n## Early life [...] | Nadella in 2017 |\n| Born | Satya Narayana Nadella   (1967-08-19) 19 August 1967 (age 59)  Hyderabad, Telangana, India |\n| Citizenship | American |\n| Education |  Manipal Institute of Technology  University of Wisconsin, Milwaukee  University of Chicago |\n| Occupation | Business executive |\n| Years active | 1992–present |\n| Title |  CEO of Microsoft (since 2014)  Chairman of Microsoft (since 2021) |\n| Predecessor |  Steve Ballmer  John W. Thompson |\n| Spouse | Anupama Nadella   ​ (m. 1992)​ |",
+              "score": 0.86413884
+            },
+            {
+              "n": 2,
+              "title": "Who is the CEO of Microsoft in 2026? Satya Nadella | Unify",
+              "url": "https://www.unifygtm.com/insights/executives/microsoft-ceo",
+              "content": "Summary\n\n Satya Nadella rose through Microsoft: Various positions of increasing authority from 1992, then Executive Vice President, Cloud and Enterprise from 2013, before taking the CEO seat in February 2014.\n Satya Nadella sat on the board of Starbucks from 2017 to 2024.\n The newest member of the leadership team is Judson B. Althoff, in seat since October 2025.\n\nCurrent company\n\nMicrosoft\n\nMicrosoft is an American multinational technology corporation. [...] Satya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nUpdated September 18, 2026\n\nResearch Satya in Unify\n\nTime in seat\n\n12 years\n\nCEO since February 2014\n\nYears at company\n\n34 years\n\nJoined Microsoft 1992\n\nPrevious employers\n\n3\n\nBefore Microsoft\n\nSummary [...] ## Frequently asked questions\n\nWho is the CEO of Microsoft?\n\nSatya Nadella is the Chief Executive Officer and Chairman of Microsoft. Satya has held the CEO seat since February 2014 and Chairman since June 2021.\n\nWhen did Satya Nadella become CEO of Microsoft?\n\nSatya Nadella has been CEO of Microsoft since February 2014, according to Microsoft 2026 Form 10-K.\n\nHow long has Satya Nadella been CEO of Microsoft?\n\nSatya Nadella has been CEO of Microsoft for 12 years, since February 2014.",
+              "score": 0.8565368
+            },
+            {
+              "n": 3,
+              "title": "Who is the CEO of Microsoft in 2026? Satya Nadella's Bio | Clay",
+              "url": "https://www.clay.com/dossier/microsoft-ceo",
+              "content": "Satya Nadella is the CEO and executive chairman of Microsoft, having taken the reins from Steve Ballmer in 2014. With a background in electrical engineering and computer science, Nadella has played a pivotal role in Microsoft's shift towards cloud computing and the acquisition of LinkedIn. Under his leadership, the company has continued to innovate and expand its product offerings.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay [...] Joining Microsoft in 1992, Satya Nadella has held various leadership roles within the company before becoming the CEO in February 2014. With nearly three decades of experience at Microsoft, Nadella has played a crucial role in the company's transformation, particularly in the areas of cloud computing and enterprise services.\n\n## Index\n\nTOC Heading\n\n## Share Article\n\n Post on LinkedIn\n Post on X\n\n## Get access to more people and company data using Clay [...] ### Work History\n\n Microsoft: Chairman and CEO (February 2014 - present)\n University of Chicago: Member Board of Trustees (January 2018 - present)\n Starbucks: Board Member (January 2017 - present)\n The Business Council U.S.: Chairman (January 2021 - January 2023)\n Fred Hutch: Board Member (January 2016 - January 2022)\n\n### Education History",
+              "score": 0.8306082
+            },
+            {
+              "n": 4,
+              "title": "Satya Nadella | Biography | Research Starters | EBSCOhost",
+              "url": "https://www.ebsco.com/research-starters/biography/satya-nadella",
+              "content": "Satya Nadella is the CEO of Microsoft and has been a pivotal figure in transforming the company since his appointment in 2014. Born in Hyderabad, India, in 1967, Nadella pursued his education in electrical engineering at the Manipal Institute of Technology and later earned a master’s degree in computer science from the University of Wisconsin-Milwaukee, as well as an MBA from the University of Chicago. His career at Microsoft began in 1992, where he played crucial roles in developing key [...] culture. This direction, helped along by several major strategic acquisitions, proved quite successful: Microsoft's market value increased by 130 percent from 2014, when Nadella was appointed CEO, to 2018. Microsoft's resurgent stock price, improved image among consumers, and leading investments in AI led Time magazine to include Nadella on its list of the world's most influential people in 2018 and 2024. [...] culture. This direction, helped along by several major strategic acquisitions, proved quite successful: Microsoft's market value increased by 130 percent from 2014, when Nadella was appointed CEO, to 2018. Microsoft's resurgent stock price, improved image among consumers, and leading investments in AI led Time magazine to include Nadella on its list of the world's most influential people in 2018 and 2024.",
+              "score": 0.8266142
+            },
+            {
+              "n": 5,
+              "title": "Satya Nadella - Source",
+              "url": "https://news.microsoft.com/source/exec/satya-nadella",
+              "content": "Satya Nadella is Chairman and Chief Executive Officer of Microsoft. Before being named CEO in February 2014, Nadella held leadership roles in both enterprise and consumer businesses across the company. Joining Microsoft in 1992, he quickly became known as a leader who could span a breadth of technologies and businesses to transform some of Microsoft’s biggest product offerings. Most recently, Nadella was executive vice president of Microsoft’s Cloud and Enterprise group. In this role he led the [...] in electrical engineering from Mangalore University, a master’s degree in computer science from the University of Wisconsin – Milwaukee and a master’s degree in business administration from the University of Chicago. Nadella serves on the board of trustees to his alma mater the University of Chicago.",
+              "score": 0.8080827
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1483,
+            "completionTokens": 153,
+            "latencyMs": 2605
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Satya Nadella has been the CEO of Microsoft since 2014.",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Satya Nadella become CEO of Microsoft"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 353,
+        "completionTokens": 143,
+        "latencyMs": 2477
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "2d59bc6f-59f1-4692-8b12-74a694c2a699",
+        "provider": "ollama",
+        "model": "ollama/exaone-3.5-2.4b:latest",
+        "timestamp": "2026-11-01T23:15:44.3080255Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current Pope? Answer in one or two sentences.",
+      "answer": "The current Pope is Pope Francis, who has been serving since October 2013. His pontificate continues under the title \"Francis I.\"",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "The current Pope is Pope Francis.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "current Pope"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 2,
+              "url": "https://en.wikipedia.org/wiki/Pope",
+              "quote": "The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave.",
+              "match": "exact"
+            }
+          ],
+          "inference": "While source 1 states Pope Francis was the current pope as of 2024, sources 2, 3, 4, and 5 all confirm that Pope Leo XIV was elected on May 8, 2025, and is the current pope.",
+          "currentValue": "Pope Leo XIV",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Who is the Current Pope? - Questions and Answers",
+              "url": "https://spiritualculture.org/who-is-the-current-pope",
+              "content": "As of 2024, the current pope is Pope Francis, born Jorge Mario Bergoglio on December 17, 1936. He is the 266th pope in the history of the Catholic Church and took office on March 13, 2013. Pope Francis’s election marked a historic moment, as he became the first pope from the Americas, hailing from Argentina. He also bears the distinction of being the first Jesuit pope and the first pope to choose the name Francis, inspired by Saint Francis of Assisi, who epitomized humility and a deep concern [...] Pope Francis is currently 87 years old. His health has been a matter of public interest, especially considering he underwent surgery for colon cancer in July 2021. Although he has faced challenges relating to mobility, including issues with his knee that necessitated the use of a wheelchair for a time, he remains active in fulfilling his papal duties. The Vatican has communicated that he is in stable condition, continuing to prioritize his role as pope despite the challenges posed by age and [...] Religion and belief\n\n# Who is the Current Pope?\n\n## In this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nIn this article, we explore the background, beliefs, and significance of Pope Francis, the current leader of the Roman Catholic Church.\n\nThe papacy, one of the oldest and most influential religious institutions in the world, has seen a profound evolution over the centuries.",
+              "score": 0.8997663
+            },
+            {
+              "n": 2,
+              "title": "Pope - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Pope",
+              "content": "by Jesus, who gave Peter the Keys of Heaven and the powers of \"binding and loosing\", naming him as the \"rock\" upon which the Church would be built. The current pope is Leo XIV, who was elected on 8 May 2025 on the second day of the 2025 papal conclave. [...] before. The most recent election, of Pope Leo XIV (formerly Cardinal Robert Prevost), continues this new tradition of papal selection from a global pool: the current pope was born and lived until his mid-20s in the United States, is a citizen by naturalization of Peru (where he served as an Augustinian priest and bishop for approximately 20 years), and had by the time of his election spent almost 20 years in Italy and the Vatican studying and in various Church leadership roles. [...] The pope's regnal name is not his real or legal name, which remains unchanged in legal and governmental documents; neither is it connected in any way to his real name. The current pope was born with the name Robert Francis Prevost.\n\n### Official list of titles\n\nThe official list of titles of the pope, in the order in which they are given in the Annuario Pontificio, is:",
+              "score": 0.8740022
+            },
+            {
+              "n": 3,
+              "title": "Who is the current Pope? at DuckDuckGo",
+              "url": "https://duckduckgo.com?q=Who+is+the+current+Pope%3F",
+              "content": "Only include results for this siteRedo search without this siteBlock this site from all results Share feedback about this site     Image 10visitingthevatican.com\n\n   ## Who is The Present Pope? - Visiting The Vatican Sep 2, 2025WHOISTHE PRESENT POPE? Meet Pope Leo XIV, elected in May 2025 as the first U.S.-born pontiff, leading the Catholic Church with unity, peace, and inclusion.   \n7.   vaticannews.va [...] › Pope_Leo_XIV   ## Pope Leo XIV - Wikipedia Pope Leo XIV[a] (born Robert Francis Prevost, [b] pronounced / ˈpriːvoʊst / PREE-vohst, [c] September 14, 1955) is the head of the Catholic Church and sovereign of Vatican City. He is the first pope to have been born in the United States, the first to hold either U.S. or Peruvian citizenship, the first from the Order of Saint Augustine, and the second (after his immediate predecessor ...   \n3.   ewtnnews.com [...] › pope › news › 2026-04 › pope-leo-xiv-africa-apostolic-journey-press-office.html   ## Pope Leo XIV: A pilgrim in Africa - Vatican News 5 days ago Vatican News The Director of the Holy See Press Office, Matteo Bruni, outlined the Apostolic Journey that Pope Leo XIV will undertake from 13 to 23 April in Algeria, Cameroon, Angola and Equatorial Guinea. Briefing journalists during a press conference on Thursday, he illustrated the visit which spans four countries over eleven days and will include",
+              "score": 0.79939574
+            },
+            {
+              "n": 4,
+              "title": "Pope Leo XIV | The Current Pope of the Catholic Church | Catholic Answers Tract",
+              "url": "https://www.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church",
+              "content": "On May 8, 2025, Cardinal Robert Prevost became the first American-born pope, and the native of Illinois seems to have providentially anticipated his pontificate in choosing his episcopal motto: In Illo uno unum. That is, “In the One [Jesus Christ], we are one” (see John 17:20-23), and the vicar of Christ, the pope, is at the service of fostering and safeguarding that unity. [...] Accessibility feedback\n\n☰Catholic Answers LogoCatholic Answers Logo\n\nAbout\n\nwww.catholic.com/tract/pope-leo-xiv-the-pope-of-the-catholic-church\n\ntract\n\n# Pope Leo XIV | The Pope of the Catholic Church\n\n2026-06-18T11:10:39\n\n## Who Is Pope Leo XIV?\n\nPope Leo XIV is the current pope of the Catholic Church, the Successor of St. Peter and thus visible leader in unifying the faithful and advancing the Church’s God-given mission to “make disciples of all nations” (Matt. 28:18-20; CCC 882; see CCC 815). [...] Who is the new pope in 2025? Pope Leo XIV, formerly Cardinal Robert Francis Prevost.\n How old is Pope Leo XIV? Pope Leo XIV was born September 14, 1955, making him 70 years old.\n Where is Pope Leo XIV from? He is from Chicago, Illinois, in the United States of America.",
+              "score": 0.7711725
+            },
+            {
+              "n": 5,
+              "title": "Everything You’ve Ever Wanted to Know About Pope Leo XIV",
+              "url": "https://www.4lpi.com/blog/everything-youve-ever-wanted-to-know-about-pope-leo-xiv",
+              "content": "Pope Leo XIV was elected on May 8, 2025 by the Catholic College of Cardinals to be pope, the head of the global Catholic Church. His historic election as the first American-born pope has garnered interest from Catholics and non-Catholics worldwide. In this guide, we cover Pope Leo XIV’s past, missionary work, path to the papacy, and what he’s currently focusing on as the leader of the Catholic church. [...] Birth Name: His birth name is Robert Francis Prevost.\n Age: Pope Leo XIV is currently 70 years old. He was born on September 14, 1955.\n Birthplace: He was born in Chicago, Ill., and lived in the south suburb of Dolton until 1969.\n Nationality: Pope Leo XIV is a citizen of the United States and has a dual nationality with Peru.\n Ethnicity: Pope Leo XIV is a mixed-race American with heritage that includes French, Italian, Spanish, Cuban, and African American (Louisiana Creole). [...] Born in September 1955, the 70-year-old pope grew up in Chicago, currently speaks five languages fluently, and is also the very first pope elected from the Order of Saint Augustine (O.S.A). This priestly order, inspired by the life and spirituality of St. Augustine of Hippo, was established in 1244. They take a vow of obedience, chastity, and poverty. On the order’s official website, they proclaim, “United in community and rooted in a shared search for God, we serve the Church and the world",
+              "score": 0.7011614
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1642,
+            "completionTokens": 135,
+            "latencyMs": 2317
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Pope Francis has been serving as Pope since October 2013.",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Pope Francis become Pope"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 344,
+        "completionTokens": 131,
+        "latencyMs": 2343
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "f150b8e8-6bbf-4aa3-a47b-a7c5e104512d",
+        "provider": "ollama",
+        "model": "ollama/exaone-3.5-2.4b:latest",
+        "timestamp": "2026-11-01T23:15:44.0930819Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current Chancellor of Germany? Answer in one or two sentences.",
+      "answer": "The current Chancellor of Germany is Olaf Scholz, who assumed office on December 8, 2021. He leads a coalition government comprising the Social Democratic Party (SPD), the Green Party, and the Free Democratic Party (FDP).",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "The current Chancellor of Germany is Olaf Scholz.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "current Chancellor of Germany"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "high"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+              "quote": "The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.",
+              "match": "exact"
+            },
+            {
+              "source": 2,
+              "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+              "quote": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025.",
+              "match": "exact"
+            },
+            {
+              "source": 4,
+              "url": "https://www.bundeskanzler.de/bk-en",
+              "quote": "Federal Chancellor ### Friedrich Merz",
+              "match": "exact"
+            }
+          ],
+          "inference": "The claim that Olaf Scholz is the current Chancellor is incorrect; according to multiple sources, Friedrich Merz has been the Chancellor of Germany since May 6, 2025.",
+          "currentValue": "Friedrich Merz",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Chancellor of Germany - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Chancellor_of_Germany",
+              "content": "Ten people (nine men and one woman) have served as chancellor of the Federal Republic of Germany, the first being Konrad Adenauer from 1949 to 1963. (Another 26 men had served as \"Reich chancellors\" of the previous German Empire from 1871 to 1945.) The current officeholder is Friedrich Merz of the Christian Democratic Union, sworn in on 6 May 2025.\n\n## History of the office (pre-1949)\n\n[edit\")]\n\n|  | [...] Scheel not taken into account, three persons, Ludwig Erhard, Willy Brandt, and Olaf Scholz, have held both the office of Vice Chancellor and that of Chancellor of Germany.\n\nThe current vice chancellor of Germany is Lars Klingbeil, who also serves as Minister of Finance \"Federal Ministry of Finance (Germany)\") in the Merz cabinet.\n\n#### List of vice chancellors (1949–present)\n\n[edit\")] [...] | This article is part of a series on the |\n| Politics of  Germany |\n| Constitution (Basic Law)   Federal Constitutional Court  Human rights |\n| Head of state   President of Germany   Frank-Walter Steinmeier (SPD) |\n| Executive   Chancellor of Germany \"Chancellor of Germany (1949–)\") (list)   Friedrich Merz (CDU)   Vice Chancellor of Germany   Lars Klingbeil (SPD)  ---   Cabinet Merz  Federal agencies \"Federal agency (Germany)\")  Federal ministries \"Federal ministry (Germany)\") |",
+              "score": 0.88705814
+            },
+            {
+              "n": 2,
+              "title": "Friedrich Merz - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+              "content": "Joachim-Friedrich Martin Josef Merz (born 11 November 1955) is a German politician who has served as Chancellor of Germany since 6 May 2025. He has also served as Leader of the Christian Democratic Union (CDU) since January 2022, leading the CDU/CSU (Union) parliamentary group as Leader of the Opposition \"Leader of the Opposition (Germany)\") in the Bundestag from February 2022 to May 2025. [...] | Head shot of Merz smiling.jpg) Merz in 2024 |\n| Chancellor of Germany |\n| Incumbent |\n| Assumed office  6 May 2025 |\n| President | Frank-Walter Steinmeier |\n| Vice Chancellor | Lars Klingbeil |\n| Preceded by | Olaf Scholz |\n| Leader of the Christian Democratic Union |\n| Incumbent |\n| Assumed office  31 January 2022 |\n| General Secretary | Mario Czaja Carsten Linnemann |\n| Deputy | Andreas Jung Karin Prien Silvia Breher Michael Kretschmer Karl-Josef Laumann |\n| Preceded by | Armin Laschet | [...] | Leader of the Opposition \"Leader of the Opposition (Germany)\") |\n| In office 15 February 2022 – 6 May 2025 |\n| Chancellor | Olaf Scholz |\n| Preceded by | Ralph Brinkhaus |\n| Succeeded by | Tino Chrupalla Alice Weidel |\n| In office 29 February 2000 – 22 September 2002 |\n| Chancellor | Gerhard Schröder |\n| Preceded by | Wolfgang Schäuble |\n| Succeeded by | Angela Merkel |",
+              "score": 0.87681407
+            },
+            {
+              "n": 3,
+              "title": "As Germany selects a new conservative chancellor, a look at the challenges he inherits | PBS News",
+              "url": "https://www.pbs.org/newshour/show/as-germany-selects-a-new-conservative-chancellor-a-look-at-the-challenges-he-inherits",
+              "content": "Nick Schifrin:\n\nToday, in Germany, a bitter victory. Friedrich Merz became Germany's 10th post-World War II chancellor and the first to lose an initial secret round of voting.\n\nMerz had promised to begin his chancellorship forcefully and today showed the fragility of his leadership and coalition. But, this evening, at the official handover ceremony without going Chancellor Olaf Scholz, Merz brushed it aside.\n\nFriedrich Merz, German Chancellor (through interpreter): [...] Watch the Full Episode\n\n## Related\n\nMay 06\n\nFriedrich Merz of the Christian Democratic Union (CDU) is sworn in as the new German Chancellor, in Berlin\n\nBy Stefanie Dazio, Kirsten Grieshaber, Associated Press\n\nApr 30\n\nChristian Democratic Union (CDU) party conference to formally sign off on a coalition agreement reached with the Social De...\n\nBy Associated Press\n\nApr 01\n\nA view shows Marinka town destroyed in the course of Russia-Ukraine conflict\n\nBy Illia Novikov, Associated Press\n\nMar 10 [...] Amna Nawaz:\n\nIn Berlin today, Friedrich Merz was elected Germany's chancellor, but not without a surprising setback. For the first time in Germany's modern history, he lost the Parliament's initial vote and needed a second round to secure a majority.\n\nNick Schifrin is back now with this report on the challenges that Merz inherits, from a politically divided Germany to an American president who's questioned the transatlantic alliance.\n\nNick Schifrin:",
+              "score": 0.76554126
+            },
+            {
+              "n": 4,
+              "title": "The Federal Chancellor of the Federal Republic of Germany | Home page",
+              "url": "https://www.bundeskanzler.de/bk-en",
+              "content": "## Main-navigation\n\n Federal Chancellor\n ### Friedrich Merz\n ### News\n ### Chancellery\n\n  + Tasks of the Chancellor\n  + The election of the Federal Chancellor\n  + Federal Cabinet\n  + Federal Chancellors since 1949 show more\n ### Service\n\n  + Contact\n  + Data privacy information\n\nFollow the Federal Chancellor:\n\n To the Federal Government's Instagram channel\")\n To the Federal Government's X channel\")\n To the Federal Government's TikTok- channel\")\n\nFollow the Federal Government: [...] Deutsch\n\nFederal Chancellor Merz and BDA President Rainer Dulger \n\n## Speech by Federal Chancellor Merz on the occasion of the 2026 German Employers’ Day Reforms for a bright future in Germany\n\nBundeskanzler Friedrich Merz und der britische Premierminister Andrew Burnham \n\n## Pressestatement von Kanzler Merz zum Empfang britischen Premier Burnham  Vereinigtes Königreich und Deutschland gehören zusammen [...] Smiles all round as Federal Chancellor Merz meets Kazakh President Tokayev. \n\n## Press conference with Federal Chancellor Merz and President Tokayev of Kazakhstan Close partners for energy and peace\")\n\nFinnish Prime Minister Orpo is sitting next to Chancellor Merz and gesticulating. \n\n## Federal Chancellor Friedrich Merz at the EU-Arctic Summit European partners discuss geopolitical changes in the Arctic\n\n Blick von oben auf den Plenarsaal des Bundestages",
+              "score": 0.73891455
+            },
+            {
+              "n": 5,
+              "title": "Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News",
+              "url": "https://www.youtube.com/watch?v=qslX7zcx4Gw",
+              "content": "### Transcript\n[0:00] extensions one.\n[0:12] There will be time to applaud in a moment, but I would like to note that MP\n[0:19] Fredish Mattz has now got the necessary majority of 316 votes according to\n[0:27] article 63 power 2. He has now been elected chancellor of the Federal Republic of Germany.\n[0:43] Now before you all come and congratulate him, I would like to ask you for a\n[0:49] moment here because we have to ask the chancellor whether he wishes to accept the result. [...] # Friedrich Merz elected as Germany's new chancellor in unprecedented second round of voting | DW News\n## Channel: DW News (verified)\n6.46M subscribers\n1.7K likes\n\n### Description\n91,550 views\nPosted: 2025-05-06\nGerman lawmakers have elected conservative Friedrich Merz as chancellor - after his historic defeat in the first round earlier today. [...] Follow DW on social media:\n►Instagram:   / dwnews  \n►TikTok:   / dwnews  \n►Facebook:   / deutschewellenews  \n►Twitter:   / dwnews  \n\nFür Videos in deutscher Sprache besuchen Sie:    / dwdeutsch  \n\nSubscribe: \n\n#germany #friedrichmerz #chancellor",
+              "score": 0.7055624
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1659,
+            "completionTokens": 177,
+            "latencyMs": 3446
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Olaf Scholz assumed office as Chancellor of Germany on December 8, 2021.",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Olaf Scholz become Chancellor of Germany"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        },
+        {
+          "claim": {
+            "id": "c3",
+            "text": "The German coalition government comprises the Social Democratic Party (SPD), the Green Party, and the Free Democratic Party (FDP).",
+            "category": "other",
+            "timeSensitive": true,
+            "sensitivity": "medium",
+            "searchQuery": "current German government coalition parties"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 5,
+              "url": "https://en.wikipedia.org/wiki/Merz_cabinet",
+              "quote": "The cabinet is composed of Merz's Christian Democratic Union (CDU), its Bavarian sister-party Christian Social Union (CSU) (which form the CDU/CSU alliance; the so called Union) and the Social Democratic Party (SPD).",
+              "match": "exact"
+            }
+          ],
+          "inference": "The claim states the coalition consists of the SPD, Greens, and FDP, but the sources indicate that as of May 2025, the current German government is a 'Grand Coalition' consisting of the CDU/CSU and the SPD.",
+          "currentValue": "Christian Democratic Union (CDU), Christian Social Union (CSU), and Social Democratic Party (SPD)",
+          "sources": [
+            {
+              "n": 1,
+              "title": "German governing coalition - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/German_governing_coalition",
+              "content": "In Germany, coalitions rarely consist of more than two parties (CDU and CSU, two allies which on the federal level always form the CDU/CSU caucus, count as a single party). Starting in the 2010s, coalitions at the state level increasingly have included three parties, often the FDP, Greens, and one of the major parties, or \"red-red-green\" coalitions of the SPD, the Left, and the Greens. As of 2017, the Greens have joined governments on the state level in ten coalitions in seven various [...] [edit]\n\n Great Coalition (Weimar Republic) \"Great Coalition (Weimar Republic)\"), comprising the main pro-democratic parties at the time: the Social Democratic Party (SPD), the German Centre Party (DZP), the German Democratic Party (DDP), and the German People's Party (DVP)\n List of current heads of government of the German federal states, with information on which parties are included in each state government\n\n## Notes\n\n[edit] [...] 2021, following the 2021 German federal election held on 26 September, a traffic light coalition (SPD, FDP, and Greens) led by Olaf Scholz took power in Germany, the first time a three-party coalition had formed at the federal level.",
+              "score": 0.8506799
+            },
+            {
+              "n": 2,
+              "title": "Germany: CDU/CSU and SPD announce coalition government deal",
+              "url": "https://www.dw.com/en/germany-cdu-csu-and-spd-announce-coalition-government-deal/live-72180120",
+              "content": "Christian Social Union (CSU) leader and Bavarian Premier Markus Soeder, Germany's chancellor-in-waiting and leader of the Christian Democratic Union party (CDU) Friedrich Merz,, co-leaders of the Social Democratic party (SPD) Saskia Esken and Lars Klingbeil attend a press conference after reaching an agreement on their coalition government in Berlin, Germany, April 9, 2025. [...] Germany's Green Party has criticized the coalition agreement presented on Wednesday between the CDU/CSU and SPD as a \"great disappointment\" in light of current issues facing the world.\n\nGermany and the world are grappling with three central challenges — the collapse of ecosystems, the erosion of the rules-based global order, and the rise of right-wing extremism, said party co-leader Felix Banaszak. [...] Coalition partners announce details after reaching an agreement on forming a new German governmentImage: Annegret Hilse/REUTERS\n\nChristian Democrat leader Friedrich Merz, Bavaria's Christian Social Union leader Markus Söder and Social Democrat leaders Saskia Esken and Lars Klingbeil have appeared on stage for the “presentation of the joint coalition agreement.\"\n\nMerz opened the speech, speaking of the intensive negotiations that have taken place.",
+              "score": 0.82425016
+            },
+            {
+              "n": 3,
+              "title": "Germany's incoming government signs coalition deal: What to expect | DW News",
+              "url": "https://www.youtube.com/watch?v=2PYOGBUNuoU",
+              "content": "### Description\n33,831 views\nPosted: 2025-05-05\nIn Germany, the conservatives and social democrats have inked a coalition deal paving the way for a new government. \nIncoming Chancellor Friedrich Merz leads the alliance with his conservative bloc. The center-left social democrats, led by Lars Klingbeil, are the junior partners. Merz is set to be elected as chancellor in a parliamentary vote on Tuesday, with his coalition majority.\nDW's Michaela Küfner reports from Berlin\n\nFor more news go to: [...] ### Transcript\n[0:00] We start here in Germany where the conservatives and social democrats have just inked a coalition deal paving the way for a new government. Now incoming\n[0:08] Chancellor Fred Matz leads the alliance with his conservative block. The centerleft social democrats led by Laz\n[0:16] Klingb are the junior partners. Mattz is set to be elected as chancellor in a parliamentary vote on Tuesday with his [...] [0:25] coalition majority and we can get more details from our chief political editor Mika\n[0:32] Kufner. So Mika the SPD as we've just been saying is the junior coalition partner in this new government but will the party be getting its hands on any of\n[0:41] the more influential uh cabinet posts?\n[0:46] Absolutely. The Social Democrats may be junior. They may have only received just over 16% of the vote in these past",
+              "score": 0.7701369
+            },
+            {
+              "n": 4,
+              "title": "German coalition deal approved by center-left party, paving way for Merz to be elected chancellor | PBS News",
+              "url": "https://www.pbs.org/newshour/world/german-coalition-deal-approved-by-center-left-party-paving-way-for-merz-to-be-elected-chancellor",
+              "content": "The Union and Social Democrats have governed Germany together before: once in the 1960s, and then in three of the four terms of former Chancellor Angela Merkel, who led the country from 2005 to 2021.\n\nSupport trusted journalism and civil dialogue.\n\nLeft:\nChristian Democratic Union (CDU) party leader Friedrich Merz speaks at a CDU party conference to formally sign off on a coalition agreement reached with the Social Democrats, in Berlin, Germany, April 28, 2025. Photo by Lisi Niesner/Reuters [...] # German coalition deal approved by center-left party, paving way for Merz to be elected chancellor\n\nBERLIN (AP) — Germany's center-left Social Democrats have approved a deal to join a new coalition government, paving the way for parliament to elect conservative leader Friedrich Merz as the country's new chancellor. [...] The party of outgoing Chancellor Olaf Scholtz will join a coalition led by Merz's center-right Christian Democratic Union and its Bavarian sister party, the Christian Social Union, which won Germany's election in February with 28.5 percent.\n\nWATCH: Center-right party wins Germany's election as far-right doubles its support",
+              "score": 0.7339103
+            },
+            {
+              "n": 5,
+              "title": "Merz cabinet - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Merz_cabinet",
+              "content": "The cabinet is composed of Merz's Christian Democratic Union (CDU), its Bavarian sister-party Christian Social Union (CSU) (which form the CDU/CSU alliance; the so called Union) and the Social Democratic Party (SPD). It is the fifth time a governing coalition between Union and SPD \"Grand coalition (Germany)\") has been formed in post-war German history and the first since the Fourth Merkel cabinet led by then-Chancellor Angela Merkel in 2018.\n\n## Coalition formation\n\n[edit] [...] | 25th Cabinet of the Federal Republic of Germany |\n| 6 May 2025 – present |\n| Signing of the coalition agreement for the 21st Bundestag on 5 May 2025 |\n| Date formed | 6 May 2025 |\n| People and organisations |\n| President | Frank-Walter Steinmeier |\n| Chancellor | Friedrich Merz |\n| Vice Chancellor | Lars Klingbeil |\n| Member parties | Christian Democratic Union   Christian Social Union   Social Democratic Party |\n| Status in legislature | Grand coalition \"Grand coalition (Germany)\") | [...] with its Chancellor candidate Friedrich Merz emerged from 2025 German federal election as the strongest faction in the new Bundestag. However, the CDU/CSU needed coalition partners (as is usual in German politics) in order to form a majority government. The only possibility of forming a coalition with just one other party was a coalition with the SPD. Mathematically, a two-party coalition with the AfD, which is generally considered to be on the far right, would also have been possible;",
+              "score": 0.7309246
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1590,
+            "completionTokens": 165,
+            "latencyMs": 3520
+          }
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 365,
+        "completionTokens": 219,
+        "latencyMs": 3684
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "e4050ee1-ea07-4a40-baf3-9c0a5683c8ab",
+        "provider": "ollama",
+        "model": "ollama/exaone-3.5-2.4b:latest",
+        "timestamp": "2026-11-01T23:15:43.8963371Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "What is the latest stable version of Python? Answer in one or two sentences.",
+      "answer": "The latest stable version of Python as of early 2023 is Python 3.11, officially released on October 28, 2022, offering performance improvements and new features while maintaining backward compatibility.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "The latest stable version of Python is Python 3.11.",
+            "category": "version",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "latest stable version of Python"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 1,
+              "url": "https://www.liquidweb.com/blog/latest-python-version",
+              "quote": "The latest stable version of Python is 3.14",
+              "match": "exact"
+            }
+          ],
+          "inference": "The claim states that Python 3.11 is the latest stable version, but Source 1 explicitly states that Python 3.14 is the latest stable version as of its release on October 7, 2025.",
+          "currentValue": "Python 3.14",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Latest Python Version (2025) – What's New in Python 3.14?",
+              "url": "https://www.liquidweb.com/blog/latest-python-version",
+              "content": "The latest major version, Python 3.14 was officially released on October 7, 2025.\n\nLet’s explore the key features of Python’s current version, how to download and install it, and what this release means for developers.\n\n## Get premium VPS hosting\n\nHigh-performance VPS hosting that delivers unrivaled power\n\nExplore VPS hosting\n\n## What’s the latest Python version?\n\nThe latest stable version of Python is 3.14\n\nPython 3.14 was released on October 7, 2025 with several improvements: [...] Download the latest Python version today and start exploring its new features on Liquid Web’s diversity of packages for dedicated hosting, VPS hosting, bare metal servers, GPU hosting, and cloud servers,\n\nExplore all hosting\n\nBuild a server now\n\n## Frequently asked questions\n\nYes, Python 3.14 is the latest stable release. We recommend testing this version in a staging or development environment before deploying in order to identify any refactoring required. [...] | Python 3.4 | March 16, 2014 | `enum` module, pathlib, async IO (`asyncio`) |\n| Python 3.3 | September 29, 2012 | `yield from, u\"` string literals reintroduced |\n| Python 3.2 | February 20, 2011 | `concurrent.futures`, PEP 384 (Stable ABI) |\n| Python 3.1 | June 27, 2009 | OrderedDict, io module rewritten |\n| Python 3.0 | December 3, 2008 | Print function, integer division changes, Unicode by default |\n| Python 2.7 | July 3, 2010 | Last release of Python 2, backported features from Python 3 |",
+              "score": 0.8965509
+            },
+            {
+              "n": 2,
+              "title": "Updating Python",
+              "url": "https://www.mostlypython.com/updating-python",
+              "content": "I write a bunch of small scripts that don't use any third-party libraries, and don't need a dedicated virtual environment. I want to have a `python` command on my system that always points to the latest point release of the most recent stable version of Python. At the time of this writing, that's Python 3.13.5. [...] $ uv python install Installed Python 3.13.5 in 930ms\n + cpython-3.13.5-macos-aarch64-none (python3.13)\nIf you don't specify a version, `uv` will install the latest stable release. (Note that it's `uv python install`, not `uv install python`!)\n\nBut, my `python` commands are still blank, or pointing to brew-installed interpreters: [...] It's also a good to check out Python's status page, and see what the latest point releases are for each major release:\n\nImage 2: bar chart showing release date and end of support date for each major Python release\n\nPython's status page is fantastic for knowing which versions are still being supported, and when the next version will be released. As of this writing, Python 3.9 is just about to reach end of life, and Python 3.14 will be released this fall.",
+              "score": 0.8405867
+            },
+            {
+              "n": 3,
+              "title": "Which Python Version Should I Install?",
+              "url": "https://www.youtube.com/watch?v=ZQ6F_M4HAhE&vl=en",
+              "content": "[0:57] or 3.12. The general overwhelming recommendation for anyone starting a new project or learning Python is to install the latest stable release of Python 3.\n[1:08] As of now, that typically means Python 3.12 or the most recent stable iteration available on python.org. The reason for this recommendation is straightforward.\n[1:19] Newer versions come packed with performance improvements, new language features, bug fixes, and critical security updates. While some legacy [...] 3. Essential: Virtual Environments - Crucial for managing different project Python versions, Isolate project dependencies and specific Python versions easily, Avoid conflicts between distinct project requirements seamlessly.\n4. Installation Best Practices - Download latest stable Python 3 from python.org, Use package managers or Anaconda for specific needs, Always create a virtual environment for each project. [...] [1:27] projects might require an older Python 3 minor version, eg 3.9 or 3.10, due to specific library dependencies\n[1:35] that haven't yet caught up, this is a niche scenario and not the default for general use. For beginners, sticking with the latest stable version ensures\n[1:43] you're learning the most current syntax and practices, and you'll benefit from all the optimizations. The real power move for managing Python versions,",
+              "score": 0.8266142
+            },
+            {
+              "n": 4,
+              "title": "How to get the version number of the latest stable release of Python via single HTTP request?",
+              "url": "https://stackoverflow.com/questions/70378786/how-to-get-the-version-number-of-the-latest-stable-release-of-python-via-single",
+              "content": "m = re.search(r'Download Python (\\d+\\.\\d+.\\d+)', resp.text)\n    return m if m else None\n\nif __name__ == '__main__':\n    print(get_latest_python_release())\n```\n\nPrints:\n\n```\n3.13.3\n```\n\nShare\n\nShare a link to this answer \n\nCopy linkCC BY-SA 4.0\n\nShort permalink to this answer\n\nImprove this answer\n\n Follow \n\nFollow this answer to receive notifications\n\n answered Apr 24, 2025 at 12:40\n\nImage 9: Booboo's user avatar\n\nBooboo\n\n46.7k 4 4 gold badges 48 48 silver badges 75 75 bronze badges [...] ## 2 Comments\n\nAdd a comment\n\nImage 7\n\nТёма Макеев\n\nТёма МакеевOver a year ago\n\nSeems like the best solution so far, thank you!\n\n2021-12-16T18:41:04.65Z+00:00\n\n0\n\nReply\n\n   Copy link\n\nImage 8\n\nhippietrail\n\nhippietrailOver a year ago\n\nThat's pretty nice but it's a little bit laggy. For instance it lists `3.12.1 (07 Dec 2023)` as the latest rather than `3.12.2` which was just released today or yesterday.\n\n2024-02-07T06:08:27.513Z+00:00\n\n0\n\nReply\n\n   Copy link [...] Copy link\n\n\n>>> for m in re.finditer(r'Download Python (\\d+\\.\\d+.\\d+)', resp.text): print(m)\n...\n3.13.3\n3.13.3\n3.13.3\n3.13.3\n>>>\n```\n\nDisclaimer: There is no guarantee that this will always be the case in the future. But as long as it is the case, this might be a better alternative to the accepted answer:\n\nCopy\n\n```python\nimport requests\nimport re\n\ndef get_latest_python_release():\n    url = '\n\n    resp = requests.get(url)\n    resp.raise_for_status()",
+              "score": 0.79522943
+            },
+            {
+              "n": 5,
+              "title": "Python Version in Production ? : r/Python",
+              "url": "https://www.reddit.com/r/Python/comments/1qgt083/python_version_in_production",
+              "content": "Balance-\n\n•9mo ago\n\n3.13 for GIS and web stuff (those packages tend to be updated later), 3.14 for data science and general development.\n\n, newer stuff is a mix of 3.13 & 3.14\n\n# People also ask about section\n\n People also ask about \n\nBest Python version for production use\n\nMain differences between Python 3.12 and 3.13\n\nLatest stable Python version recommendations\n\nBest practices for Python code optimization\n\nHow to start a Python project from scratch [...] Edit: I read more of the comments and it seems that the biggest reason people don’t use the latest stable version is that dependencies haven’t been updated to support it. This is why we have venvs, people! Use the latest version which is compatible, and pin your versions so your type checker and linter and LSP can tell you what to do when things aren’t backwards compatible.\n\n2 more replies \n\n2 more replies \n\n2 more replies\n\nImage 23: u/Balance- avatar\n\nBalance-\n\n•9mo ago",
+              "score": 0.7159213
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1697,
+            "completionTokens": 109,
+            "latencyMs": 2652
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Python 3.11 was officially released on October 28, 2022.",
+            "category": "other",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "Python 3.11 release date"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 364,
+        "completionTokens": 147,
+        "latencyMs": 2560
+      }
+    },
+    {
+      "source": {
+        "kind": "bifrost_log",
+        "logId": "9b47086a-f416-4c73-b7f6-6ae692f68397",
+        "provider": "ollama",
+        "model": "ollama/exaone-3.5-2.4b:latest",
+        "timestamp": "2026-11-01T23:15:35.7678655Z",
+        "virtualKey": "demo-chat-app"
+      },
+      "question": "Who is the current CEO of Intel? Answer in one or two sentences.",
+      "answer": "The current CEO of Intel Corporation is Jim Kelly, who took office in January 2023, succeeding Brian Kracklauer. Kelly leads Intel through ongoing technological advancements and strategic initiatives in semiconductor manufacturing and innovation.",
+      "claims": [
+        {
+          "claim": {
+            "id": "c1",
+            "text": "The current CEO of Intel Corporation is Jim Kelly.",
+            "category": "office_holder",
+            "timeSensitive": true,
+            "sensitivity": "high",
+            "searchQuery": "current CEO of Intel Corporation"
+          },
+          "verdict": "changed",
+          "confidence": 1,
+          "freshness": {
+            "score": 0,
+            "label": "stale",
+            "confidence": "medium"
+          },
+          "evidence": [
+            {
+              "source": 2,
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html",
+              "quote": "Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18.",
+              "match": "exact"
+            }
+          ],
+          "inference": "The claim that Jim Kelly is the CEO is incorrect; according to Intel's official announcement and supporting sources, Lip-Bu Tan was appointed CEO effective March 18, 2025.",
+          "currentValue": "Lip-Bu Tan",
+          "sources": [
+            {
+              "n": 1,
+              "title": "Intel - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Intel",
+              "content": "On June 21, 2018, Intel announced the resignation of Brian Krzanich as CEO, with the exposure of a relationship he had with an employee. Bob Swan was named interim CEO, as the Board began a search for a permanent CEO.\n\nOn January 31, 2019, Swan transitioned from his role as CFO and interim CEO and was named by the Board as the seventh CEO to lead the company. [...] 244. ↑ \"Intel CEO Pat Gelsinger is out, stock up 5%\". CNBC. December 2, 2024. Retrieved December 2, 2024.\n245. ↑ \"Intel CEO Gelsinger Retires, Leaves Board\". WSJ. December 2, 2024. Retrieved December 2, 2024.\n246. ↑ Press, Associated (December 2, 2024). \"Intel CEO Pat Gelsinger retires amid chipmaker's struggles\". The Guardian. ISSN \"ISSN (identifier)\") 0261-3077. Retrieved December 2, 2024.\n247. ↑ Tan, Lip-Bu (March 12, 2025). \"Intel Press Announcement\". [...] 115. ↑ Maruf, Ramishah (December 3, 2024). \"Ousted Intel CEO Pat Gelsinger is leaving the company with millions | CNN Business\". CNN. Retrieved December 5, 2024.\n116. ↑ \"Intel CEO Forced Out by Board Frustrated With Slow Progress\". Bloomberg. December 2, 2024. Retrieved December 5, 2024.\n117. ↑ \"Intel Announces Retirement of CEO Pat Gelsinger\". Intel. December 2, 2024. Retrieved December 5, 2024.",
+              "score": 0.9018604
+            },
+            {
+              "n": 2,
+              "title": "Intel Appoints Lip-Bu Tan as Chief Executive Officer",
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-appoints-lip-bu-tan-chief-executive-officer.html",
+              "content": "SANTA CLARA, Calif., March 12, 2025 – Intel Corporation (Nasdaq: INTC) today announced that its board of directors has appointed Lip-Bu Tan, an accomplished technology leader with deep semiconductor industry experience, as chief executive officer, effective March 18. He succeeds Interim Co-CEOs David Zinsner and Michelle (MJ) Johnston Holthaus. Tan will also rejoin the Intel board of directors after stepping down from the board in August 2024. [...] Skip To Main Content\n\nNews\n\n# Intel Appoints Lip-Bu Tan as Chief Executive Officer\n\n March 12,2025\n\nCopied\n\nCorporate Information\n\nLip-Bu Tan was appointed chief executive officer of Intel Corporation in March 2025. He also serves on the company’s board of directors.\n\nLip-Bu Tan was appointed chief executive officer of Intel Corporation in March 2025. He also serves on the company’s board of directors.\n\n## Tan to join Intel board of directors. [...] Zinsner will remain executive vice president and chief financial officer, and Johnston Holthaus will remain CEO of Intel Products. Frank D. Yeary, who took on the role of interim executive chair of the board during the search for a new CEO, will revert to being the independent chair of the board upon Tan becoming CEO.",
+              "score": 0.8943568
+            },
+            {
+              "n": 3,
+              "title": "Who is the CEO of Intel in 2026? Lip-Bu Tan | Unify",
+              "url": "https://www.unifygtm.com/insights/executives/intel-ceo",
+              "content": "Current company\n\nIntel\n\nIntel is an American multinational technology company.\n\nelectrical industry · Headquartered in Santa Clara · Founded 1968 · Nasdaq: INTC\n\nSource: Wikidata\n\nView Intel headcount\n\n## Career and education\n\nLip-Bu Tan joined Intel in August 2022 and has been CEO since March 2025. Before Intel, Lip-Bu was CEO at Cadence from October 2008 until December 2021.\n\nCareer\n\n1. Intel2022 to present [...] Lip-Bu Tan is the Chief Executive Officer of Intel. Lip-Bu has held the CEO seat since March 2025, and was previously CEO at Cadence.\n\nUpdated September 23, 2026\n\nResearch Lip-Bu in Unify\n\nTime in seat\n\n1 year\n\nCEO since March 2025\n\nYears at company\n\n4 years\n\nJoined Intel August 2022\n\nCareer span\n\n42 years\n\nFirst recorded role January 1984\n\nSummary [...] Lip-Bu Tan has been CEO of Intel for 1 year, since March 2025.\n\nWho else leads Intel?\n\nDavid Zinsner (Executive Vice President and Chief Financial Officer), April Miller Boise (Executive Vice President and Chief Legal Officer), Nagasubramaniyan Chandrasekaran (Executive Vice President and Chief Technology and Operations Officer, General Manager of Intel Foundry). Source: Intel 2025 Form 10-K.\n\n## Reach Intel's decision makers",
+              "score": 0.8679453
+            },
+            {
+              "n": 4,
+              "title": "Who is the CEO of Intel in 2026? Lip-Bu Tan's Bio | Clay",
+              "url": "https://www.clay.com/dossier/intel-ceo",
+              "content": "Lip-Bu Tan is the CEO of Intel Corporation, an experienced executive with a demonstrated history of working in the computer software and semiconductor industries. He brings deep expertise in EDA, Software as a Service (SaaS), Mergers & Acquisitions (M&A), Application-Specific Integrated Circuits (ASIC), and start-ups. [...] Lip-Bu Tan is the CEO of Intel Corporation, bringing extensive experience in the technology and semiconductor industries to the role. With a strong background in business development, mergers and acquisitions, and start-ups, Tan also serves as Chairman of Walden International and Founding Managing Partner of Walden Catalyst Ventures.\n\nResearch any company or contact with Clay\n\nGet verified emails, company info, funding data and more with Clay\n\nTry for free\n\nLip-Bu Tan\n\nintel.com [...] In addition to his role at Intel, Tan serves as Chairman of Walden International and as Founding Managing Partner of Walden Catalyst Ventures, reflecting his long-standing commitment to technology investment and innovation.\n\n### Work History\n\n Intel: CEO, March 2025 - Present\n SambaNova: Chairman of the Board, March 2025 - Present\n SambaNova: Executive Chairman, April 2024 - March 2025\n Inphi Corporation: Board Member, May 2002 - December 2012\n\n### Education History",
+              "score": 0.85995835
+            },
+            {
+              "n": 5,
+              "title": "Lip-Bu Tan - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Lip-Bu_Tan",
+              "content": "Lip-Bu Tan (born November 12, 1959) is an American business executive who has been chief executive officer (CEO) of Intel since 2025. He is also chairman of Walden International, a venture capital firm; a founding managing partner of Walden Catalyst Ventures and Celesta Capital; and holds numerous board positions. Tan was CEO of Cadence Design Systems from 2009 to 2021.\n\n## Early life and education\n\n[edit] [...] ### Intel\n\n[edit]\n\nIn March 2025, Tan was named CEO of Intel, effective from March 18, 2025. Tan had been on Intel's board of directors from 2022 to 2024.\n\n## Board memberships\n\n[edit]\n\n### Academic boards\n\n[edit]",
+              "score": 0.8194462
+            }
+          ],
+          "notes": [],
+          "judge": {
+            "purpose": "judge",
+            "requested": "ollama/gemma4:26b-a4b-chat",
+            "served": "ollama/gemma4:26b-a4b-chat",
+            "isFallback": false,
+            "promptTokens": 1639,
+            "completionTokens": 129,
+            "latencyMs": 2971
+          }
+        },
+        {
+          "claim": {
+            "id": "c2",
+            "text": "Jim Kelly took office as CEO of Intel in January 2023.",
+            "category": "office_holder",
+            "timeSensitive": false,
+            "sensitivity": "low",
+            "searchQuery": "when did Jim Kelly become CEO of Intel"
+          },
+          "verdict": "unverifiable",
+          "confidence": 0,
+          "freshness": {
+            "score": null,
+            "label": "unknown",
+            "confidence": "low"
+          },
+          "evidence": [],
+          "inference": "",
+          "currentValue": null,
+          "sources": [],
+          "notes": [
+            "not time-sensitive; not researched"
+          ],
+          "skipped": "not_time_sensitive"
+        }
+      ],
+      "extract": {
+        "purpose": "extract",
+        "requested": "ollama/gemma4:26b-a4b-chat",
+        "served": "ollama/gemma4:26b-a4b-chat",
+        "isFallback": false,
+        "promptTokens": 360,
+        "completionTokens": 142,
+        "latencyMs": 2504
+      }
+    }
+  ]
+}

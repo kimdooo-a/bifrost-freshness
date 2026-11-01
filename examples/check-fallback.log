@@ -1,0 +1,16 @@
+Bifrost http://localhost:8080 - auditor primary ollama/llama3.3:70b, fallbacks [ollama/gemma4:26b-a4b-chat, ollama/gemma4:e4b-it-q4km-chat]
+  ! primary model unavailable, ollama/gemma4:26b-a4b-chat took over (extract)
+  3 claim(s), 1 time-sensitive
+  ! primary model unavailable, ollama/gemma4:26b-a4b-chat took over (judge)
+  [changed] The latest stable version of Python is Python 3.11
+
+CHANGED       freshness   0  The latest stable version of Python is Python 3.11
+              now: Python 3.14
+              evidence: https://www.liquidweb.com/blog/latest-python-version
+
+Totals: 1 researched - 0 supported, 1 changed, 0 unverifiable
+Auditor LLM: 2 calls via Bifrost, primary ollama/llama3.3:70b - 2 served by FALLBACK (ollama/gemma4:26b-a4b-chat)
+Virtual key vk-freshness-auditor: 24686/400000 tokens, 22/400 requests in window
+Tavily: 1 searches this run
+Report: examples\check-fallback.html
+        examples\check-fallback.json

@@ -1,0 +1,5 @@
+Bifrost http://localhost:8080 - auditor primary ollama/gemma4:26b-a4b-chat, fallbacks [ollama/gemma4:e4b-it-q4km-chat]
+Created routing rule f533d623-764c-46d8-9806-a44d4e37a253: Freshness: route time-sensitive exaone-3.5-2.4b:latest traffic to gemma4:e4b-it-q4km-chat
+  provider == "ollama" && model == "exaone-3.5-2.4b:latest" && headers["x-freshness-sensitive"] == "true"
+x-freshness-sensitive=true -> {"provider":"ollama","model":"gemma4:e4b-it-q4km-chat","key":"ollama-local","requested_provider":"ollama","requested_model":"exaone-3.5-2.4b:latest"} | The current Pope is Pope Francis.
+x-freshness-sensitive=false -> {"provider":"ollama","model":"exaone-3.5-2.4b:latest","key":"ollama-local","requested_provider":"ollama","requested_model":"exaone-3.5-2.4b:latest"} | The current Pope is Pope Francis, whose full name is Jorge Mario Bergoglio Sicilianus, succeeding Po
